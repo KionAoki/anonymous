@@ -5,19 +5,85 @@
     <script>Vue.config.devtools = true;</script>
     <script src="js/main.js"></script>
     <link rel=stylesheet type="text/css" href="css/main.css">
+    <link rel=stylesheet type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.css">
   </head>
   <body>
-
+  <main>
+    <!--video banner-->
     <div id="banner">
       <iframe frameborder="0" allowfullscreen volumn="0"
               allow="autoplay" title="YouTube video player"
               width="100%" height="100%"
-              src="https://www.youtube.com/embed/nB5o8liBtlk?rel=0&autoplay=1&loop=1&playlist=nB5o8liBtlk&controls=0&modestbranding=1&fs=0" id="widget2"></iframe>
+              src="https://www.youtube.com/embed/nB5o8liBtlk?rel=0&autoplay=1&loop=1&playlist=nB5o8liBtlk&controls=0&modestbranding=1&fs=0"
+              id="widget2"></iframe>
     </div>
-
-
-
+    <!--hamburger bar-->
+    <div class="menu-toggle" id="hamburger" v-on:click="pop">
+      <a class="hamburgerBar" style="color: white;">
+        <i class="fas fa-bars"></i>
+      </a>
+    </div>
+    <script>
+      var open = false;
+      var close = true;
+      new Vue({
+        el: '#hamburger',
+        methods: {
+          pop: function() {
+            if (close) {
+              open = true;
+              close = false;
+            } else {
+              open = false;
+              close = true;
+            }
+            console.log(open);
+          }
+        }
+      })
+    </script>
+    <!--side bar-->
+    <nav id="sidebar-wrapper" :class="{ 'open': open, 'close': close }">
+      <ul class="sidebar-nav" id="list-item">
+        <li class="sidebar-brand">
+          <a href="#BannerTitle">與精神疾病的真實距離</a>
+        </li>
+        <li class="sidebar-nav-item" v-for="value in items"><a className="js-scroll-trigger" :href=items.link>{{value.title}}</a></li>
+      </ul>
+      <div class="share">
+        <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fnewmedia.pts.org.tw%2Fmental_disorder%2F&amp;src=sdkpreparse"
+           target="_blank">
+          <img src="img/share_nav_fb.svg" alt="fb_share"/>
+        </a>
+        <a href="https://social-plugins.line.me/lineit/share?url=https%3A%2F%2Fnewmedia.pts.org.tw%2Fmental_disorder"
+           target="_blank">
+          <img src="img/share_nav_line.svg" alt="line_share"/>
+        </a>
+      </div>
+    </nav>
+    <script>
+      new Vue({
+        el: '#list-item',
+        data: {
+          items: [
+            {id: 1, title: '玉如｜與思覺失調症共處6年', link: '#Test1image'},
+            {id: 2, title: '宗辰｜與強迫症共處15年', link: '#Test2image'},
+            {id: 3, title: '結語｜跨越成見 拉近距離', link: '#Test3image'}
+          ]
+        }
+      })
+      new Vue({
+        el: '#sidebar-wrapper',
+        data: {
+          open: open,
+          close: close
+        },
+        watch: {
+          open: open,
+          close: close
+        }
+      })
+    </script>
+  </main>
   </body>
-  <script>
-  </script>
 </htmL>
