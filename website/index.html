@@ -24,23 +24,37 @@
       </a>
     </div>
     <script>
-      var open = false;
-      var close = true;
-      new Vue({
+      var hb = new Vue({
         el: '#hamburger',
+        data: {
+          open: false,
+          close: true
+        },
         methods: {
           pop: function() {
-            if (close) {
-              open = true;
-              close = false;
-            } else {
-              open = false;
-              close = true;
+            if (this.close) {
+              this.open = true;
+              this.close = false;
+            } else{
+              this.open = false;
+              this.close = true;
             }
-            console.log(open);
+            console.log(this.open);
+            console.log(this.close);
+          }
+        },
+        watch: {
+          open: function(){
+            console.log('hb.open'+hb.open);
+            this.open ? sidebarstatus.open = true : sidebarstatus.open = false;
+          },
+          close: function(){
+            console.log('hb.close'+hb.close);
+            hb.close ? sidebarstatus.close = true : sidebarstatus.close = false;
           }
         }
       })
+      console.log(open)
     </script>
     <!--side bar-->
     <nav id="sidebar-wrapper" :class="{ 'open': open, 'close': close }">
@@ -72,17 +86,17 @@
           ]
         }
       })
-      new Vue({
+      console.log('hb_open '+hb.open);
+      console.log('hb_close '+hb.close);
+      var sidebarstatus = new Vue({
         el: '#sidebar-wrapper',
         data: {
-          open: open,
-          close: close
-        },
-        watch: {
-          open: open,
-          close: close
+          open: hb.open,
+          close: hb.close
         }
       })
+      console.log('sidebarstatus_open '+sidebarstatus.open);
+      console.log('sidebarstatus_close '+sidebarstatus.close);
     </script>
   </main>
   </body>
