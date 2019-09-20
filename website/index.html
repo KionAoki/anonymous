@@ -6,6 +6,7 @@
   <script src="js/main.js"></script>
   <link rel=stylesheet type="text/css" href="css/main.css">
   <link rel=stylesheet type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.css">
+  <link href="https://fonts.googleapis.com/css?family=Noto+Sans+TC&display=swap" rel="stylesheet">
 </head>
 <body>
 <!--hamburger bar-->
@@ -20,20 +21,12 @@
     <li class="sidebar-brand">
       <a href="#BannerTitle">與精神疾病的真實距離</a>
     </li>
-    <li class="sidebar-nav-item" v-for="value in items"><a className="js-scroll-trigger" :href=items.link>{{value.title}}</a>
+    <li class="sidebar-nav-item" v-for="value in items"><a class="js-scroll-trigger" :href=value.link>{{value.title}}</a>
     </li>
   </ul>
-  <div class="share">
-    <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fnewmedia.pts.org.tw%2Fmental_disorder%2F&amp;src=sdkpreparse"
-       target="_blank">
-      <img src="img/share_nav_fb.svg" alt="fb_share"/>
-    </a>
-    <a href="https://social-plugins.line.me/lineit/share?url=https%3A%2F%2Fnewmedia.pts.org.tw%2Fmental_disorder"
-       target="_blank">
-      <img src="img/share_nav_line.svg" alt="line_share"/>
-    </a>
-  </div>
 </nav>
+<script>
+</script>
 <main id="landing" v-on:click.stop="closesidebar">
   <!--video banner-->
   <div id="banner">
@@ -44,8 +37,56 @@
             src="https://www.youtube.com/embed/nB5o8liBtlk?rel=0&autoplay=1&loop=1&playlist=nB5o8liBtlk&controls=0&modestbranding=1&fs=0"
             id="widget2"></iframe>
   </div>
-  
+  <!-- background-->
+  <div class="background">
+    <!-- cyberbully -->
+    <div id="cyberbully">
+      <page-title title="示範標題"></page-title>
+    </div>
+    <!-- story -->
+    <div id="story">
+      <page-title title="聽聽他們怎麼說"></page-title>
+    </div>
+    <!-- instagram -->
+    <div id="instagram">
+      <page-title title="IG 遊戲介紹"></page-title>
+    </div>
+  </div>
+  <script>
+    /* Page title */
+
+    Vue.component('page-title', {
+      props: ['title'],
+      template: '<div class="title-wrapper"><div class="line"></div><div class="title"><h2>{{ title }}</h2></div><div class="line"></div></div>'
+    })
+  </script>
 </main>
+<footer>
+  <div>
+    <div>
+      <div>
+        <p>分享文章  ｜  </p>
+        <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fnewmedia.pts.org.tw%2Fmental_disorder%2F&amp;src=sdkpreparse"
+           target="_blank">
+          <img src="img/share_nav_fb.svg" alt="fb_share"/>
+        </a>
+        <a href="https://social-plugins.line.me/lineit/share?url=https%3A%2F%2Fnewmedia.pts.org.tw%2Fmental_disorder"
+           target="_blank">
+          <img src="img/share_nav_line.svg" alt="line_share"/>
+        </a>
+      </div>
+    </div>
+    <div>
+      <p>數據、文字整理 | Seo Joo Kim</p>
+    </div>
+    <div>
+      <p>設計 | Chew Hui Jing</p>
+    </div>
+    <div>
+      <p>工程 | Kion</p>
+    </div>
+  </div>
+</footer>
 </body>
 <script>
   /* hamburger bar */
@@ -86,14 +127,14 @@
   });
 
   /* sidebar content */
-  
+
   new Vue({
     el: '#list-item',
     data: {
       items: [
-        {id: 1, title: '示範標題', link: '#cyberbully'},
-        {id: 2, title: '聽聽他們怎麼說', link: '#story'},
-        {id: 3, title: 'IG 遊戲介紹', link: '#instagram'}
+        {id: 1, link: '#cyberbully', title: '示範標題'},
+        {id: 2, link: '#story', title: '聽聽他們怎麼說'},
+        {id: 3, link: '#instagram', title: 'IG 遊戲介紹'}
       ]
     }
   })
