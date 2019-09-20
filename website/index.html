@@ -62,31 +62,46 @@
   </script>
 </main>
 <footer>
-  <div>
-    <div>
-      <div>
-        <p>分享文章  ｜  </p>
-        <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fnewmedia.pts.org.tw%2Fmental_disorder%2F&amp;src=sdkpreparse"
-           target="_blank">
-          <img src="img/share_nav_fb.svg" alt="fb_share"/>
-        </a>
-        <a href="https://social-plugins.line.me/lineit/share?url=https%3A%2F%2Fnewmedia.pts.org.tw%2Fmental_disorder"
-           target="_blank">
-          <img src="img/share_nav_line.svg" alt="line_share"/>
-        </a>
+  <div class="wrapper">
+    <div >
+      <div id="share" class="footer-center">
+        <div>
+          <p>分享文章</p>
+        </div>
+        <div><p>|</p></div>
+        <div>
+          <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fnewmedia.pts.org.tw%2Fmental_disorder%2F&amp;src=sdkpreparse"
+             target="_blank">
+            <img src="img/share_nav_fb.svg" alt="fb_share">
+          </a>
+          <a href="https://social-plugins.line.me/lineit/share?url=https%3A%2F%2Fnewmedia.pts.org.tw%2Fmental_disorder"
+             target="_blank">
+            <img src="img/share_nav_line.svg" alt="line_share">
+          </a>
+        </div>
       </div>
     </div>
-    <div>
-      <p>數據、文字整理 | Seo Joo Kim</p>
-    </div>
-    <div>
-      <p>設計 | Chew Hui Jing</p>
-    </div>
-    <div>
-      <p>工程 | Kion</p>
+    <div id="credit" >
+      <div v-for="value in items" class="footer-center">
+        <div><p>{{value.work}}</p></div>
+        <div><p>|</p></div>
+        <div><p>{{value.name}}</p></div>
+      </div>
     </div>
   </div>
 </footer>
+<script>
+  new Vue({
+    el: '#credit',
+    data: {
+      items: [
+        {id: 1, work: '數據、文字整理', name: 'Seo Joo Kim'},
+        {id: 2, work: '設計', name: 'Chew Hui Jing'},
+        {id: 3, work: '工程', name: 'Kion'},
+        ]
+    }
+  })
+</script>
 </body>
 <script>
   /* hamburger bar */

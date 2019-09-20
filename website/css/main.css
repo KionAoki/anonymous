@@ -7,7 +7,7 @@ body{
 /* wrapper margin*/
 
 .wrapper{
-  padding: 40px;
+  padding: 60px;
 }
 
 /* font size */
@@ -200,3 +200,27 @@ a:not([href]) {
 
 
 
+/* footer */
+
+footer p{
+  color: black;
+}
+
+.footer-center{
+  display: flex;
+  align-items: center;
+}
+
+/* Add space between footer's content */
+
+.footer-center div:first-child{
+  padding-right: 30px;
+}
+
+.footer-center div:last-child{
+  padding-left: 30px;
+}
+
+#share a:last-child{
+  margin-left: 30px;
+}
