@@ -69,14 +69,9 @@
           <p>分享文章</p>
         </div>
         <div><p>|</p></div>
-        <div>
-          <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fnewmedia.pts.org.tw%2Fmental_disorder%2F&amp;src=sdkpreparse"
-             target="_blank">
-            <img src="img/share_nav_fb.svg" alt="fb_share">
-          </a>
-          <a href="https://social-plugins.line.me/lineit/share?url=https%3A%2F%2Fnewmedia.pts.org.tw%2Fmental_disorder"
-             target="_blank">
-            <img src="img/share_nav_line.svg" alt="line_share">
+        <div v-for="value in items">
+          <a :href=value.link target="_blank">
+            <img :src=value.image :alt=value.alt>
           </a>
         </div>
       </div>
@@ -91,13 +86,29 @@
   </div>
 </footer>
 <script>
+  /* share content */
+  
+  new Vue({
+    el: '#share',
+    data: {
+      items: [
+        {id: 1, link: 'https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fnewmedia.pts.org.tw%2Fmental_disorder%2F&amp;src=sdkpreparse',
+          image: 'img/share_nav_fb.svg', alt: 'fb_share'},
+        {id: 2, link: 'https://social-plugins.line.me/lineit/share?url=https%3A%2F%2Fnewmedia.pts.org.tw%2Fmental_disorder',
+          image: 'img/share_nav_line.svg', alt: 'line_share'}
+      ]
+    }
+  })
+  
+  /* credit content */
+  
   new Vue({
     el: '#credit',
     data: {
       items: [
         {id: 1, work: '數據、文字整理', name: 'Seo Joo Kim'},
         {id: 2, work: '設計', name: 'Chew Hui Jing'},
-        {id: 3, work: '工程', name: 'Kion'},
+        {id: 3, work: '工程', name: 'Kion'}
         ]
     }
   })
