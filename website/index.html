@@ -8,45 +8,12 @@
   <link rel=stylesheet type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.css">
 </head>
 <body>
-
 <!--hamburger bar-->
 <div class="menu-toggle" id="hamburger" v-on:click="pop">
   <a class="hamburgerBar" style="color: white;">
-    <i class="fas fa-bars fa-sm"></i>
+    <i :class="{'fas fa-bars': bar, 'fas fa-times': cross,'fa-sm': size}"></i>
   </a>
 </div>
-<script>
-  var hb = new Vue({
-    el: '#hamburger',
-    data: {
-      open: false,
-      close: true
-    },
-    methods: {
-      pop: function () {
-        console.log('hb click!');
-        if (this.close) {
-          this.open = true;
-          this.close = false;
-        } else {
-          this.open = false;
-          this.close = true;
-        }
-        console.log(this.open);
-        console.log(this.close);
-      }
-    },
-    watch: {
-      open: function () {
-        this.open ? sidebarstatus.open = true : sidebarstatus.open = false;
-        this.open ? landingpage.open = true : landingpage.open = false;
-      },
-      close: function () {
-        hb.close ? sidebarstatus.close = true : sidebarstatus.close = false;
-      }
-    }
-  });
-</script>
 <!--side bar-->
 <nav id="sidebar-wrapper" :class="{ 'open': open, 'close': close }">
   <ul class="sidebar-nav" id="list-item">
@@ -67,29 +34,6 @@
     </a>
   </div>
 </nav>
-<script>
-  new Vue({
-    el: '#list-item',
-    data: {
-      items: [
-        {id: 1, title: '玉如｜與思覺失調症共處6年', link: '#Test1image'},
-        {id: 2, title: '宗辰｜與強迫症共處15年', link: '#Test2image'},
-        {id: 3, title: '結語｜跨越成見 拉近距離', link: '#Test3image'}
-      ]
-    }
-  })
-  console.log('hb_open ' + hb.open);
-  console.log('hb_close ' + hb.close);
-  var sidebarstatus = new Vue({
-    el: '#sidebar-wrapper',
-    data: {
-      open: hb.open,
-      close: hb.close
-    }
-  })
-  console.log('sidebarstatus_open ' + sidebarstatus.open);
-  console.log('sidebarstatus_close ' + sidebarstatus.close);
-</script>
 <main id="landing" v-on:click.stop="closesidebar">
   <!--video banner-->
   <div id="banner">
@@ -100,28 +44,89 @@
             src="https://www.youtube.com/embed/nB5o8liBtlk?rel=0&autoplay=1&loop=1&playlist=nB5o8liBtlk&controls=0&modestbranding=1&fs=0"
             id="widget2"></iframe>
   </div>
-  <script>
-    var landingpage = new Vue({
-      el: '#landing',
-      data: {
-        open: hb.open
-      },
-      methods: {
-        closesidebar: function () {
-          console.log('click!');
-          if (this.open) {
-            console.log('open!!!!');
-            sidebarstatus.open = false;
-            sidebarstatus.close = true;
-          }
-        }
-      }
-    })
-  </script>
-  <!-- cyberbully -->
-  <script>
   
-  </script>
 </main>
 </body>
+<script>
+  /* hamburger bar */
+  
+  var hb = new Vue({
+    el: '#hamburger',
+    data: {
+      open: false,
+      close: true,
+      bar: true,
+      cross: false,
+      size: true
+    },
+    methods: {
+      pop: function () {
+        if (this.close) {
+          this.open = true;
+          this.close = false;
+          this.cross = true;
+          this.bar = false;
+        } else {
+          this.open = false;
+          this.close = true;
+          this.cross = false;
+          this.bar = true;
+        }
+      }
+    },
+    watch: {
+      open: function () {
+        this.open ? sidebarstatus.open = true : sidebarstatus.open = false;
+        this.open ? landingpage.open = true : landingpage.open = false;
+      },
+      close: function () {
+        hb.close ? sidebarstatus.close = true : sidebarstatus.close = false;
+      }
+    }
+  });
+
+  /* sidebar content */
+  
+  new Vue({
+    el: '#list-item',
+    data: {
+      items: [
+        {id: 1, title: '示範標題', link: '#cyberbully'},
+        {id: 2, title: '聽聽他們怎麼說', link: '#story'},
+        {id: 3, title: 'IG 遊戲介紹', link: '#instagram'}
+      ]
+    }
+  })
+  
+  /* sidebar status */
+  
+  var sidebarstatus = new Vue({
+    el: '#sidebar-wrapper',
+    data: {
+      open: hb.open,
+      close: hb.close
+    }
+  })
+
+  /* click the landing page, the sidebar will be closed  */
+
+  var landingpage = new Vue({
+    el: '#landing',
+    data: {
+      open: hb.open
+    },
+    methods: {
+      closesidebar: function () {
+        if (this.open) {
+          sidebarstatus.open = false;
+          sidebarstatus.close = true;
+          hb.open = false;
+          hb.close = true;
+          hb.cross = false;
+          hb.bar = true;
+        }
+      }
+    }
+  })
+</script>
 </htmL>
