@@ -42,8 +42,10 @@
     <!-- cyberbully -->
     <div id="cyberbully">
       <page-title title="示範標題"></page-title>
-      <div class="shallow">
-        <paragraph v-for="text in posts" :id="text.id" :content="text.content"></paragraph>
+      <div class="center shallow">
+        <div>
+          <paragraph v-for="text in posts" :id="text.id" :content="text.content"></paragraph>
+        </div>
       </div>
     </div>
     <script>

@@ -10,6 +10,10 @@ body{
   margin: 60px;
 }
 
+.block-content{
+
+}
+
 /* font size */
 
 h1{
@@ -198,11 +202,16 @@ a:not([href]) {
 
 /* paragraph */
 
-.shallow{
+.center{
   width: 75%;
   margin: auto;
+  padding: 30px;
 }
-
+.shallow{
+  position: relative;
+  background-color: rgb(0,51,102,0.3);
+  border-radius: 2%;
+}
 
 
 /* footer */
