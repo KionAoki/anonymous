@@ -21,7 +21,8 @@
     <li class="sidebar-brand">
       <a href="#BannerTitle">與精神疾病的真實距離</a>
     </li>
-    <li class="sidebar-nav-item" v-for="value in items"><a class="js-scroll-trigger" :href=value.link>{{value.title}}</a>
+    <li class="sidebar-nav-item" v-for="value in items"><a class="js-scroll-trigger"
+                                                           :href=value.link>{{value.title}}</a>
     </li>
   </ul>
 </nav>
@@ -46,6 +47,36 @@
         <div>
           <paragraph v-for="text in posts" :id="text.id" :content="text.content"></paragraph>
         </div>
+        <section class="container">
+          <h3>I'm a web developer and here's what I can do</h3>
+          <!-- HTML Chart -->
+          <figure class="chart" data-percent="75">
+            <figcaption>HTML</figcaption>
+            <img class="html" src="https://dl.dropboxusercontent.com/s/68gv23q4y5qyq52/html5.svg">
+            <svg width="200" height="200">
+              <circle class="outer" cx="95" cy="95" r="85" transform="rotate(-90, 95, 95)"/>
+            </svg>
+          </figure>
+          <!-- CSS Chart -->
+          <figure class="chart" data-percent="75">
+            <figcaption>CSS</figcaption>
+            <img class="css" src="https://dl.dropboxusercontent.com/s/gftbpqje9h2jvlv/css3.svg">
+            <svg width="200" height="200">
+              <circle class="outer" cx="95" cy="95" r="85" transform="rotate(-90, 95, 95)"/>
+            </svg>
+          </figure>
+          <!-- Javascript Chart -->
+          <figure class="chart" data-percent="50">
+            <figcaption>Javascript</figcaption>
+            <img class="javascript" src="https://dl.dropboxusercontent.com/s/jsp3rsberc4q650/javascript.svg">
+            <svg width="200" height="200">
+              <circle class="outer" cx="95" cy="95" r="85" transform="rotate(-90, 95, 95)"/>
+            </svg>
+          </figure>
+        </section>
+        <div>
+          <paragraph2 v-for="text in posts2" :key="text.key" :content2="text.content2"></paragraph2>
+        </div>
       </div>
     </div>
     <script>
@@ -56,29 +87,76 @@
         data: {
           posts: [
             {id: '1', content: '政治中心/綜合報導'},
-            {id: '2', content: '2020總統大選越來越激烈，除了要拚連任的總統蔡英文以及獲得國民黨提名的高雄市長韓國瑜之外，' +
+            {
+              id: '2', content: '2020總統大選越來越激烈，除了要拚連任的總統蔡英文以及獲得國民黨提名的高雄市長韓國瑜之外，' +
                 ' 日前前副總統呂秀蓮也決定參戰。現在傳出，時代力量有意找立委黃國昌參選2020。' +
-                '時代力量祕書長 吳佩芸表示，黨中央正草擬「時代力量總統候選人提名辦法」，並以徵召黃國昌委員為優先考量選項 之一。'},
-            {id: '3', content: '針對2020大選，民進黨提名記者會，包含公布賴品妤參戰新北汐止區，時代力量祕書長吳佩芸表示尊重他黨安排，' +
+                '時代力量祕書長 吳佩芸表示，黨中央正草擬「時代力量總統候選人提名辦法」，並以徵召黃國昌委員為優先考量選項 之一。'
+            },
+            {
+              id: '3', content: '針對2020大選，民進黨提名記者會，包含公布賴品妤參戰新北汐止區，時代力量祕書長吳佩芸表示尊重他黨安排，' +
                 '選戰倒數115天，時力將全力支持在地深耕五年的國會辦公室主任賴嘉倫。吳佩芸也強調，時代力量在汐止區不只是已參戰，' +
-                '更以「拿下勝利」為主要目標，延續時力在該選區的深耕經營。'},
-            {id: '4', content: '針對外界認為時代力量和民進黨兩黨主席對談似乎陷入僵局，' +
+                '更以「拿下勝利」為主要目標，延續時力在該選區的深耕經營。'
+            },
+            {
+              id: '4', content: '針對外界認為時代力量和民進黨兩黨主席對談似乎陷入僵局，' +
                 '吳佩芸表示，作為時力秘書長仍不會放棄與民進黨秘書長羅文嘉展開對談的可能性，' +
-                '不管是立委選區、政策推進、對談形式公開與否，都沒有任何限制，喝咖啡之約隨時有效。\n'},
-            {id: '5', content: '另外，有記者詢問時代力量是否會與柯文哲尋求合作?祕書長吳佩芸表示，柯文哲市長須先放棄「兩\n' +
-                '岸一家親」路線，並向民眾清楚說明台灣主權國家的立場，時代力量與柯文哲才有談下一步的可能。'},
-            {id: '6', content: '針對2020總統選舉，吳佩芸也說明，時代力量黨中央正草擬「時代力量總統候選人提名辦法」' +
+                '不管是立委選區、政策推進、對談形式公開與否，都沒有任何限制，喝咖啡之約隨時有效。\n'
+            },
+            {
+              id: '5', content: '另外，有記者詢問時代力量是否會與柯文哲尋求合作?祕書長吳佩芸表示，柯文哲市長須先放棄「兩\n' +
+                '岸一家親」路線，並向民眾清楚說明台灣主權國家的立場，時代力量與柯文哲才有談下一步的可能。'
+            },
+            {
+              id: '6', content: '針對2020總統選舉，吳佩芸也說明，時代力量黨中央正草擬「時代力量總統候選人提名辦法」' +
                 '，並以徵召黃國昌委員為優先考量選項之一。自提總統候選人是政黨主體性的展現，吳佩芸強調，未來若有機會與羅文嘉對談，' +
-                '將排除總統選舉層次，以免衍生錯誤解讀。'},
+                '將排除總統選舉層次，以免衍生錯誤解讀。'
+            },
           ],
+          posts2: [
+            {key: '1', content2: '政治中心/綜合報導'},
+            {
+              key: '2', content2: '2020總統大選越來越激烈，除了要拚連任的總統蔡英文以及獲得國民黨提名的高雄市長韓國瑜之外，' +
+                ' 日前前副總統呂秀蓮也決定參戰。現在傳出，時代力量有意找立委黃國昌參選2020。' +
+                '時代力量祕書長 吳佩芸表示，黨中央正草擬「時代力量總統候選人提名辦法」，並以徵召黃國昌委員為優先考量選項 之一。'
+            },
+            {
+              key: '3', content2: '針對2020大選，民進黨提名記者會，包含公布賴品妤參戰新北汐止區，時代力量祕書長吳佩芸表示尊重他黨安排，' +
+                '選戰倒數115天，時力將全力支持在地深耕五年的國會辦公室主任賴嘉倫。吳佩芸也強調，時代力量在汐止區不只是已參戰，' +
+                '更以「拿下勝利」為主要目標，延續時力在該選區的深耕經營。'
+            },
+            {
+              key: '4', content2: '針對外界認為時代力量和民進黨兩黨主席對談似乎陷入僵局，' +
+                '吳佩芸表示，作為時力秘書長仍不會放棄與民進黨秘書長羅文嘉展開對談的可能性，' +
+                '不管是立委選區、政策推進、對談形式公開與否，都沒有任何限制，喝咖啡之約隨時有效。\n'
+            },
+            {
+              key: '5', content2: '另外，有記者詢問時代力量是否會與柯文哲尋求合作?祕書長吳佩芸表示，柯文哲市長須先放棄「兩\n' +
+                '岸一家親」路線，並向民眾清楚說明台灣主權國家的立場，時代力量與柯文哲才有談下一步的可能。'
+            },
+            {
+              key: '6', content2: '針對2020總統選舉，吳佩芸也說明，時代力量黨中央正草擬「時代力量總統候選人提名辦法」' +
+                '，並以徵召黃國昌委員為優先考量選項之一。自提總統候選人是政黨主體性的展現，吳佩芸強調，未來若有機會與羅文嘉對談，' +
+                '將排除總統選舉層次，以免衍生錯誤解讀。'
+            },
+          ]
         },
         components: {
           paragraph: {
-            props: ['id','content'],
+            props: ['id', 'content'],
             template: `
               <div class="wrapper">
                 <div class="block-content">
                   <p>{{content}}</p>
+                </div>
+              </div>
+              `
+          },
+          paragraph2: {
+            props: ['key', 'content2'],
+            template: `
+              <div class="wrapper">
+                <div class="block-content">
+                  <p>{{content2}}</p>
                 </div>
               </div>
               `
@@ -110,12 +188,12 @@
         </div>
       `
     })
-    
+  
   </script>
 </main>
 <footer>
   <div class="wrapper">
-    <div >
+    <div>
       <div id="share" class="footer-center">
         <div>
           <p>分享文章</p>
@@ -128,7 +206,7 @@
         </div>
       </div>
     </div>
-    <div id="credit" >
+    <div id="credit">
       <div v-for="value in items" class="footer-center">
         <div><p>{{value.work}}</p></div>
         <div><p>|</p></div>
@@ -139,21 +217,29 @@
 </footer>
 <script>
   /* share content */
-  
+
   new Vue({
     el: '#share',
     data: {
       items: [
-        {id: 1, link: 'https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fnewmedia.pts.org.tw%2Fmental_disorder%2F&amp;src=sdkpreparse',
-          image: 'img/share_nav_fb.svg', alt: 'fb_share'},
-        {id: 2, link: 'https://social-plugins.line.me/lineit/share?url=https%3A%2F%2Fnewmedia.pts.org.tw%2Fmental_disorder',
-          image: 'img/share_nav_line.svg', alt: 'line_share'}
+        {
+          id: 1,
+          link: 'https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fnewmedia.pts.org.tw%2Fmental_disorder%2F&amp;src=sdkpreparse',
+          image: 'img/share_nav_fb.svg',
+          alt: 'fb_share'
+        },
+        {
+          id: 2,
+          link: 'https://social-plugins.line.me/lineit/share?url=https%3A%2F%2Fnewmedia.pts.org.tw%2Fmental_disorder',
+          image: 'img/share_nav_line.svg',
+          alt: 'line_share'
+        }
       ]
     }
   })
-  
+
   /* credit content */
-  
+
   new Vue({
     el: '#credit',
     data: {
@@ -161,14 +247,14 @@
         {id: 1, work: '數據、文字整理', name: 'Seo Joo Kim'},
         {id: 2, work: '設計', name: 'Chew Hui Jing'},
         {id: 3, work: '工程', name: 'Kion'}
-        ]
+      ]
     }
   })
 </script>
 </body>
 <script>
   /* hamburger bar */
-  
+
   var hb = new Vue({
     el: '#hamburger',
     data: {
@@ -216,9 +302,9 @@
       ]
     }
   })
-  
+
   /* sidebar status */
-  
+
   var sidebarstatus = new Vue({
     el: '#sidebar-wrapper',
     data: {
