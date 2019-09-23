@@ -7,7 +7,7 @@ body{
 /* wrapper margin*/
 
 .wrapper{
-  padding: 60px;
+  margin: 60px;
 }
 
 /* font size */
@@ -196,7 +196,12 @@ a:not([href]) {
   width: 30%;
 }
 
+/* paragraph */
 
+.shallow{
+  width: 75%;
+  margin: auto;
+}
 
 
 
