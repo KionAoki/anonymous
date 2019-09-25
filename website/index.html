@@ -136,32 +136,22 @@
           </figure>
         </section>
         <div>
-          <paragraph2 v-for="text in posts2" :key="text.key" :content2="text.content2"></paragraph2>
+          <paragraph v-for="text in posts2" :key="text.key" :content="text.content"></paragraph>
         </div>
       </div>
     </div>
-    <script>
-      /* paragraph */
-
-      new Vue({
-        el: '#cyberbully',
-        data: function () {
-          return {}
-        )
-    </script>
-    
     <!-- story -->
     <div id="story">
       <page-title title="聽聽他們怎麼說"></page-title>
+      <div>
+        <div>
+          <button @click="changea"><img src="img/a.png" alt="respondent_1"></button>
+          <button @click="changeb"><img src="img/b.png" alt="respondent_2"></button>
+          <button @click="changec"><img src="img/c.png" alt="respondent_3"></button>
+        </div>
+        <component :is="story"></component>
+      </div>
     </div>
-    <div>
-      <button @click="changea"><img src="img/a.png" alt="respondent_1"></button>
-      <button @click="changeb"><img src="img/b.png" alt="respondent_2"></button>
-      <button @click="changec"><img src="img/c.png" alt="respondent_3"></button>
-      <component :is="story"></component>
-    </div>
-    
-    
     <!-- instagram -->
     <div id="instagram">
       <page-title title="IG 遊戲介紹"></page-title>
@@ -185,21 +175,35 @@
   </script>
 </main>
 <script>
-  /* click the landing page, the sidebar will be closed  */
+  /* paragraph component  */
 
-  Vue.component('my-component3', {
+  Vue.component('paragraph',{
+    props: ['key', 'content'],
+      template:
+    `
+              <div class="wrapper">
+                <div class="block-content">
+                  <p>{{content}}</p>
+                </div>
+              </div>
+              `
+  })
+
+  /* story component  */
+  
+  Vue.component('respondent-1', {
     template: `
-    <div>
-      <h3>--component3--</h3>
-      <select>
-        <option>0</option>
-        <option>1</option>
-        <option>2</option>
-      </select>
+    <div class="wrapper">
+      <div class="block-content">
+        <h3>--component3--</h3>
+      </div>
+      <div class="block-content">
+        <p></p>
+      </div>
     </div>`,
   });
 
-  Vue.component('my-component4', {
+  Vue.component('respondent-2', {
     template: `
     <div>
       <h3>--component4--</h3>
@@ -207,13 +211,15 @@
     `
   });
 
-  Vue.component('my-component5', {
+  Vue.component('respondent-3', {
     template: `
     <div>
       <h3>--component5--</h3>
     </div>
     `
   });
+
+  /* paragraph content  */
   
   var cyberbully_posts=[
     {key: '1', content: '政治中心/綜合報導'},
@@ -244,33 +250,35 @@
   ];
   
   var cyberbully_posts2 = [
-    {key: '1', content2: '政治中心/綜合報導'},
+    {key: '7', content: '政治中心/綜合報導'},
     {
-      key: '2', content2: '2020總統大選越來越激烈，除了要拚連任的總統蔡英文以及獲得國民黨提名的高雄市長韓國瑜之外，' +
+      key: '8', content: '2020總統大選越來越激烈，除了要拚連任的總統蔡英文以及獲得國民黨提名的高雄市長韓國瑜之外，' +
         ' 日前前副總統呂秀蓮也決定參戰。現在傳出，時代力量有意找立委黃國昌參選2020。' +
         '時代力量祕書長 吳佩芸表示，黨中央正草擬「時代力量總統候選人提名辦法」，並以徵召黃國昌委員為優先考量選項 之一。'
     },
     {
-      key: '3', content2: '針對2020大選，民進黨提名記者會，包含公布賴品妤參戰新北汐止區，時代力量祕書長吳佩芸表示尊重他黨安排，' +
+      key: '9', content: '針對2020大選，民進黨提名記者會，包含公布賴品妤參戰新北汐止區，時代力量祕書長吳佩芸表示尊重他黨安排，' +
         '選戰倒數115天，時力將全力支持在地深耕五年的國會辦公室主任賴嘉倫。吳佩芸也強調，時代力量在汐止區不只是已參戰，' +
         '更以「拿下勝利」為主要目標，延續時力在該選區的深耕經營。'
     },
     {
-      key: '4', content2: '針對外界認為時代力量和民進黨兩黨主席對談似乎陷入僵局，' +
+      key: '10', content: '針對外界認為時代力量和民進黨兩黨主席對談似乎陷入僵局，' +
         '吳佩芸表示，作為時力秘書長仍不會放棄與民進黨秘書長羅文嘉展開對談的可能性，' +
         '不管是立委選區、政策推進、對談形式公開與否，都沒有任何限制，喝咖啡之約隨時有效。\n'
     },
     {
-      key: '5', content2: '另外，有記者詢問時代力量是否會與柯文哲尋求合作?祕書長吳佩芸表示，柯文哲市長須先放棄「兩\n' +
+      key: '11', content: '另外，有記者詢問時代力量是否會與柯文哲尋求合作?祕書長吳佩芸表示，柯文哲市長須先放棄「兩\n' +
         '岸一家親」路線，並向民眾清楚說明台灣主權國家的立場，時代力量與柯文哲才有談下一步的可能。'
     },
     {
-      key: '6', content2: '針對2020總統選舉，吳佩芸也說明，時代力量黨中央正草擬「時代力量總統候選人提名辦法」' +
+      key: '12', content: '針對2020總統選舉，吳佩芸也說明，時代力量黨中央正草擬「時代力量總統候選人提名辦法」' +
         '，並以徵召黃國昌委員為優先考量選項之一。自提總統候選人是政黨主體性的展現，吳佩芸強調，未來若有機會與羅文嘉對談，' +
         '將排除總統選舉層次，以免衍生錯誤解讀。'
     },
   ];
 
+  /* landingpage's instance  */
+  
   var landingpage = new Vue({
     el: '#landing',
     data: {
@@ -291,38 +299,13 @@
         }
       },
       changea: function () {
-        this.story='my-component3';
+        this.story='respondent-1';
       },
       changeb: function () {
-        this.story='my-component4';
+        this.story='respondent-2';
       },
       changec: function () {
-        this.story='my-component5';
-      }
-    },
-    components: {
-      paragraph: {
-        props: ['id', 'content'],
-        template:
-          `
-              <div class="wrapper">
-                <div class="block-content">
-                  <p>{{content}}</p>
-                </div>
-              </div>
-              `
-      }
-      ,
-      paragraph2: {
-        props: ['key', 'content2'],
-        template:
-          `
-              <div class="wrapper">
-                <div class="block-content">
-                  <p>{{content2}}</p>
-                </div>
-              </div>
-              `
+        this.story='respondent-3';
       }
     }
   })
