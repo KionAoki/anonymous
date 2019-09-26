@@ -144,16 +144,14 @@
     <div id="story">
       <page-title title="聽聽他們怎麼說"></page-title>
       <div>
-        <div>
-          <button @click="changea"><img src="img/a.png" alt="respondent_1"></button>
-          <button @click="changeb"><img src="img/b.png" alt="respondent_2"></button>
-          <button @click="changec"><img src="img/c.png" alt="respondent_3"></button>
-        </div>
-        <component :is="story"></component>
+        <button @click="changea"><img src="img/a.png" alt="respondent_1"></button>
+        <button @click="changeb"><img src="img/b.png" alt="respondent_2"></button>
+        <button @click="changec"><img src="img/c.png" alt="respondent_3"></button>
       </div>
+      <component :is="story" v-for='text in respondent' :key="text.key" :content="text.content"></component>
     </div>
     <!-- instagram -->
-    <div id="instagram">
+    <div id='instagram'>
       <page-title title="IG 遊戲介紹"></page-title>
     </div>
   </div>
@@ -413,30 +411,42 @@
   /* story component  */
 
   Vue.component('respondent-1', {
+    props: ['content'],
     template: `
     <div class="wrapper">
       <div class="block-content">
         <h3>--component1--</h3>
+      </div>
+      <div>
+        <p>{{content}}</p>
       </div>
     </div>
     `
   });
 
   Vue.component('respondent-2', {
+    props: ['content'],
     template: `
     <div class="wrapper">
       <div class="block-content">
         <h3>--component2--</h3>
+      </div>
+      <div>
+        <p>{{content}}</p>
       </div>
     </div>
     `
   });
 
   Vue.component('respondent-3', {
+    props: ['content'],
     template: `
     <div class="wrapper">
       <div class="block-content">
         <h3>--component3--</h3>
+      </div>
+      <div>
+        <p>{{content}}</p>
       </div>
     </div>
     `
@@ -451,9 +461,7 @@
       story: 'respondent-1',
       posts: cyberbully_posts,
       posts2: cyberbully_posts2,
-      respondent1: story_1,
-      respondent2: story_2,
-      respondent3: story_3,
+      respondent: story_1
     },
     methods: {
       closesidebar: function () {
@@ -468,12 +476,15 @@
       },
       changea: function () {
         this.story = 'respondent-1';
+        this.respondent = story_1;
       },
       changeb: function () {
         this.story = 'respondent-2';
+        this.respondent = story_2;
       },
       changec: function () {
         this.story = 'respondent-3';
+        this.respondent = story_3;
       }
     }
   })
