@@ -168,7 +168,26 @@
     <!-- instagram -->
     <div id='instagram'>
       <page-title title="IG 遊戲介紹"></page-title>
+      <div>
       
+      </div>
+      <div class="center">
+        <div>
+          <paragraph v-for="text in posts2" :key="text.key" :content="text.content"></paragraph>
+        </div>
+        <div>
+          <div class="start">
+            <p>開始遊戲</p>
+            <a href="https://github.com/KionAoki/anonymous">
+              <img src="img/qrcode.svg" alt="QRcord">
+            </a>
+          </div>
+          <div class="comment">
+            <img src="img/hand_click.svg" alt="pointer">
+            <p>掃瞄或點擊圖示</p>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
   <script>
