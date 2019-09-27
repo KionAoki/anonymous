@@ -213,7 +213,62 @@ a:not([href]) {
   border-radius: 2%;
 }
 
+/* option */
 
+.option-center{
+  margin: auto;
+  padding: 30px;
+}
+
+#option{
+  display: flex;
+  justify-content: center;
+}
+
+#option button{
+  display: flex;
+  justify-content: center;
+  background-color: transparent;
+  border: transparent;
+  cursor: pointer;
+}
+
+#option button:focus{
+  outline: none;
+}
+
+/* respondent content */
+
+.respondent-img{
+  position: absolute;
+}
+
+.respondent-img > img{
+  width: 100%;
+}
+
+.respondent{
+  border-radius: 2%;
+  border: #f0f0f0 solid 2px;
+  margin-top: 200px;
+}
+
+.respondent-inner-line{
+  padding: 40px;
+  border-top: #f0f0f0 solid 1px;
+  border-left: #f0f0f0 solid 1px;
+}
+
+
+
+/* story title */
+
+.story-title:first-child > h3{
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  margin: 0;
+}
 
 /* footer */
 

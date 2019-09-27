@@ -144,15 +144,31 @@
     <div id="story">
       <page-title title="聽聽他們怎麼說"></page-title>
       <div>
-        <button @click="changea"><img src="img/a.png" alt="respondent_1"></button>
-        <button @click="changeb"><img src="img/b.png" alt="respondent_2"></button>
-        <button @click="changec"><img src="img/c.png" alt="respondent_3"></button>
+        <div id="option" class="option-center">
+          <button @click="changea"><img src="img/a.png" alt="respondent_1"></button>
+          <button @click="changeb"><img src="img/b.png" alt="respondent_2"></button>
+          <button @click="changec"><img src="img/c.png" alt="respondent_3"></button>
+        </div>
+        <div class="respondent-img wrapper">
+          <img v-bind:src="img" alt="character">
+        </div>
+        <div class="wrapper">
+          <div class="respondent center">
+            <div class="respondent-inner-line">
+              <respondent v-for='text in respondent' :key="text.key" :content="text.content"
+                          :title="text.title"></respondent>
+            </div>
+          </div>
+        </div>
+        <div class="center">
+          <paragraph v-for="text in posts2" :key="text.key" :content="text.content"></paragraph>
+        </div>
       </div>
-      <respondent v-for='text in respondent' :key="text.key" :content="text.content" :title="text.title"></respondent>
     </div>
     <!-- instagram -->
     <div id='instagram'>
       <page-title title="IG 遊戲介紹"></page-title>
+      
     </div>
   </div>
   <script>
@@ -422,16 +438,12 @@
   Vue.component('respondent', {
     props: ['title', 'content'],
     template: `
-    <div>
-        <div class="wrapper">
-          <div class="block-content">
-            <h3>{{title}}</h3>
-          </div>
+    <div class="wrapper">
+        <div class="story-title">
+          <h3>{{title}}</h3>
         </div>
-        <div class="wrapper">
-          <div class="block-content">
-            <p>{{content}}</p>
-          </div>
+        <div class="block-content">
+          <p>{{content}}</p>
         </div>
     </div>
     `
@@ -446,7 +458,8 @@
       story: 'respondent-1',
       posts: cyberbully_posts,
       posts2: cyberbully_posts2,
-      respondent: story_1
+      respondent: story_1,
+      img: 'img/a.png'
     },
     methods: {
       closesidebar: function () {
@@ -461,12 +474,15 @@
       },
       changea: function () {
         this.respondent = story_1;
+        this.img = 'img/a.png'
       },
       changeb: function () {
         this.respondent = story_2;
+        this.img = 'img/b.png'
       },
       changec: function () {
         this.respondent = story_3;
+        this.img = 'img/c.png'
       }
     }
   })
