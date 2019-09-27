@@ -259,8 +259,6 @@ a:not([href]) {
   border-left: #f0f0f0 solid 1px;
 }
 
-
-
 /* story title */
 
 .story-title:first-child > h3{
@@ -268,6 +266,44 @@ a:not([href]) {
   justify-content: center;
   align-content: center;
   margin: 0;
+}
+
+/* QRcord */
+
+.qrcode-title{
+  display: flex;
+  justify-content: center;
+  margin: 10px;
+}
+
+.start{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.start img{
+  width: 70%;
+  padding-left: 34px;
+  border-left: #f0f0f0 solid 1px;
+}
+
+.start h3{
+  display: flex;
+  align-items: center;
+  -webkit-writing-mode: vertical-lr;
+  writing-mode: vertical-lr;
+  padding: 55px 10px 10px 10px;
+  letter-spacing: 2em;
+}
+
+.comment{
+  display: flex;
+  justify-content: center;
+}
+
+.comment p{
+  margin-left: 50px;
 }
 
 /* footer */
