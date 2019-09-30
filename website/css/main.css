@@ -19,10 +19,11 @@ body{
 h1{
   font-size: 60px;
   font-family: 'Noto Sans TC', sans-serif;
+  color: #ffffff;
 }
 h2{
-  font-size: 48px;
-  color: #FFFFFF;
+  font-size: 34px;
+  color: #FFEE52;
   font-family: 'Noto Sans TC', sans-serif;
 }
 h3{
@@ -31,9 +32,10 @@ h3{
   font-family: 'Noto Sans TC', sans-serif;
 }
 p{
-  font-size: 18px;
+  font-size: 17px;
   color: #FFFFFF;
   font-family: 'Noto Sans TC', sans-serif;
+  line-height: 2em;
 }
 
 /* loading page */
@@ -82,7 +84,7 @@ p{
 /* background */
 
 .background{
-  background-color: #003366;
+  background-color: #13131B;
 }
 
 /* hamburger bar */
@@ -149,14 +151,14 @@ a:not([href]) {
 .sidebar-nav li.sidebar-nav-item a {
   display: block;
   text-decoration: none;
-  color: #707070;
+  color: #999999;
   padding: 8px 8px 8px 20px;
 }
 
 .sidebar-nav li a:hover {
   text-decoration: none;
-  color: #8B5618;
-  background: #EED38E;
+  color: #666666;
+  background: #AFBFBC;
   opacity: 0.8;
 }
 
@@ -173,12 +175,12 @@ a:not([href]) {
 }
 
 .sidebar-nav > .sidebar-brand a {
-  color: #707070;
+  color: #999999;
   font-weight: bold;
 }
 
 .sidebar-nav > .sidebar-brand a:hover {
-  color: #8B5618;
+  color: #666666;
   background: 0 0
 }
 
@@ -216,10 +218,10 @@ a:not([href]) {
 /* cyberbully title background */
 
 #cyberbully{
-  background: -webkit-linear-gradient(#0099CC,#003366);
-  background: -o-linear-gradient(#0099CC,#003366);
-  background: -moz-linear-gradient(#0099CC,#003366);
-  background: linear-gradient(#0099CC 0%,#003366 60%);
+  background: -webkit-linear-gradient(#202026,#13131B);
+  background: -o-linear-gradient(#202026,#13131B);
+  background: -moz-linear-gradient(#202026,#13131B);
+  background: linear-gradient(#202026 0%,#13131B 60%);
 }
 
 /* title template */
@@ -251,8 +253,12 @@ a:not([href]) {
 }
 .shallow{
   position: relative;
-  background-color: rgb(0,51,102,0.3);
+  background-color: rgb(39,47,68,0.3);
   border-radius: 2%;
+}
+
+.inner{
+  padding: 40px;
 }
 
 /* option */

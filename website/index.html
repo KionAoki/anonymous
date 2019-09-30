@@ -2,6 +2,8 @@
 <head>
   <title>anonymous</title>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <link rel="shortcut icon" href="img/yeqian.ico"/>
+  <link rel="bookmark" href="img/yeqian.ico"/>
   <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.min.js"></script>
   <script>Vue.config.devtools = true;</script>
   <script src="js/main.js"></script>
@@ -133,11 +135,11 @@
 <main id="landing" v-on:click.capture="closesidebar">
   <!--video banner-->
   <div id="banner">
-    <img src="img/title.png" alt="title">
+    <img src="img/title.svg" alt="title">
     <iframe frameborder="0" allowfullscreen volumn="0"
             allow="autoplay" title="YouTube video player"
             width="100%" height="100%"
-            src="https://www.youtube.com/embed/nB5o8liBtlk?rel=0&autoplay=1&loop=1&playlist=nB5o8liBtlk&controls=0&modestbranding=1&fs=0"
+            src="https://www.youtube.com/embed/AzjyEieovk8?rel=0&autoplay=1&loop=1&playlist=AzjyEieovk8&controls=0&modestbranding=1&fs=0"
             id="widget2"></iframe>
   </div>
   <!-- background-->
@@ -146,38 +148,40 @@
     <div id="cyberbully">
       <page-title title="示範標題"></page-title>
       <div class="center shallow">
-        <div>
-          <paragraph v-for="text in posts" :key="text.key" :content="text.content"></paragraph>
-        </div>
-        <section class="container">
-          <h3>I'm a web developer and here's what I can do</h3>
-          <!-- HTML Chart -->
-          <figure class="chart" data-percent="75">
-            <figcaption>HTML</figcaption>
-            <img class="html" src="https://dl.dropboxusercontent.com/s/68gv23q4y5qyq52/html5.svg">
-            <svg width="200" height="200">
-              <circle class="outer" cx="95" cy="95" r="85" transform="rotate(-90, 95, 95)"/>
-            </svg>
-          </figure>
-          <!-- CSS Chart -->
-          <figure class="chart" data-percent="75">
-            <figcaption>CSS</figcaption>
-            <img class="css" src="https://dl.dropboxusercontent.com/s/gftbpqje9h2jvlv/css3.svg">
-            <svg width="200" height="200">
-              <circle class="outer" cx="95" cy="95" r="85" transform="rotate(-90, 95, 95)"/>
-            </svg>
-          </figure>
-          <!-- Javascript Chart -->
-          <figure class="chart" data-percent="50">
-            <figcaption>Javascript</figcaption>
-            <img class="javascript" src="https://dl.dropboxusercontent.com/s/jsp3rsberc4q650/javascript.svg">
-            <svg width="200" height="200">
-              <circle class="outer" cx="95" cy="95" r="85" transform="rotate(-90, 95, 95)"/>
-            </svg>
-          </figure>
-        </section>
-        <div>
-          <paragraph v-for="text in posts2" :key="text.key" :content="text.content"></paragraph>
+        <div class="inner">
+          <div>
+            <paragraph v-for="text in posts" :key="text.key" :content="text.content"></paragraph>
+          </div>
+          <section class="container">
+            <h3>I'm a web developer and here's what I can do</h3>
+            <!-- HTML Chart -->
+            <figure class="chart" data-percent="75">
+              <figcaption>HTML</figcaption>
+              <img class="html" src="https://dl.dropboxusercontent.com/s/68gv23q4y5qyq52/html5.svg">
+              <svg width="200" height="200">
+                <circle class="outer" cx="95" cy="95" r="85" transform="rotate(-90, 95, 95)"/>
+              </svg>
+            </figure>
+            <!-- CSS Chart -->
+            <figure class="chart" data-percent="75">
+              <figcaption>CSS</figcaption>
+              <img class="css" src="https://dl.dropboxusercontent.com/s/gftbpqje9h2jvlv/css3.svg">
+              <svg width="200" height="200">
+                <circle class="outer" cx="95" cy="95" r="85" transform="rotate(-90, 95, 95)"/>
+              </svg>
+            </figure>
+            <!-- Javascript Chart -->
+            <figure class="chart" data-percent="50">
+              <figcaption>Javascript</figcaption>
+              <img class="javascript" src="https://dl.dropboxusercontent.com/s/jsp3rsberc4q650/javascript.svg">
+              <svg width="200" height="200">
+                <circle class="outer" cx="95" cy="95" r="85" transform="rotate(-90, 95, 95)"/>
+              </svg>
+            </figure>
+          </section>
+          <div>
+            <paragraph v-for="text in posts2" :key="text.key" :content="text.content"></paragraph>
+          </div>
         </div>
       </div>
     </div>
