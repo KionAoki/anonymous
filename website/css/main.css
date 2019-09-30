@@ -345,13 +345,12 @@ a:not([href]) {
   letter-spacing: 2em;
 }
 
-.comment{
-  display: flex;
-  justify-content: center;
+.start a{
+  text-decoration: none;
 }
 
-.comment p{
-  margin-left: 50px;
+.start h3:hover{
+  color: #FFEE52;
 }
 
 /* footer */
