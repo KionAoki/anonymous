@@ -45,7 +45,7 @@
       loadend: false
     },
     mounted:
-      function() {
+      function () {
         window.addEventListener('load', () => {
           this.loadend = true;
           this.loading = false;
@@ -232,15 +232,16 @@
               <img src="img/qrcode.svg" alt="QRcord">
             </a>
           </div>
+        </div>
       </div>
     </div>
   </div>
-  <script>
-    /* Page title */
+    <script>
+      /* Page title */
 
-    Vue.component('page-title', {
-      props: ['title'],
-      template: `
+      Vue.component('page-title', {
+        props: ['title'],
+        template: `
         <div class="title-wrapper">
           <div class="line"></div>
           <div class="title">
@@ -249,8 +250,8 @@
           <div class="line"></div>
         </div>
       `
-    })
-  </script>
+      })
+    </script>
 </main>
 <script>
 
