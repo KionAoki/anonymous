@@ -197,7 +197,7 @@ a:not([href]) {
   height: 0;
   overflow: hidden;
   max-width: 100%;
-  background: #0099CC;
+  background: #202026;
   z-index: -1;
 }
 
@@ -340,24 +340,47 @@ a:not([href]) {
   border-left: #f0f0f0 solid 1px;
 }
 
-.start h3{
+.start p{
   display: flex;
   align-items: center;
   -webkit-writing-mode: vertical-lr;
   writing-mode: vertical-lr;
   padding: 55px 10px 10px 10px;
   letter-spacing: 2em;
+  font-size: 24px;
 }
 
 .start a{
   text-decoration: none;
 }
 
-.start h3:hover{
+.start p:hover{
   color: #FFEE52;
 }
 
 /* footer */
+
+.footer{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+[alt="logo"]{
+  width: 40%;
+}
+
+#share{
+  display: flex;
+  flex-direction: column;
+}
+
+.link{
+  display: flex;
+  flex-direction: row;
+  padding: 20px 0px 0px 10px;
+}
 
 footer p{
   color: black;
@@ -379,7 +402,7 @@ footer p{
 }
 
 #share a:last-child{
-  margin-left: 30px;
+  padding-left: 30px;
 }
 
 

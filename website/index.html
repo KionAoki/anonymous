@@ -13,6 +13,7 @@
 </head>
 <body>
 <!-- loading -->
+<!--
 <div id="loading" :class="{'loading': loading, 'loadend': loadend}">
   <div id="img_preload">
     <div class="loder"></div>
@@ -36,6 +37,7 @@
       },
   })
 </script>
+-->
 <!--hamburger bar-->
 <div class="menu-toggle" id="hamburger" v-on:click="pop">
   <a class="hamburgerBar" style="color: white;">
@@ -209,7 +211,7 @@
           </div>
           <div class="start">
             <a href="https://github.com/KionAoki/anonymous">
-              <h3>開始遊戲</h3>
+              <p>開始遊戲</p>
             </a>
             <a href="https://github.com/KionAoki/anonymous">
               <img src="img/qrcode.svg" alt="QRcord">
@@ -219,12 +221,12 @@
       </div>
     </div>
   </div>
-    <script>
-      /* Page title */
+  <script>
+    /* Page title */
 
-      Vue.component('page-title', {
-        props: ['title'],
-        template: `
+    Vue.component('page-title', {
+      props: ['title'],
+      template: `
         <div class="title-wrapper">
           <div class="line"></div>
           <div class="title">
@@ -233,8 +235,8 @@
           <div class="line"></div>
         </div>
       `
-      })
-    </script>
+    })
+  </script>
 </main>
 <script>
 
@@ -537,13 +539,12 @@
 
 </script>
 <footer>
-  <div class="wrapper">
-    <div>
-      <div id="share" class="footer-center">
-        <div>
-          <p>分享文章</p>
-        </div>
-        <div><p>|</p></div>
+  <div class="wrapper footer">
+    <div id="share">
+      <div>
+        <img src="img/logo.png" alt="logo">
+      </div>
+      <div class="link footer-center">
         <div v-for="value in items">
           <a :href=value.link target="_blank">
             <img :src=value.image :alt=value.alt>
@@ -552,6 +553,9 @@
       </div>
     </div>
     <div id="credit">
+      <div>
+        <p>製作團隊</p>
+      </div>
       <div v-for="value in items" class="footer-center">
         <div><p>{{value.work}}</p></div>
         <div><p>|</p></div>
