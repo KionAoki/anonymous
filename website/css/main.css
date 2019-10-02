@@ -250,10 +250,7 @@ a:not([href]) {
 /* cyberbully title background */
 
 #cyberbully{
-  background: -webkit-linear-gradient(#202026,#13131B);
-  background: -o-linear-gradient(#202026,#13131B);
-  background: -moz-linear-gradient(#202026,#13131B);
-  background: linear-gradient(#202026 0%,#13131B 60%);
+  background-image: url('../img/star.svg'),linear-gradient(#202026 0%,#13131B 60%);
 }
 
 /* title template */
