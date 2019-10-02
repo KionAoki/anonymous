@@ -10,6 +10,7 @@
   <link rel=stylesheet type="text/css" href="css/main.css">
   <link rel=stylesheet type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.css">
   <link href="https://fonts.googleapis.com/css?family=Noto+Sans+TC&display=swap" rel="stylesheet">
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
 </head>
 <body>
 <!-- loading -->
@@ -119,7 +120,7 @@
 </script>
 <main id="landing" v-on:click.capture="closesidebar">
   <!-- story bar -->
-  <nav id="story-bar" v-show="show">
+  <nav id="story-bar"  @scroll.passive="scroll" v-show="show">
     <ul>
       <li @click="changea">
         <img src="img/a.png" alt="a-story">
@@ -229,9 +230,9 @@
       
       </div>
       <div class="center">
-        <div>
-          <paragraph v-for="text in posts" :key="text.key" :content="text.content"></paragraph>
-        </div>
+        <paragraph v-for="text in posts" :key="text.key" :content="text.content"></paragraph>
+        <paragraph v-for="text in posts" :key="text.key" :content="text.content"></paragraph>
+        <paragraph v-for="text in posts" :key="text.key" :content="text.content"></paragraph>
         <div class="wrapper">
           <div class="qrcode-title">
             <h2>「你...可以拯救要自殺的 ta 嗎？」</h2>
@@ -745,9 +746,12 @@
       posts8: cyberbully_posts_8,
       posts9: cyberbully_posts_9,
       posts10: cyberbully_posts_10,
-      show: true,
+      show: false,
       respondent: story_1,
       img: 'img/a.png'
+    },
+    mounted(){
+      window.addEventListener('scroll',this.yyy,true);
     },
     methods: {
       closesidebar: function () {
@@ -771,7 +775,22 @@
       changec: function () {
         this.respondent = story_3;
         this.img = 'img/c.png'
-      }
+      },
+      scroll: $(function(){
+        var story=document.getElementById('story').offsetTop;
+        var instagram=document.getElementById('instagram').offsetTop;
+        $(window).scroll(function() {
+          var current = $(this).scrollTop();
+          if(current > story){
+            landingpage.show = true;
+          }else {
+            landingpage.show = false;
+          }
+          if(current > instagram) {
+            landingpage.show = false;
+          }
+        })
+      })
     }
   })
 
