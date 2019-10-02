@@ -188,6 +188,34 @@ a:not([href]) {
   background: 0 0
 }
 
+/* story bar */
+
+#story-bar{
+  display: flex;
+  justify-content: flex-end;
+  position: fixed;
+  z-index: 99999;
+  background-color: #f0f0f0;
+  width: 100%;
+}
+
+#story-bar ul{
+  display: flex;
+  list-style: none;
+}
+
+#story-bar li{
+  display: flex;
+  justify-content: flex-end;
+  cursor: pointer;
+}
+
+#story-bar img{
+  width: 30%;
+}
+
+
+
 /* banner video */
 
 #banner {

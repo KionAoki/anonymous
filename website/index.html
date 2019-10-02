@@ -118,6 +118,20 @@
   })
 </script>
 <main id="landing" v-on:click.capture="closesidebar">
+  <!-- story bar -->
+  <nav id="story-bar" v-show="show">
+    <ul>
+      <li @click="changea">
+        <img src="img/a.png" alt="a-story">
+      </li>
+      <li @click="changeb">
+        <img src="img/b.png"  alt="b-story">
+      </li>
+      <li @click="changec">
+        <img src="img/c.png" alt="c-story">
+      </li>
+    </ul>
+  </nav>
   <!--video banner-->
   <div id="banner">
     <img src="img/title.svg" alt="title">
@@ -731,6 +745,7 @@
       posts8: cyberbully_posts_8,
       posts9: cyberbully_posts_9,
       posts10: cyberbully_posts_10,
+      show: true,
       respondent: story_1,
       img: 'img/a.png'
     },
