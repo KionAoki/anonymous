@@ -134,39 +134,52 @@
       <page-title title="示範標題"></page-title>
       <div class="center shallow">
         <div class="inner">
-          <div>
-            <paragraph v-for="text in posts" :key="text.key" :content="text.content"></paragraph>
+          <paragraph v-for="text in posts" :key="text.key" :title="text.title" :subtitle="text.subtitle" :content="text.content"></paragraph>
+          <div class="wrapper">
+            <img src="img/a.png" alt="a">
+            <p>a</p>
           </div>
-          <section class="container">
-            <h3>I'm a web developer and here's what I can do</h3>
-            <!-- HTML Chart -->
-            <figure class="chart" data-percent="75">
-              <figcaption>HTML</figcaption>
-              <img class="html" src="https://dl.dropboxusercontent.com/s/68gv23q4y5qyq52/html5.svg">
-              <svg width="200" height="200">
-                <circle class="outer" cx="95" cy="95" r="85" transform="rotate(-90, 95, 95)"/>
-              </svg>
-            </figure>
-            <!-- CSS Chart -->
-            <figure class="chart" data-percent="75">
-              <figcaption>CSS</figcaption>
-              <img class="css" src="https://dl.dropboxusercontent.com/s/gftbpqje9h2jvlv/css3.svg">
-              <svg width="200" height="200">
-                <circle class="outer" cx="95" cy="95" r="85" transform="rotate(-90, 95, 95)"/>
-              </svg>
-            </figure>
-            <!-- Javascript Chart -->
-            <figure class="chart" data-percent="50">
-              <figcaption>Javascript</figcaption>
-              <img class="javascript" src="https://dl.dropboxusercontent.com/s/jsp3rsberc4q650/javascript.svg">
-              <svg width="200" height="200">
-                <circle class="outer" cx="95" cy="95" r="85" transform="rotate(-90, 95, 95)"/>
-              </svg>
-            </figure>
-          </section>
-          <div>
-            <paragraph v-for="text in posts2" :key="text.key" :content="text.content"></paragraph>
+          <paragraph v-for="text in posts2" :key="text.key" :title="text.title" :subtitle="text.subtitle" :content="text.content"></paragraph>
+          <div class="wrapper">
+            <img src="img/a.png" alt="a">
+            <p>a</p>
           </div>
+          <paragraph v-for="text in posts3" :key="text.key" :title="text.title" :subtitle="text.subtitle" :content="text.content"></paragraph>
+          <div class="wrapper">
+            <img src="img/a.png" alt="a">
+            <p>a</p>
+          </div>
+          <paragraph v-for="text in posts4" :key="text.key" :title="text.title" :subtitle="text.subtitle" :content="text.content"></paragraph>
+          <div class="wrapper">
+            <img src="img/a.png" alt="a">
+            <p>a</p>
+          </div>
+          <paragraph v-for="text in posts5" :key="text.key" :title="text.title" :subtitle="text.subtitle" :content="text.content"></paragraph>
+          <div class="wrapper">
+            <img src="img/a.png" alt="a">
+            <p>a</p>
+          </div>
+          <paragraph v-for="text in posts6" :key="text.key" :title="text.title" :subtitle="text.subtitle" :content="text.content"></paragraph>
+          <div class="wrapper">
+            <img src="img/a.png" alt="a">
+            <p>a</p>
+          </div>
+          <paragraph v-for="text in posts7" :key="text.key" :title="text.title" :subtitle="text.subtitle" :content="text.content"></paragraph>
+          <div class="wrapper">
+            <img src="img/a.png" alt="a">
+            <p>a</p>
+          </div>
+          <paragraph v-for="text in posts8" :key="text.key" :title="text.title" :subtitle="text.subtitle" :content="text.content"></paragraph>
+          <div class="wrapper">
+            <img src="img/a.png" alt="a">
+            <p>a</p>
+          </div>
+          <paragraph v-for="text in posts9" :key="text.key" :title="text.title" :subtitle="text.subtitle" :content="text.content"></paragraph>
+          <div class="wrapper">
+            <img src="img/a.png" alt="a">
+            <p>a</p>
+          </div>
+          <paragraph v-for="text in posts10" :key="text.key" :title="text.title" :subtitle="text.subtitle" :content="text.content"></paragraph>
         </div>
       </div>
     </div>
@@ -191,7 +204,7 @@
           </div>
         </div>
         <div class="center">
-          <paragraph v-for="text in posts2" :key="text.key" :content="text.content"></paragraph>
+          <paragraph v-for="text in posts" :key="text.key" :content="text.content"></paragraph>
         </div>
       </div>
     </div>
@@ -203,7 +216,7 @@
       </div>
       <div class="center">
         <div>
-          <paragraph v-for="text in posts2" :key="text.key" :content="text.content"></paragraph>
+          <paragraph v-for="text in posts" :key="text.key" :content="text.content"></paragraph>
         </div>
         <div class="wrapper">
           <div class="qrcode-title">
@@ -242,61 +255,257 @@
 
   /* paragraph content  */
 
-  var cyberbully_posts = [
-    {key: '1', content: '政治中心/綜合報導'},
-    {
-      key: '2', content: '2020總統大選越來越激烈，除了要拚連任的總統蔡英文以及獲得國民黨提名的高雄市長韓國瑜之外，' +
-        ' 日前前副總統呂秀蓮也決定參戰。現在傳出，時代力量有意找立委黃國昌參選2020。' +
-        '時代力量祕書長 吳佩芸表示，黨中央正草擬「時代力量總統候選人提名辦法」，並以徵召黃國昌委員為優先考量選項 之一。'
+  var cyberbully_posts_1 = [
+    { key: '1',
+      title: '前言',
+      subtitle: '',
+      content: '根據DTL(Ditch the Label)歷時四年統計1900萬條的推特推文中的髒詞統計，前三名分別被Bitch、Dumb、Fucking給包攬。' +
+        '隨著我們越來越沈浸網路的世界中，網路霸凌(Cyberbullying)一直沒有離開過視線範圍，甚至也許你會覺得網路霸凌稀鬆平常。' +
+        '但近年網路霸凌翻倍增長的趨勢大環境下，是台灣還未有相關專法來制止網路霸凌行為；在此背景下的你我，到底該如何是好？' +
+        '看完此份報告，相信可以對你有所幫助。'
     },
-    {
-      key: '3', content: '針對2020大選，民進黨提名記者會，包含公布賴品妤參戰新北汐止區，時代力量祕書長吳佩芸表示尊重他黨安排，' +
-        '選戰倒數115天，時力將全力支持在地深耕五年的國會辦公室主任賴嘉倫。吳佩芸也強調，時代力量在汐止區不只是已參戰，' +
-        '更以「拿下勝利」為主要目標，延續時力在該選區的深耕經營。'
-    },
-    {
-      key: '4', content: '針對外界認為時代力量和民進黨兩黨主席對談似乎陷入僵局，' +
-        '吳佩芸表示，作為時力秘書長仍不會放棄與民進黨秘書長羅文嘉展開對談的可能性，' +
-        '不管是立委選區、政策推進、對談形式公開與否，都沒有任何限制，喝咖啡之約隨時有效。\n'
-    },
-    {
-      key: '5', content: '另外，有記者詢問時代力量是否會與柯文哲尋求合作?祕書長吳佩芸表示，柯文哲市長須先放棄「兩\n' +
-        '岸一家親」路線，並向民眾清楚說明台灣主權國家的立場，時代力量與柯文哲才有談下一步的可能。'
-    },
-    {
-      key: '6', content: '針對2020總統選舉，吳佩芸也說明，時代力量黨中央正草擬「時代力量總統候選人提名辦法」' +
-        '，並以徵召黃國昌委員為優先考量選項之一。自提總統候選人是政黨主體性的展現，吳佩芸強調，未來若有機會與羅文嘉對談，' +
-        '將排除總統選舉層次，以免衍生錯誤解讀。'
+    { key: '2',
+      title: '什麼?日本近半數人口沒有網路霸凌概念!?',
+      subtitle: '全球人民對於網路霸凌概念的認知程度\n',
+      content: '根據2016-2019年網絡欺凌的事實和統計數據(Sam Cook,2019)報告指出，全球範圍內的受訪者對網路霸凌認知差距懸殊：' +
+        '其中認知程度最高的國家為瑞典及義大利，有91%受訪者明白網路霸凌之相關概念；最低的為沙烏地阿拉伯，僅有37%。'
     }
   ];
 
-  var cyberbully_posts2 = [
-    {key: '1', content: '政治中心/綜合報導'},
-    {
-      key: '2', content: '2020總統大選越來越激烈，除了要拚連任的總統蔡英文以及獲得國民黨提名的高雄市長韓國瑜之外，' +
-        ' 日前前副總統呂秀蓮也決定參戰。現在傳出，時代力量有意找立委黃國昌參選2020。' +
-        '時代力量祕書長 吳佩芸表示，黨中央正草擬「時代力量總統候選人提名辦法」，並以徵召黃國昌委員為優先考量選項 之一。'
+  var cyberbully_posts_2 = [
+    { key: '1',
+      title: '',
+      subtitle: '',
+      content: '大致了解了全球人民對於網路霸凌概念的認知程度後，接下來看看究竟何種行為才會被定義為「網路霸凌」？'
     },
-    {
-      key: '3', content: '針對2020大選，民進黨提名記者會，包含公布賴品妤參戰新北汐止區，時代力量祕書長吳佩芸表示尊重他黨安排，' +
-        '選戰倒數115天，時力將全力支持在地深耕五年的國會辦公室主任賴嘉倫。吳佩芸也強調，時代力量在汐止區不只是已參戰，' +
-        '更以「拿下勝利」為主要目標，延續時力在該選區的深耕經營。'
+    { key: '2',
+      title: '',
+      subtitle: '網路霸凌的定義',
+      content: '美國網路霸凌研究中心(Cyberbullying Research Center)給出的網路霸凌定義為:\n' +
+        ' <b>Willful and repeated harm inflicted through the use of computers, cell phones, and other electronic devices.(通過電腦、手機等其他電子產品所造成的故意、反覆傷害。)</b> ' +
+        '另一邊，StopBullying網站對於網路霸凌之定義則更為詳細：網絡霸凌(Cyberbullying)是霸凌行為的一種。網路霸凌的場合是手機，電腦和平板等電子產品；' +
+        '其發生可以通過SMS，簡訊和應用程序進行，也可以在社交媒體，論壇或遊戲中進行，人們可以在上述介質中查看，參與或共享內容。 ' +
+        ' <b>網絡霸凌行為包括發送，發布或共享有關他人的負面，有害，虛假等負面內容；也可以是共享有關他人之隱私信息，從而導致當事人感到尷尬或屈辱。</b>'
     },
-    {
-      key: '4', content: '針對外界認為時代力量和民進黨兩黨主席對談似乎陷入僵局，' +
-        '吳佩芸表示，作為時力秘書長仍不會放棄與民進黨秘書長羅文嘉展開對談的可能性，' +
-        '不管是立委選區、政策推進、對談形式公開與否，都沒有任何限制，喝咖啡之約隨時有效。\n'
+  ];
+  
+   var cyberbully_posts_3 = [
+     { key: '1',
+       title: '',
+       subtitle: '全球網路霸凌數字正在不斷攀升中',
+       content: '從2007年至2016年，美國國高中生經歷過網絡欺凌的個人比例幾乎翻了一番(18％至34％)' +
+         '(<a href="https://cyberbullying.org/summary-of-our-cyberbullying-research">Patchin＆Hinduja,2016</a>)。'
+     }
+   ];
+  
+  var cyberbully_posts_4 = [
+    { key: '1',
+      title: '',
+      subtitle: '',
+      content: '而台灣對於網路霸凌的統計中19.6%的人有被網路霸凌的經驗，10%的人有網路霸凌別人的經驗，而有 54.7%的網路霸凌旁觀者知道有人被網路霸凌。' +
+        '(廖國良、黃正魁、張仁俊、劉籹君，2012)。根據 <a href="https://www.children.org.tw/news/advocacy_detail/1538">兒童福利聯盟</a> 的調查將近四分之三的兒少(74.1%)覺得網路霸凌情形嚴重，' +
+        '而有高達 <b>七成六</b> 的兒少有在網上有目睹或是自身遭遇受害的經驗，社群網站(93.2%)穩居第一，其次是通訊軟體(48.0%)。'
     },
-    {
-      key: '5', content: '另外，有記者詢問時代力量是否會與柯文哲尋求合作?祕書長吳佩芸表示，柯文哲市長須先放棄「兩\n' +
-        '岸一家親」路線，並向民眾清楚說明台灣主權國家的立場，時代力量與柯文哲才有談下一步的可能。'
+    { key: '2',
+      title: '',
+      subtitle: '',
+      content: '從上述內容可以看出，網路霸凌在日常生活中真的可謂是如影隨形；網路霸凌絕不僅僅只有肉搜或公審這樣引起較大迴響的事件；像例如黑特版靠北文，' +
+        '或是各種群魔亂舞的自製人像貼圖，都屬於網路霸凌的範疇。只是很多現象已經司空見慣，讓我們不去質疑其合理性，可真的是這樣嗎？' +
+        '網絡霸凌造成的影響很多時候猶如暗流湧動，表面看似風平浪靜，實則隨時可以把人捲入深淵吞噬。'
     },
-    {
-      key: '6', content: '針對2020總統選舉，吳佩芸也說明，時代力量黨中央正草擬「時代力量總統候選人提名辦法」' +
-        '，並以徵召黃國昌委員為優先考量選項之一。自提總統候選人是政黨主體性的展現，吳佩芸強調，未來若有機會與羅文嘉對談，' +
-        '將排除總統選舉層次，以免衍生錯誤解讀。'
+    { key: '3',
+      title: '',
+      subtitle: '無法忽視的影響及傷害',
+      content: '即使你從未成為任何形式的霸凌受害者，也應該了解霸凌對當事人產生的負面影響。霸凌帶給當事人的影響不僅僅只是一時低落，' +
+        '這種虐待更多是持續從身理心理上產生影響，甚至有可能引發雪球效應。'
+    },
+    { key: '4',
+      title: '',
+      subtitle: '',
+      content: '有64%的被網路霸凌者表示霸凌事件影響了他們的學習能力和在學校的安全感；並且患有頭痛或胃病的可能性是其他學生的兩倍' +
+        '( <a href="https://cyberbullying.org/new-national-bullying-cyberbullying-data">Cyberbullying Research Center</a> )' +
+        '( <a href="https://pediatrics.aappublications.org/content/132/4/720">Gianluca Gini, Tiziana Pozzoli,2013</a> )。' +
+        '被網路霸凌者除了要應付霸凌事件本身，還要面對這一系列負面的身體變化，這樣也導致了他們比其他人更沒有安全感及感到焦慮。\n'
+    },
+    { key: '5',
+      title: '',
+      subtitle: '',
+      content: '根據 <a href="https://www.ditchthelabel.org/wp-content/uploads/2017/07/The-Annual-Bullying-Survey-2017-1.pdf">Ditch the Label 2017</a> ' +
+        '的調查報告中顯示，網路霸凌所造成的影響前三名分別是：' +
+        '社交焦慮的增加（41%）、失望感的增加（37%）、有過自殺念頭（26%）以及刪除社群帳號（26%）。' +
+        '其中自殺念頭是最容易讓人驚出一身冷汗吧：霸凌與自殺行為有很強的關聯性，但這種關係往往是由於其他因素所導致的例如憂鬱、暴力行為及濫用毒品' +
+        '(Reed,Nugent,Cooper,2015)。並且美國疾控中心也指出曾遭受或參與過霸凌的學生，比其他未經歷霸凌的學生有更高的自殺相關行為。'
+    },
+    { key: '6',
+      title: '',
+      subtitle: '',
+      content: '與此同時全球對於網路霸凌(Cyberbullying)概念的關注越來越高，根據Google Trends在全球範圍內，從2004年至今(19/09/30)' +
+        '的搜索趨勢中可以看出，網絡霸凌議題的搜索整體呈上升趨勢。'
+    },
+  ];
+
+  var cyberbully_posts_5 = [
+    { key: '1',
+      title: '',
+      subtitle: '各國當前對於網路霸凌的因應之道',
+      content: '反霸凌法(Anti-Bullying Law)是阻止霸凌行為的重要武器之一，但可惜的是並不是每個國家都有制定相關法律，' +
+        '例如台灣目前並沒有針對網路霸凌的專法，如果當事人想要走法律途徑，只能以公然侮辱罪、誹謗罪等名義加以控告。(關懷資源詳見第三部分)'
     }
   ];
+  var cyberbully_posts_6 = [
+    { key: '1',
+      title: '',
+      subtitle: '',
+      content: '現在我們把目光投向大洋彼岸的美國。與台灣不同的是，美國幾乎各州（除Alaska及Wisconsin外）都制定了針對網路霸凌的專法和學校營運政策；' +
+        '並且也有許多官方組織例如Cyberbullying Research Center，PACER等，這些組織提供了大量有關網路霸凌的研究及相關統計。' +
+        '其中本篇文章就使用了Cyberbullying Research Center關於美國各州霸凌法包含網路霸凌之內容統計數據：'
+    },
+  ];
+  var cyberbully_posts_7 = [
+    { key: '1',
+      title: '',
+      subtitle: '',
+      content: '另一方面，英國法律中並沒有網路霸凌一詞相關概念，也並無網路霸凌專法(Cybersmile)。但許多民間團體基金會都會提供相關幫助：'
+    },
+    { key: '2',
+      title: '',
+      subtitle: '',
+      content: ' <a href="https://www.bullying.co.uk/cyberbullying">Bullying UK</a> 是一間英國的NGO，該組織可以為父母或孩子提供心理諮商上的免費幫助，並且也會定期舉辦相關教育課程講座或出版期刊。' +
+        ' <a href="http://ditchthelabel.org">Ditch the Label</a> 作為一家數位慈善機構，通過網頁及社群不斷幫助12-25歲孩童或年輕人克服霸凌遭遇，' +
+        '其發布的網路霸凌年度報告更是詳細統計了英國網路霸凌現況及趨勢。'
+    },
+  ];
+
+  var cyberbully_posts_8 = [
+    { key: '1',
+      title: '如果無法阻止網路霸凌，為何我們還要持續談論它??',
+      subtitle: '大家都越來越離不開網路了',
+      content: '國際電信聯盟(ITU)表示至2018年底，互聯網用戶將佔全球人口的51.2%（即39億）。' +
+        '並且隨著AI與5G技術的發展，互聯網將覆蓋越來越多的生活場景，例如Foodpanda自2012年進駐台灣並在2018年超大幅度增長，' +
+        '更是在2019年的周訂單已經超越了前六年的訂餐總和；蝦皮在2019上半年站上關鍵字搜尋總數超過 1.5 兆筆，也成功入圍台灣前十大通路。' +
+        '互聯網作為連結萬物的基礎設施，其發展更是一路水漲船高，下圖是2001年至2018年的全球電信發展趨勢：'
+    }
+  ];
+
+  var cyberbully_posts_9 = [
+    { key: '1',
+      title: '',
+      subtitle: '',
+      content: '以台灣地區為例，國家發展委員會指出當今台灣社會中18-19歲網路族群平均每日上網4.7小時，並且該族群網路沈迷傾向比其他年齡層民眾要高。' +
+        '另一方面，台灣民眾在社群平台使用率高達80.6%，其中以15至19，20至24歲兩個族群佔比最高，分別為97.0%與97.9%。' +
+        ' <b> 也就是說，台灣青少年不僅是在線時間最長，而且也是社群使用率最高的族群</b>。'
+    },
+    { key: '2',
+      title: '',
+      subtitle: '網路霸凌比起傳統霸凌更具殺傷力',
+      content: ' 網路的便利性有時候就是一把雙刃劍，畢竟便利性說不定下一秒就變成了靠北鍵；神龍見首不見尾的鍵盤超人，還是如同便利店一般全年無休的不間斷問候，' +
+        '最崩潰的莫過於只要伺服器沒有關閉，當事人永遠都可以看到那些傷害的痕跡，歲月撫平了細紋卻撫不平疤痕：'
+    },
+    { key: '3',
+      title: '',
+      subtitle: '',
+      content: '<ol><li>由於匿名性不知道誰是霸凌者，或為什麼將自己作為目標</li>一份對全台地區網路使用者的調查顯示：' +
+        '62.3%的網路霸凌受害者不知道是被誰網路霸凌（廖國良，2012）。另，以加害原因來看大多數受害者都不知道為何霸凌者為何要加害自己，' +
+        '佔了 43%（謝意苹，2013）。<li>網絡霸凌不受制於時間空間</li>除了即時性的霸凌行為，霸凌者由於看不到被霸凌者，更可能採取惡毒的語言或是殘酷的手段。' +
+        '<li>凡走過必留痕跡</li>網路大大提高了傳播速度，很多內容被快速複製保存；傳統霸凌內容大多停留在當事人記憶，無關人員不太容易獲取內容。' +
+        '網路霸凌只需要一個關鍵字就可以找出霸凌現場，相關截圖錄屏讓事件更容易被轉發。<li>父母和監護人很難管理網絡霸凌(Hinduja和Patchin，2014)</li>' +
+        '網路匿名性無法隨意去調閱IP地址，當父母與監護人發現自家小孩遭遇網絡霸凌時很難有效去制止霸凌行為，並且網路霸凌不同於肢體霸凌有時很難去察覺。' +
+        '<li>網路霸凌也可能包含肢體霸凌</li>根據對美國高校的網路霸凌調查研究顯示，83%被網路霸凌者表示除了線上霸凌，他們同時也在線下遭受霸凌；' +
+        '69%的霸凌者承認也曾經在線下對他人進行了霸凌行為( <a href="https://www.sciencedaily.com/releases/2017/02/170221102036.htm">Florida Atlantic University,2017</a> )。</ol>'
+    },
+    { key: '4',
+      title: '',
+      subtitle: '',
+      content: '也許霸凌這個行為永遠也不會停止，但是這不代表我們就不需要去談論它；網路霸凌因其特殊性讓當事人不斷重複著二次傷害，' +
+        '有時可能一張截圖就會把當事人好不容易積攢起來的勇氣給敲碎，或是一個連結就把心中的陽光給驅散進而留下深深的寂靜；' +
+        '也許不保存、不擴散的安靜，就是對他們來說最大的幫助。'
+    },
+    { key: '5',
+      title: '醒醒，網路霸凌無法讓你有所成長!!',
+      subtitle: '',
+      content: '當孩子遭遇霸凌時，不少家長鼓勵孩子要堅強時，經常會搬出類似“這些傷痛是成長的必經之路，你要努力去克服它”的話語。' +
+        '實際上根據Ditch the Label對曾經的被霸凌者做過統計： <b>約77%的被網路霸凌孩童都認為霸凌不應該是成長的一部分。</b> ' +
+        '(roughly 77% of children from around the world believe that bullying should not be a normal part of growing up.)'
+    },
+    { key: '6',
+      title: '',
+      subtitle: '',
+      content: '而如果真的不幸遭遇了霸凌，那麼不管是直面解決還是選擇躲避都是沒有關係的。' +
+        '世界上沒有一個研究或是SOP可以完美解決霸凌遭遇，在之前對被網路霸凌者的訪談中我們得知，每個人對於突如其來的變故都有不一樣的解決方式，' +
+        '有的人直面霸凌者選擇了回嗆；也有人選擇了關閉一切通訊軟體；也有人選擇了尋求別人幫助來保護自己；他們都有各自的理由，' +
+        '但當問到“如果現在可以對正在遭受網路霸凌的人說點什麼，你想傳達的是？”他們大多都表達了“比起別人的看法意見，自己的心情想法才是真正重要的。”'
+    },
+    { key: '7',
+      title: '',
+      subtitle: '',
+      content: '也就是說，不管是霸凌者的傷害或是身邊人的建議，首先應該傾聽自己的內心，直面或逃避都沒關係，只要自己可以獲得快樂和平靜，' +
+        '就是最好的解決方法。並且要明白霸凌不會促進成長，拯救自己的過程才是。'
+    },
+    { key: '8',
+      title: '',
+      subtitle: '',
+      content: '這裏蒐集了一些可以獲得幫助的資源：'
+    },
+    { key: '9',
+      title: '',
+      subtitle: '',
+      content: '在法律諮商方面，法務局、各區公所及戶政事務所有免費的義務律師提供法律諮詢，只需要去網頁或電話提前預約時間：' +
+        '<ul><li><a href="https://wsdo.gov.taipei/cp.aspx?n=8C91A036C09515F6">文山區公所免費法律諮詢</a></li>' +
+        '<li><a href="https://www.law.ntpc.gov.tw/home.jsp?id=5eed5cacfa562ac6">新北市政府法制局免費法律諮詢服務</a></li>' +
+        '<li>或是像 <a href="https://ntulegalservice.weebly.com/">臺大也有法律服務社</a> 提供民眾法律諮詢，支持線上報名及現場候位。</li></ul>'
+    },
+    { key: '10',
+      title: '',
+      subtitle: '',
+      content: '心理諮商方面除了學校的諮商中心外，各區健康中心都有諮商駐點，收費方式健保50+諮商費200共計250，詳細介紹請參考官方網頁：' +
+        '<ul><li> <a href="https://www.wshc.gov.taipei/News_Content.aspx?n=E175F07FB6C8C366&s=6D58DF7D601ECF2A">臺北市文山區社區心理諮商服務</a></li></ul>'
+    },
+    { key: '11',
+      title: '',
+      subtitle: '',
+      content: '或是加入相關反網路霸凌的社團，去和相同遭遇的人傾訴：<ul>' +
+        '<li>FB社團- <a href="https://www.facebook.com/080club/">網路霸凌防制組織</a></li>' +
+        '<li>FB社團- <a href="https://www.facebook.com/StopBullying.Gov/">StopBullying.Gov</a></li></ul>'
+    }
+  ];
+
+  var cyberbully_posts_10 = [
+    { key: '1',
+      title: '等等，那家長和周遭人可以怎麼做??',
+      subtitle: '',
+      content: '據調查只有2成青少年在遭遇網路霸凌時會選擇告訴身邊的成年人，而近8成選擇告訴周圍朋友，只有一成左右受訪者選擇告訴警察（廖國良，2012）。' +
+        '爸爸麻麻們先不要著急，這可能並不是你和家裏小孩溝通有問題，因為很可能是孩子擔心告知被霸凌會減少自己的上網時間。PACER給出了一些建議：' +
+        '首先要溝通了解孩子的想法需求，孩子可能會覺得被霸凌是自己的問題，或是被減少上網時間等；其次是制定一些上網規則，' +
+        '例如不要隨便透露自己的郵箱地址或是所在學校等個人信息，並保管好自己的帳號密碼；最後父母需要一起參與孩子們的網路世界，' +
+        '並一起討論所遇到的問題。當然父母也應該積極了解學校的防霸凌政策，並保存相關負責人的聯繫方式。'
+    },
+    { key: '2',
+      title: '',
+      subtitle: '',
+      content: '那萬一孩子不說，可不可以通過其他方式來了解孩子是否遭遇網路霸凌？答案是肯定的，在遭遇網路霸凌後可能會出現的行為(美國國家預防犯罪中心NCPC)：' +
+        '<ol><li>變得退縮或開始抗拒上學</li><li>情緒低落，出現睡眠問題</li><li>企圖自殘或自殺</li><li>情緒低落，出現睡眠問題</li>' +
+        '<li><b>停止使用電腦或其他連結網路的設備**</b></li></ol>**：這被認為是危險信號，由於孩子此前與設備的聯繫緊密，' +
+        '這突然斷開的反常舉動需要去和孩子溝通他們最近的生活經歷。'
+    },
+    { key: '3',
+      title: '最後的話',
+      subtitle: '',
+      content: '悲觀來說隨著互聯網的不斷發展，網絡霸凌事件也許會持續增加；可是隨著各國的越來越重視，相關法律及服務保障一定會更加完善。' +
+        '也許對於你我這樣的普通人，更加關心的或許是如何去幫助自己或是周遭親友；也許我們還可以思考的是，除了把資源在防制網絡霸凌外，' +
+        '是否可以把更多關注給予被霸凌的當事人，告訴他們：'
+    },
+    { key: '4',
+      title: '',
+      subtitle: '',
+      content: '「你並不是一個人，我愛你，我們都愛你，所以想笑就笑，想哭就哭吧，只希望你能愛你自己。」'
+    },
+    { key: '5',
+      title: '',
+      subtitle: '',
+      content: 'bgm：Vast & Hazy-求救訊號'
+    }
+  ];
+  
 
   var story_1 = [
     {
@@ -472,12 +681,18 @@
   /* paragraph component  */
 
   var paragraph = Vue.component('paragraph', {
-    props: ['key', 'content'],
+    props: ['key', 'content','title','subtitle'],
     template:
       `
               <div class="wrapper">
                 <div class="block-content">
-                  <p>{{content}}</p>
+                  <h3>{{title}}</h3>
+                </div>
+                <div class="block-content">
+                  <p class="subtitle">{{subtitle}}</p>
+                </div>
+                <div class="block-content">
+                  <p v-html="content"></p>
                 </div>
               </div>
               `
@@ -506,8 +721,16 @@
     data: {
       open: hb.open,
       story: 'respondent-1',
-      posts: cyberbully_posts,
-      posts2: cyberbully_posts2,
+      posts: cyberbully_posts_1,
+      posts2: cyberbully_posts_2,
+      posts3: cyberbully_posts_3,
+      posts4: cyberbully_posts_4,
+      posts5: cyberbully_posts_5,
+      posts6: cyberbully_posts_6,
+      posts7: cyberbully_posts_7,
+      posts8: cyberbully_posts_8,
+      posts9: cyberbully_posts_9,
+      posts10: cyberbully_posts_10,
       respondent: story_1,
       img: 'img/a.png'
     },
