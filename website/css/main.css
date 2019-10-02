@@ -101,7 +101,7 @@ p{
   color: rgb(1, 51, 83);
   background: transparent;
   line-height: 50px;
-  z-index: 999;
+  z-index: 99;
   margin-top: 10px;
   margin-right: 10px;
 }
@@ -194,7 +194,7 @@ a:not([href]) {
   display: flex;
   justify-content: flex-end;
   position: fixed;
-  z-index: 99999;
+  z-index: 999;
   background-color: #f0f0f0;
   width: 100%;
 }
