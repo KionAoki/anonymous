@@ -123,13 +123,19 @@
   <nav id="story-bar"  @scroll.passive="scroll" v-show="show">
     <ul>
       <li @click="changea">
-        <img src="img/a.png" alt="a-story">
+        <a href="#option">
+          <img src="img/a.png" alt="a-story">
+        </a>
       </li>
       <li @click="changeb">
-        <img src="img/b.png"  alt="b-story">
+        <a href="#option">
+          <img src="img/b.png"  alt="b-story">
+        </a>
       </li>
       <li @click="changec">
-        <img src="img/c.png" alt="c-story">
+        <a href="#option">
+          <img src="img/c.png" alt="c-story">
+        </a>
       </li>
     </ul>
   </nav>
