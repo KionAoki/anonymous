@@ -33,9 +33,13 @@ h3{
 }
 p{
   font-size: 17px;
-  color: #FFFFFF;
+  color: #CCCCCC;
   font-family: 'Noto Sans TC', sans-serif;
   line-height: 2em;
+}
+
+#cyberbully a{
+  color: #9DDFF8;
 }
 
 /* loading page */
@@ -282,8 +286,8 @@ a:not([href]) {
 }
 .shallow{
   position: relative;
-  background-color: rgb(39,47,68,0.3);
-  border-radius: 2%;
+  background-color: rgb(58,65,81,0.7);
+  border-radius: 20px;
 }
 
 .inner{
@@ -301,13 +305,15 @@ a:not([href]) {
   padding: 30px;
 }
 
+
+/*
 #option{
+  display: block;
   display: flex;
   justify-content: center;
 }
 
 #option button{
-  display: flex;
   justify-content: center;
   background-color: transparent;
   border: transparent;
@@ -317,6 +323,7 @@ a:not([href]) {
 #option button:focus{
   outline: none;
 }
+ */
 
 /* respondent content */
 
@@ -329,7 +336,7 @@ a:not([href]) {
 }
 
 .respondent{
-  border-radius: 2%;
+  border-radius: 20px;
   border: #f0f0f0 solid 2px;
   margin-top: 200px;
 }
