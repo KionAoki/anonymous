@@ -124,17 +124,17 @@
     <ul>
       <li @click="changea">
         <a href="#option">
-          <img src="img/a.png" alt="a-story">
+          <img src="img/people1-01.png" alt="a-story">
         </a>
       </li>
       <li @click="changeb">
         <a href="#option">
-          <img src="img/b.png"  alt="b-story">
+          <img src="img/people2-01.png"  alt="b-story">
         </a>
       </li>
       <li @click="changec">
         <a href="#option">
-          <img src="img/c.png" alt="c-story">
+          <img src="img/people3-01.png" alt="c-story">
         </a>
       </li>
     </ul>
@@ -209,9 +209,9 @@
       <page-title title="聽聽他們怎麼說"></page-title>
       <div>
         <div id="option" class="option-center">
-          <button @click="changea"><img src="img/people-story1.svg" alt="respondent_1"></button>
-          <button @click="changeb"><img src="img/people-story2.svg" alt="respondent_2"></button>
-          <button @click="changec"><img src="img/people-story3.svg" alt="respondent_3"></button>
+          <button @click="changea"><img src="img/people%20story1-01.png" alt="respondent_1"></button>
+          <button @click="changeb"><img src="img/people%20story2-01.png" alt="respondent_2"></button>
+          <button @click="changec"><img src="img/people%20story3-01.png" alt="respondent_3"></button>
         </div>
         <div class="respondent-img wrapper">
           <img v-bind:src="img" alt="character">
@@ -803,7 +803,7 @@
       posts10: cyberbully_posts_10,
       show: false,
       respondent: story_1,
-      img: 'img/people-story1.svg'
+      img: 'img/people%20story1-01.png'
     },
     mounted(){
       window.addEventListener('scroll',this.yyy,true);
@@ -821,15 +821,15 @@
       },
       changea: function () {
         this.respondent = story_1;
-        this.img = 'img/people-story1.svg'
+        this.img = 'img/people%20story1-01.png'
       },
       changeb: function () {
         this.respondent = story_2;
-        this.img = 'img/people-story2.svg'
+        this.img = 'img/people%20story2-01.png'
       },
       changec: function () {
         this.respondent = story_3;
-        this.img = 'img/people-story3.svg'
+        this.img = 'img/people%20story3-01.png'
       },
       scroll: $(function(){
         var story=document.getElementById('story').offsetTop;

@@ -212,10 +212,7 @@ a:not([href]) {
   display: flex;
   justify-content: flex-end;
   cursor: pointer;
-}
-
-#story-bar img{
-  width: 20%;
+  margin-right: 50px;
 }
 
 
@@ -305,10 +302,7 @@ a:not([href]) {
   padding: 30px;
 }
 
-
-/*
 #option{
-  display: block;
   display: flex;
   justify-content: center;
 }
@@ -323,12 +317,16 @@ a:not([href]) {
 #option button:focus{
   outline: none;
 }
- */
+
+#option img{
+  width: 60%;
+}
 
 /* respondent content */
 
 .respondent-img{
   position: absolute;
+  width: 20%;
 }
 
 .respondent-img > img{
