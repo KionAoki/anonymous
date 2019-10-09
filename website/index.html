@@ -833,7 +833,7 @@
       },
       scroll: $(function(){
         var story=document.getElementById('story').offsetTop;
-        var instagram=document.getElementById('instagram').offsetTop;
+        var instagram=story + document.getElementById('story').offsetHeight-150;
         $(window).scroll(function() {
           var current = $(this).scrollTop();
           if(current > story){
