@@ -251,12 +251,16 @@ a:not([href]) {
   margin-right: 20%;
   margin-top: 10%;
 }
-
+.background{
+  background-image: url('../img/star.svg'),linear-gradient(#202026 0%,#13131B 60%);
+}
 /* cyberbully title background */
-
+/*
 #cyberbully{
   background-image: url('../img/star.svg'),linear-gradient(#202026 0%,#13131B 60%);
 }
+
+ */
 
 /* title template */
 

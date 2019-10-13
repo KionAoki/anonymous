@@ -832,8 +832,8 @@
         this.img = 'img/people%20story3-01.png'
       },
       scroll: $(function(){
-        var story=document.getElementById('story').offsetTop;
-        var instagram=story + document.getElementById('story').offsetHeight-150;
+        var story=document.getElementById('option').offsetTop + document.getElementById('option').offsetHeight;
+        var instagram=document.getElementById('story').offsetTop + document.getElementById('story').offsetHeight;
         $(window).scroll(function() {
           var current = $(this).scrollTop();
           if(current > story){
