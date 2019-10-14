@@ -237,6 +237,11 @@
           <i class="fas fa-chevron-left fa-2x"></i>
         </div>
         <img :src="carousel" alt="carousel">
+        <div id="circle">
+          <i @click="clair" :class="{ 'far fa-circle': passive_1, 'fas fa-circle': active_1 }"></i>
+          <i @click="draw" :class="{ 'far fa-circle': passive_2, 'fas fa-circle': active_2 }"></i>
+          <i @click="bunny" :class="{ 'far fa-circle': passive_3, 'fas fa-circle': active_3 }"></i>
+        </div>
         <div class="arrow" @click="next">
           <i class="fas fa-chevron-right fa-2x"></i>
         </div>
@@ -879,6 +884,33 @@
           this.carousel ='img/a.jpg'
         }
       },
+      clair: function () {
+        this.carousel ='img/a.jpg';
+        this.passive_1=false;
+        this.passive_2=true;
+        this.passive_3=true;
+        this.active_1=true;
+        this.active_2=false;
+        this.active_3=false;
+      },
+      draw: function () {
+        this.carousel ='img/b.jpg';
+        this.passive_1=true;
+        this.passive_2=false;
+        this.passive_3=true;
+        this.active_1=false;
+        this.active_2=true;
+        this.active_3=false;
+      },
+      bunny: function () {
+        this.carousel ='img/c.jpg';
+        this.passive_1=true;
+        this.passive_2=true;
+        this.passive_3=false;
+        this.active_1=false;
+        this.active_2=false;
+        this.active_3=true;
+      }
     }
   })
 
