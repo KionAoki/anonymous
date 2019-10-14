@@ -825,6 +825,14 @@
     },
     mounted(){
       window.addEventListener('scroll',this.yyy,true);
+      function loop(i){
+        setTimeout('landingpage.next()', 3000);
+      }
+      var i=1;
+      while(i<6){
+        loop(i);
+        i++;
+      }
     },
     methods: {
       closesidebar: function () {
@@ -864,52 +872,65 @@
           }
         })
       }),
+      node1: function(){
+        landingpage.passive_1 = false;
+        landingpage.passive_2 = true;
+        landingpage.passive_3 = true;
+        landingpage.active_1 = true;
+        landingpage.active_2 = false;
+        landingpage.active_3 = false;
+      },
+      node2: function(){
+        landingpage.passive_1=true;
+        landingpage.passive_2=false;
+        landingpage.passive_3=true;
+        landingpage.active_1=false;
+        landingpage.active_2=true;
+        landingpage.active_3=false;
+      },
+      node3: function(){
+        landingpage.passive_1=true;
+        landingpage.passive_2=true;
+        landingpage.passive_3=false;
+        landingpage.active_1=false;
+        landingpage.active_2=false;
+        landingpage.active_3=true;
+      },
       previous: function () {
-        console.log('pre!');
         if(this.carousel === 'img/a.jpg'){
-          this.carousel ='img/c.jpg'
+          this.carousel ='img/c.jpg';
+          this.node3();
         }else if(this.carousel === 'img/b.jpg'){
-          this.carousel ='img/a.jpg'
+          this.carousel ='img/a.jpg';
+          this.node1();
         }else if(this.carousel === 'img/c.jpg'){
-          this.carousel ='img/b.jpg'
+          this.carousel ='img/b.jpg';
+          this.node2();
         }
       },
       next: function () {
-        console.log('next!');
-        if(this.carousel === 'img/a.jpg'){
-          this.carousel ='img/b.jpg'
-        }else if(this.carousel === 'img/b.jpg'){
-          this.carousel ='img/c.jpg'
-        }else if(this.carousel === 'img/c.jpg'){
-          this.carousel ='img/a.jpg'
+        if(landingpage.carousel === 'img/a.jpg'){
+          this.carousel ='img/b.jpg';
+          this.node2();
+        }else if(landingpage.carousel === 'img/b.jpg'){
+          this.carousel ='img/c.jpg';
+          this.node3();
+        }else if(landingpage.carousel === 'img/c.jpg') {
+          this.carousel = 'img/a.jpg';
+          this.node1();
         }
       },
       clair: function () {
         this.carousel ='img/a.jpg';
-        this.passive_1=false;
-        this.passive_2=true;
-        this.passive_3=true;
-        this.active_1=true;
-        this.active_2=false;
-        this.active_3=false;
+        this.node1();
       },
       draw: function () {
         this.carousel ='img/b.jpg';
-        this.passive_1=true;
-        this.passive_2=false;
-        this.passive_3=true;
-        this.active_1=false;
-        this.active_2=true;
-        this.active_3=false;
+        this.node2();
       },
       bunny: function () {
         this.carousel ='img/c.jpg';
-        this.passive_1=true;
-        this.passive_2=true;
-        this.passive_3=false;
-        this.active_1=false;
-        this.active_2=false;
-        this.active_3=true;
+        this.node3();
       }
     }
   })

@@ -393,7 +393,7 @@ a:not([href]) {
   display: flex;
   justify-content: center;
   position: absolute;
-  margin-top: 45vh;
+  margin-top: 28%;
 }
 #circle i{
   cursor: pointer;
