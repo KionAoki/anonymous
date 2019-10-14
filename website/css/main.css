@@ -362,6 +362,34 @@ a:not([href]) {
   margin: 0;
 }
 
+/* introduction carousel */
+
+#carousel{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+[alt="carousel"]{
+  width: 100%;
+}
+
+.arrow{
+  position: absolute;
+  cursor: pointer;
+  align-content: center;
+}
+
+.arrow:first-child{
+  left: 0;
+  padding: 50vh 50vh 50vh 30px;
+}
+.arrow:last-child{
+  right: 0;
+  padding: 50vh 30px 50vh 50vh;
+}
+
+
 /* QRcord */
 
 .qrcode-title{

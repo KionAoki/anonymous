@@ -150,60 +150,6 @@
   </div>
   <!-- background-->
   <div class="background">
-    <!-- cyberbully -->
-    <div id="cyberbully">
-      <page-title title="示範標題"></page-title>
-      <div class="center shallow">
-        <div class="inner">
-          <paragraph v-for="text in posts" :key="text.key" :title="text.title" :subtitle="text.subtitle" :content="text.content"></paragraph>
-          <div class="wrapper">
-            <img src="img/a.png" alt="a">
-            <p>a</p>
-          </div>
-          <paragraph v-for="text in posts2" :key="text.key" :title="text.title" :subtitle="text.subtitle" :content="text.content"></paragraph>
-          <div class="wrapper">
-            <img src="img/a.png" alt="a">
-            <p>a</p>
-          </div>
-          <paragraph v-for="text in posts3" :key="text.key" :title="text.title" :subtitle="text.subtitle" :content="text.content"></paragraph>
-          <div class="wrapper">
-            <img src="img/a.png" alt="a">
-            <p>a</p>
-          </div>
-          <paragraph v-for="text in posts4" :key="text.key" :title="text.title" :subtitle="text.subtitle" :content="text.content"></paragraph>
-          <div class="wrapper">
-            <img src="img/a.png" alt="a">
-            <p>a</p>
-          </div>
-          <paragraph v-for="text in posts5" :key="text.key" :title="text.title" :subtitle="text.subtitle" :content="text.content"></paragraph>
-          <div class="wrapper">
-            <img src="img/a.png" alt="a">
-            <p>a</p>
-          </div>
-          <paragraph v-for="text in posts6" :key="text.key" :title="text.title" :subtitle="text.subtitle" :content="text.content"></paragraph>
-          <div class="wrapper">
-            <img src="img/a.png" alt="a">
-            <p>a</p>
-          </div>
-          <paragraph v-for="text in posts7" :key="text.key" :title="text.title" :subtitle="text.subtitle" :content="text.content"></paragraph>
-          <div class="wrapper">
-            <img src="img/a.png" alt="a">
-            <p>a</p>
-          </div>
-          <paragraph v-for="text in posts8" :key="text.key" :title="text.title" :subtitle="text.subtitle" :content="text.content"></paragraph>
-          <div class="wrapper">
-            <img src="img/a.png" alt="a">
-            <p>a</p>
-          </div>
-          <paragraph v-for="text in posts9" :key="text.key" :title="text.title" :subtitle="text.subtitle" :content="text.content"></paragraph>
-          <div class="wrapper">
-            <img src="img/a.png" alt="a">
-            <p>a</p>
-          </div>
-          <paragraph v-for="text in posts10" :key="text.key" :title="text.title" :subtitle="text.subtitle" :content="text.content"></paragraph>
-        </div>
-      </div>
-    </div>
     <!-- story -->
     <div id="story">
       <page-title title="聽聽他們怎麼說"></page-title>
@@ -229,11 +175,71 @@
         </div>
       </div>
     </div>
+    <!-- cyberbully -->
+    <div id="cyberbully">
+      <page-title title="示範標題"></page-title>
+      <div class="center shallow">
+        <div class="inner">
+          <paragraph v-for="text in posts" :key="text.key" :title="text.title" :subtitle="text.subtitle" :content="text.content"></paragraph>
+          <div class="wrapper">
+            <img src="img/a.jpg" alt="a">
+            <p>a</p>
+          </div>
+          <paragraph v-for="text in posts2" :key="text.key" :title="text.title" :subtitle="text.subtitle" :content="text.content"></paragraph>
+          <div class="wrapper">
+            <img src="img/a.jpg" alt="a">
+            <p>a</p>
+          </div>
+          <paragraph v-for="text in posts3" :key="text.key" :title="text.title" :subtitle="text.subtitle" :content="text.content"></paragraph>
+          <div class="wrapper">
+            <img src="img/a.jpg" alt="a">
+            <p>a</p>
+          </div>
+          <paragraph v-for="text in posts4" :key="text.key" :title="text.title" :subtitle="text.subtitle" :content="text.content"></paragraph>
+          <div class="wrapper">
+            <img src="img/a.jpg" alt="a">
+            <p>a</p>
+          </div>
+          <paragraph v-for="text in posts5" :key="text.key" :title="text.title" :subtitle="text.subtitle" :content="text.content"></paragraph>
+          <div class="wrapper">
+            <img src="img/a.jpg" alt="a">
+            <p>a</p>
+          </div>
+          <paragraph v-for="text in posts6" :key="text.key" :title="text.title" :subtitle="text.subtitle" :content="text.content"></paragraph>
+          <div class="wrapper">
+            <img src="img/a.jpg" alt="a">
+            <p>a</p>
+          </div>
+          <paragraph v-for="text in posts7" :key="text.key" :title="text.title" :subtitle="text.subtitle" :content="text.content"></paragraph>
+          <div class="wrapper">
+            <img src="img/a.jpg" alt="a">
+            <p>a</p>
+          </div>
+          <paragraph v-for="text in posts8" :key="text.key" :title="text.title" :subtitle="text.subtitle" :content="text.content"></paragraph>
+          <div class="wrapper">
+            <img src="img/a.jpg" alt="a">
+            <p>a</p>
+          </div>
+          <paragraph v-for="text in posts9" :key="text.key" :title="text.title" :subtitle="text.subtitle" :content="text.content"></paragraph>
+          <div class="wrapper">
+            <img src="img/a.jpg" alt="a">
+            <p>a</p>
+          </div>
+          <paragraph v-for="text in posts10" :key="text.key" :title="text.title" :subtitle="text.subtitle" :content="text.content"></paragraph>
+        </div>
+      </div>
+    </div>
     <!-- instagram -->
     <div id='instagram'>
       <page-title title="IG 遊戲介紹"></page-title>
-      <div>
-      
+      <div id="carousel">
+        <div class="arrow" @click="previous">
+          <i class="fas fa-chevron-left fa-2x"></i>
+        </div>
+        <img :src="carousel" alt="carousel">
+        <div class="arrow" @click="next">
+          <i class="fas fa-chevron-right fa-2x"></i>
+        </div>
       </div>
       <div class="center">
         <paragraph v-for="text in posts" :key="text.key" :content="text.content"></paragraph>
@@ -803,7 +809,14 @@
       posts10: cyberbully_posts_10,
       show: false,
       respondent: story_1,
-      img: 'img/people%20story1-01.png'
+      img: 'img/people%20story1-01.png',
+      carousel: 'img/a.jpg',
+      passive_1: false,
+      passive_2: true,
+      passive_3: true,
+      active_1: true,
+      active_2: false,
+      active_3: false,
     },
     mounted(){
       window.addEventListener('scroll',this.yyy,true);
@@ -845,7 +858,27 @@
             landingpage.show = false;
           }
         })
-      })
+      }),
+      previous: function () {
+        console.log('pre!');
+        if(this.carousel === 'img/a.jpg'){
+          this.carousel ='img/c.jpg'
+        }else if(this.carousel === 'img/b.jpg'){
+          this.carousel ='img/a.jpg'
+        }else if(this.carousel === 'img/c.jpg'){
+          this.carousel ='img/b.jpg'
+        }
+      },
+      next: function () {
+        console.log('next!');
+        if(this.carousel === 'img/a.jpg'){
+          this.carousel ='img/b.jpg'
+        }else if(this.carousel === 'img/b.jpg'){
+          this.carousel ='img/c.jpg'
+        }else if(this.carousel === 'img/c.jpg'){
+          this.carousel ='img/a.jpg'
+        }
+      },
     }
   })
 
