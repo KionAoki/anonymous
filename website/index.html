@@ -232,7 +232,7 @@
     <!-- instagram -->
     <div id='instagram'>
       <page-title title="IG 遊戲介紹"></page-title>
-      <div id="carousel" @mouseenter="stop">
+      <div id="carousel">
         <div class="arrow" @click="previous">
           <i class="fas fa-chevron-left fa-2x"></i>
         </div>
@@ -822,17 +822,32 @@
       active_1: true,
       active_2: false,
       active_3: false,
-      time_id: 0
     },
     mounted(){
       window.addEventListener('scroll',this.yyy,true);
+      var slide = document.getElementById('carousel');
+      var time_id = 0;
       (function loop(){
         var time = setTimeout(function () {
           landingpage.next();
           loop();
         }, 3000);
-        landingpage.time_id = time;
+        time_id = time;
       })();
+      slide.onmouseover = function () {
+        console.log('over');
+        clearTimeout(time_id);
+      };
+      slide.onmouseout = function () {
+        console.log('out');
+        (function loop(){
+          var time = setTimeout(function () {
+            landingpage.next();
+            loop();
+          }, 3000);
+          time_id = time;
+        })();
+      };
     },
     methods: {
       closesidebar: function () {
@@ -931,9 +946,6 @@
       bunny: function () {
         this.carousel ='img/c.jpg';
         this.node3();
-      },
-      stop: function () {
-        clearTimeout(this.time_id);
       }
     }
   })
