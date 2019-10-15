@@ -825,14 +825,12 @@
     },
     mounted(){
       window.addEventListener('scroll',this.yyy,true);
-      function loop(i){
-        setTimeout('landingpage.next()', 3000);
-      }
-      var i=1;
-      while(i<6){
-        loop(i);
-        i++;
-      }
+      (function loop(){
+        setTimeout(function () {
+          landingpage.next();
+          loop();
+        }, 3000);
+      })();
     },
     methods: {
       closesidebar: function () {
