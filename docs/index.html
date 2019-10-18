@@ -87,7 +87,7 @@
 <nav id="sidebar-wrapper" :class="{ 'open': open, 'close': close }">
   <ul class="sidebar-nav" id="list-item">
     <li class="sidebar-brand">
-      <a href="#banner">與精神疾病的真實距離</a>
+      <a href="#banner">匿名 Anonymous</a>
     </li>
     <li class="sidebar-nav-item" v-for="value in items">
       <a class="js-scroll-trigger" :href=value.link>{{value.title}}</a>
@@ -101,8 +101,8 @@
     el: '#list-item',
     data: {
       items: [
-        {id: 1, link: '#cyberbully', title: '示範標題'},
-        {id: 2, link: '#story', title: '聽聽他們怎麼說'},
+        {id: 1, link: '#story', title: '聽聽他們怎麼說'},
+        {id: 2, link: '#cyberbully', title: '網路霸凌是如何傷害我們的？'},
         {id: 3, link: '#instagram', title: 'IG 遊戲介紹'}
       ]
     }
