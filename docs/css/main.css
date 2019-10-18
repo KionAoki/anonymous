@@ -1,3 +1,7 @@
+html {
+  scroll-behavior: smooth;
+}
+
 /* body margin */
 
 body{
@@ -33,9 +37,13 @@ h3{
 }
 p{
   font-size: 17px;
-  color: #FFFFFF;
+  color: #CCCCCC;
   font-family: 'Noto Sans TC', sans-serif;
   line-height: 2em;
+}
+
+#cyberbully a{
+  color: #9DDFF8;
 }
 
 /* loading page */
@@ -195,7 +203,7 @@ a:not([href]) {
   justify-content: flex-end;
   position: fixed;
   z-index: 999;
-  background-color: #f0f0f0;
+  background-color: rgb(58,65,81,0.7);
   width: 100%;
 }
 
@@ -208,10 +216,7 @@ a:not([href]) {
   display: flex;
   justify-content: flex-end;
   cursor: pointer;
-}
-
-#story-bar img{
-  width: 20%;
+  margin-right: 50px;
 }
 
 
@@ -246,12 +251,16 @@ a:not([href]) {
   margin-right: 20%;
   margin-top: 10%;
 }
-
+.background{
+  background-image: url('../img/star.svg'),linear-gradient(#202026 0%,#13131B 60%);
+}
 /* cyberbully title background */
-
+/*
 #cyberbully{
   background-image: url('../img/star.svg'),linear-gradient(#202026 0%,#13131B 60%);
 }
+
+ */
 
 /* title template */
 
@@ -273,6 +282,14 @@ a:not([href]) {
   width: 30%;
 }
 
+#cyberbully_title .title{
+  width: 60%;
+}
+
+#cyberbully_title .line{
+  width: 20%;
+}
+
 /* paragraph */
 
 .center{
@@ -282,8 +299,8 @@ a:not([href]) {
 }
 .shallow{
   position: relative;
-  background-color: rgb(39,47,68,0.3);
-  border-radius: 2%;
+  background-color: rgb(58,65,81,0.7);
+  border-radius: 20px;
 }
 
 .inner{
@@ -307,7 +324,6 @@ a:not([href]) {
 }
 
 #option button{
-  display: flex;
   justify-content: center;
   background-color: transparent;
   border: transparent;
@@ -318,10 +334,15 @@ a:not([href]) {
   outline: none;
 }
 
+#option img{
+  width: 60%;
+}
+
 /* respondent content */
 
 .respondent-img{
   position: absolute;
+  width: 20%;
 }
 
 .respondent-img > img{
@@ -329,7 +350,7 @@ a:not([href]) {
 }
 
 .respondent{
-  border-radius: 2%;
+  border-radius: 20px;
   border: #f0f0f0 solid 2px;
   margin-top: 200px;
 }
@@ -347,6 +368,45 @@ a:not([href]) {
   justify-content: center;
   align-content: center;
   margin: 0;
+}
+
+/* introduction carousel */
+
+#carousel{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+[alt="carousel"]{
+  width: 100%;
+}
+
+.arrow{
+  position: absolute;
+  cursor: pointer;
+  align-content: center;
+}
+
+.arrow:first-child{
+  left: 0;
+  padding: 50vh 50vh 50vh 30px;
+}
+.arrow:last-child{
+  right: 0;
+  padding: 50vh 30px 50vh 50vh;
+}
+
+#circle{
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  margin-top: 28%;
+}
+#circle i{
+  cursor: pointer;
+  padding: 10px;
+  margin-right: 30px;
 }
 
 /* QRcord */
@@ -396,13 +456,10 @@ a:not([href]) {
   align-items: center;
 }
 
-[alt="logo"]{
-  width: 40%;
-}
-
 #share{
   display: flex;
   flex-direction: column;
+  margin-right: 200px;
 }
 
 .link{
