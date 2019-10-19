@@ -74,51 +74,38 @@
     },
     watch: {
       open: function () {
-        this.open ? sidebarstatus.open = true : sidebarstatus.open = false;
-        this.open ? landingpage.open = true : landingpage.open = false;
+        if(this.open){
+          landingpage.sidebar_close = false;
+          landingpage.sidebar_open = true;
+          landingpage.open = true;
+          console.log('open' + landingpage.sidebar_open);
+          console.log('close' + landingpage.sidebar_close);
+        }
       },
       close: function () {
-        hb.close ? sidebarstatus.close = true : sidebarstatus.close = false;
+        if(this.close){
+          landingpage.sidebar_close = true;
+          landingpage.sidebar_open = false;
+          landingpage.open = false;
+          console.log('open' + landingpage.sidebar_open);
+          console.log('close' + landingpage.sidebar_close);
+        }
       }
     }
   });
 </script>
-<!--side bar-->
-<nav id="sidebar-wrapper" :class="{ 'open': open, 'close': close }">
-  <ul class="sidebar-nav" id="list-item">
-    <li class="sidebar-brand">
-      <a href="#banner">匿名 Anonymous</a>
-    </li>
-    <li class="sidebar-nav-item" v-for="value in items">
-      <a class="js-scroll-trigger" :href=value.link>{{value.title}}</a>
-    </li>
-  </ul>
-</nav>
-<script>
-  /* sidebar content */
-
-  new Vue({
-    el: '#list-item',
-    data: {
-      items: [
-        {id: 1, link: '#story', title: '聽聽他們怎麼說'},
-        {id: 2, link: '#cyberbully', title: '網路霸凌是如何傷害我們的？'},
-        {id: 3, link: '#instagram', title: 'IG 遊戲介紹'}
-      ]
-    }
-  })
-
-  /* sidebar status */
-
-  var sidebarstatus = new Vue({
-    el: '#sidebar-wrapper',
-    data: {
-      open: hb.open,
-      close: hb.close
-    }
-  })
-</script>
 <main id="landing" v-on:click.capture="closesidebar">
+  <!--side bar-->
+  <nav id="sidebar-wrapper" :class="{ 'open':  sidebar_open, 'close':  sidebar_close }">
+    <ul class="sidebar-nav" id="list-item">
+      <li class="sidebar-brand">
+        <a href="#banner">匿名 Anonymous</a>
+      </li>
+      <li class="sidebar-nav-item" v-for="value in items">
+        <a class="js-scroll-trigger" :href=value.link>{{value.title}}</a>
+      </li>
+    </ul>
+  </nav>
   <!-- story bar -->
   <nav id="story-bar"  @scroll.passive="scroll" v-show="show">
     <ul>
@@ -828,6 +815,13 @@
   var landingpage = new Vue({
     el: '#landing',
     data: {
+      items: [
+        {id: 1, link: '#story', title: '聽聽他們怎麼說'},
+        {id: 2, link: '#cyberbully', title: '網路霸凌是如何傷害我們的？'},
+        {id: 3, link: '#instagram', title: 'IG 遊戲介紹'}
+      ],
+      sidebar_open: false,
+      sidebar_close: true,
       open: hb.open,
       story: 'respondent-1',
       posts: cyberbully_posts_1,
@@ -864,11 +858,9 @@
         time_id = time;
       })();
       slide.onmouseover = function () {
-        console.log('over');
         clearTimeout(time_id);
       };
       slide.onmouseout = function () {
-        console.log('out');
         (function loop(){
           var time = setTimeout(function () {
             landingpage.next();
@@ -881,8 +873,8 @@
     methods: {
       closesidebar: function () {
         if (this.open) {
-          sidebarstatus.open = false;
-          sidebarstatus.close = true;
+          this.sidebar_open = false;
+          this.sidebar_close = true;
           hb.open = false;
           hb.close = true;
           hb.cross = false;
