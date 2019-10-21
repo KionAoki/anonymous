@@ -307,8 +307,15 @@ a:not([href]) {
   padding: 40px;
 }
 
-.subtitle{
-  color: #F0B34F;
+.image-content{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.block-content h3{
+  display: flex;
+  justify-content: center;
 }
 
 /* option */
