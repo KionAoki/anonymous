@@ -385,9 +385,16 @@ a:not([href]) {
   align-items: center;
 }
 
-[alt="carousel"]{
-  width: 100%;
+.carousel-img{
+  display: flex;
+  justify-content: center;
 }
+
+[alt="carousel"]{
+  //width: 1440px;
+}
+
+
 
 .arrow{
   position: absolute;

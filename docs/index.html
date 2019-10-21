@@ -78,8 +78,6 @@
           landingpage.sidebar_close = false;
           landingpage.sidebar_open = true;
           landingpage.open = true;
-          console.log('open' + landingpage.sidebar_open);
-          console.log('close' + landingpage.sidebar_close);
         }
       },
       close: function () {
@@ -87,8 +85,6 @@
           landingpage.sidebar_close = true;
           landingpage.sidebar_open = false;
           landingpage.open = false;
-          console.log('open' + landingpage.sidebar_open);
-          console.log('close' + landingpage.sidebar_close);
         }
       }
     }
@@ -181,7 +177,11 @@
         <div class="arrow" @click="previous">
           <i class="fas fa-chevron-left fa-2x"></i>
         </div>
-        <img :src="carousel" alt="carousel">
+        <div class="carousel-img">
+          <img src="img/a.jpg" alt="carousel" class="carousel">
+          <img src="img/b.jpg" alt="carousel" class="carousel">
+          <img src="img/c.jpg" alt="carousel" class="carousel">
+        </div>
         <div id="circle">
           <i @click="clair" :class="{ 'far fa-circle': passive_1, 'fas fa-circle': active_1 }"></i>
           <i @click="draw" :class="{ 'far fa-circle': passive_2, 'fas fa-circle': active_2 }"></i>
@@ -586,7 +586,7 @@
   /* paragraph component  */
 
   var paragraph = Vue.component('paragraph', {
-    props: ['key', 'content', 'title', 'img','comment'],
+    props: ['key', 'content', 'title', 'img', 'comment'],
     template:
       `
               <div class="wrapper">
@@ -640,17 +640,30 @@
       show: false,
       respondent: story_1,
       img: 'img/people%20story1-01.png',
-      carousel: 'img/a.jpg',
       passive_1: false,
       passive_2: true,
       passive_3: true,
       active_1: true,
       active_2: false,
       active_3: false,
-      game: game
+      game: game,
+      width: 0
     },
     mounted() {
-      window.addEventListener('scroll', this.yyy, true);
+      //window.addEventListener('scroll', this.yyy, true);
+      // carousel
+      window.addEventListener('load', function () {
+        this.width = document.body.clientWidth;
+        document.getElementsByClassName('carousel')[0].style.width = this.width + 'px';
+        document.getElementsByClassName('carousel')[1].style.width = this.width + 'px';
+        document.getElementsByClassName('carousel')[2].style.width = this.width + 'px';
+      });
+      window.addEventListener('resize', function () {
+        this.width = document.body.clientWidth;
+        document.getElementsByClassName('carousel')[0].style.width = this.width + 'px';
+        document.getElementsByClassName('carousel')[1].style.width = this.width + 'px';
+        document.getElementsByClassName('carousel')[2].style.width = this.width + 'px';
+      });
       var slide = document.getElementById('carousel');
       var time_id = 0;
       (function loop() {
