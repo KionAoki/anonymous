@@ -6,11 +6,11 @@
   <link rel="bookmark" href="img/yeqian.ico"/>
   <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.min.js"></script>
   <script>Vue.config.devtools = true;</script>
-  <script src="js/main.js"></script>
   <link rel=stylesheet type="text/css" href="css/main.css">
   <link rel=stylesheet type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.css">
   <link href="https://fonts.googleapis.com/css?family=Noto+Sans+TC&display=swap" rel="stylesheet">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+  <script src="https://gw.alipayobjects.com/os/antv/pkg/_antv.g2-3.5.1/dist/g2.min.js"></script>
 </head>
 <body>
 <!-- loading -->
@@ -165,7 +165,7 @@
         <div class="inner">
           <div>
             <paragraph v-for="text in posts" :key="text.key" :title="text.title" :content="text.content"
-                       :img="text.img" :comment="text.comment"></paragraph>
+                       :img="text.img" :comment="text.comment" :chart="text.chart"></paragraph>
           </div>
         </div>
       </div>
@@ -238,7 +238,8 @@
       content: '談論網路霸凌前，需要了解什麼樣的行為才能算“網路霸凌”，這種隨著網路一同誕生的霸凌行為究竟與傳統霸凌有什麼區別呢？<br/>' +
         '只有釐清這些概念後，才能更好的理解網路霸凌相關行為及造成的影響傷害。',
       img: '',
-      comment: ''
+      comment: '',
+      chart: ''
     },
     {
       key: '2',
@@ -249,7 +250,8 @@
         '<b>網絡霸凌行為包括發送，發布或共享有關他人的負面，有害，虛假等負面內容；也可以是共享有關他人之隱私信息，從而導致當事人感到尷尬或屈辱。</b>' +
         'StopBullying）',
       img: '<img src="img/qrcode.svg" alt="a">',
-      comment: '圖一：網路霸凌示意圖'
+      comment: '圖一：網路霸凌示意圖',
+      chart: ''
     },
     {
       key: '3',
@@ -268,7 +270,8 @@
         '<li>父母和監護人很難管理網絡霸凌<br/>' +
         '網路匿名性無法隨意去調閱IP地址，當父母與監護人發現自家小孩遭遇網絡霸凌時很難有效去制止霸凌行為。</li></ol>',
       img: '',
-      comment: ''
+      comment: '',
+      chart: ''
     },
     {
       key: '4',
@@ -277,30 +280,34 @@
         '網路霸凌似乎變成了一把鋒利的刀刃，甚至乎輕易就去貫穿了他人的生命；並且似乎也沒有一個可行有效的方案來解決，' +
         '難道只能任由其肆虐在我們的生活之中嗎？',
       img: '',
-      comment: ''
+      comment: '',
+      chart: ''
     },
     {
       key: '5',
       title: '',
       content: '其實從某個角度上來說，是的。',
       img: '',
-      comment: ''
+      comment: '',
+      chart: ''
     },
     {
       key: '6',
       title: '',
       content: '現在來看看當下台灣的網路霸凌的情形：<br/>' +
         '19.6%的人有被網路霸凌的經驗，10%的人有網路霸凌別人的經驗，而有 54.7%的網路霸凌旁觀者知道有人被網路霸凌。' +
-        '(廖國良、黃正魁、張仁俊、劉籹君，2012)。',
-      img: '<img src="img/qrcode.svg" alt="a">',
-      comment: '圖二'
+        '(廖國良、黃正魁、張仁俊、劉籹君，2012)。<br/>',
+      img: '',
+      comment: '',
+      chart: '<div id="mountNode"></div>'
     },
     {
       key: '7',
       title: '',
       content: '據調查只有18%的未成年人會選擇告訴身邊成年人自己遭遇了網路霸凌',
       img: '<img src="img/qrcode.svg" alt="a">',
-      comment: '表一'
+      comment: '表一',
+      chart: ''
     },
     {
       key: '8',
@@ -309,7 +316,8 @@
         '<b>有時候發聲可能會遭受更加嚴重的霸凌，甚至「告密者」也會一同被霸凌。</b>' +
         '當霸凌事件發生後如果校方處理不當，那麼隨即而來的報復行為比霸凌本身還要慘烈許多，與其這樣不如一開始就選擇沈默，興許忍一忍就過去了。',
       img: '',
-      comment: ''
+      comment: '',
+      chart: ''
     },
     {
       key: '9',
@@ -317,7 +325,8 @@
       content: '所以對於「19.6%的人有被網路霸凌的經驗」的數據不經打了一個問號，因為還有多少人選擇沈默而未通報的網路霸凌事件沒有被我們看到？' +
         '在被低估的背後實際數據也許更令人觸目驚心。',
       img: '',
-      comment: ''
+      comment: '',
+      chart: ''
     },
     {
       key: '10',
@@ -325,7 +334,8 @@
       content: '對於旁觀者、被霸凌者、霸凌者三方角色之間，在遭遇網路霸凌時會採取完全不同的行動；雖然現實殘酷無力，' +
         '但有時或許小小的努力或改變便可通往完全不同的結局：',
       img: '',
-      comment: ''
+      comment: '',
+      chart: ''
     },
   ];
 
@@ -586,7 +596,7 @@
   /* paragraph component  */
 
   var paragraph = Vue.component('paragraph', {
-    props: ['key', 'content', 'title', 'img', 'comment'],
+    props: ['key', 'content', 'title', 'img', 'comment','chart'],
     template:
       `
               <div class="wrapper">
@@ -601,6 +611,9 @@
                   <div>
                     <p>{{comment}}</p>
                   </div>
+                </div>
+                <div class="block-content">
+                  <div v-html="chart"></div>
                 </div>
               </div>
               `
@@ -809,6 +822,7 @@
   })
 
 </script>
+<script src="js/chart.js"></script>
 <div>
   <blockquote class="instagram-media" data-instgrm-captioned
               data-instgrm-permalink="https://www.instagram.com/p/B31VyYWFswq/?utm_source=ig_embed&amp;utm_campaign=loading"
