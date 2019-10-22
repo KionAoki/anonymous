@@ -177,9 +177,9 @@
         <div class="arrow" @click="previous">
           <i class="fas fa-chevron-left fa-2x"></i>
         </div>
-        <div class="carousel-img">
-          <img src="img/a.jpg" alt="carousel" class="carousel">
-          <img src="img/b.jpg" alt="carousel" class="carousel">
+        <div class="carousel-img" :class="{'first':first, 'second':second, 'third':third}">
+          <img src="img/a.jpg" alt="carousel" class="carousel" >
+          <img src="img/b.jpg" alt="carousel" class="carousel" >
           <img src="img/c.jpg" alt="carousel" class="carousel">
         </div>
         <div id="circle">
@@ -647,7 +647,10 @@
       active_2: false,
       active_3: false,
       game: game,
-      width: 0
+      width: 0,
+      first: true,
+      second: false,
+      third: false
     },
     mounted() {
       //window.addEventListener('scroll', this.yyy, true);
@@ -749,39 +752,57 @@
         landingpage.active_3 = true;
       },
       previous: function () {
-        if (this.carousel === 'img/a.jpg') {
-          this.carousel = 'img/c.jpg';
+        if (this.first) {
+          this.first = false;
+          this.second = false;
+          this.third = true;
           this.node3();
-        } else if (this.carousel === 'img/b.jpg') {
-          this.carousel = 'img/a.jpg';
+        } else if (this.second) {
+          this.first = true;
+          this.second = false;
+          this.third = false;
           this.node1();
-        } else if (this.carousel === 'img/c.jpg') {
-          this.carousel = 'img/b.jpg';
+        } else if (this.third) {
+          this.first = false;
+          this.second = true;
+          this.third = false;
           this.node2();
         }
       },
       next: function () {
-        if (landingpage.carousel === 'img/a.jpg') {
-          this.carousel = 'img/b.jpg';
+        if (this.first) {
+          this.first = false;
+          this.second = true;
+          this.third = false;
           this.node2();
-        } else if (landingpage.carousel === 'img/b.jpg') {
-          this.carousel = 'img/c.jpg';
+        } else if (this.second) {
+          this.first = false;
+          this.second = false;
+          this.third = true;
           this.node3();
-        } else if (landingpage.carousel === 'img/c.jpg') {
-          this.carousel = 'img/a.jpg';
+        } else if (this.third) {
+          this.first = true;
+          this.second = false;
+          this.third = false;
           this.node1();
         }
       },
       clair: function () {
-        this.carousel = 'img/a.jpg';
+        this.first = true;
+        this.second = false;
+        this.third = false;
         this.node1();
       },
       draw: function () {
-        this.carousel = 'img/b.jpg';
+        this.first = false;
+        this.second = true;
+        this.third = false;
         this.node2();
       },
       bunny: function () {
-        this.carousel = 'img/c.jpg';
+        this.first = false;
+        this.second = false;
+        this.third = true;
         this.node3();
       }
     }
