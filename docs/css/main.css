@@ -67,14 +67,14 @@ p{
 .menu-toggle {
   position: fixed;
   top:0;
-  right: 0;
+  left: 0;
   text-align: center;
   color: rgb(1, 51, 83);
   background: transparent;
   line-height: 50px;
   z-index: 99;
   margin-top: 10px;
-  margin-right: 10px;
+  margin-left: 10px;
 }
 
 .hamburgerBar{
@@ -107,11 +107,11 @@ a:not([href]) {
   opacity: 0.8;
 }
 .open{
-  right: 250px;
+  left: -250px;
 }
 
 .close{
-  right: 0px;
+  left: -500px;
 }
 
 .sidebar-nav {
@@ -146,7 +146,7 @@ a:not([href]) {
   height: 90px;
   line-height: 60px;
   padding: 10.5px 0px 1px 20px;
-  margin-top: 30px;
+  margin-top: 65px;
 }
 
 .sidebar-nav > .sidebar-brand a {
