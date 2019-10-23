@@ -47,11 +47,11 @@ p{
 }
 
 #instagram > h2{
-  //color: #050511;
+  color: #050511;
 }
 
 #instagram p{
-  //color: #4D4D4D;
+  color: #4D4D4D;
 }
 
 
@@ -431,7 +431,7 @@ a:not([href]) {
 }
 
 .start p:hover{
-  color: #FFEE52;
+  color: #555B7F;
 }
 
 /* footer */
