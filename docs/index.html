@@ -6,9 +6,13 @@
   <link rel="bookmark" href="img/yeqian.ico"/>
   <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.min.js"></script>
   <script>Vue.config.devtools = true;</script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
   <link rel=stylesheet type="text/css" href="css/main.css">
   <link rel=stylesheet type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.css">
   <link href="https://fonts.googleapis.com/css?family=Noto+Sans+TC&display=swap" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
   <script src="https://gw.alipayobjects.com/os/antv/pkg/_antv.g2-3.5.1/dist/g2.min.js"></script>
 </head>
@@ -76,8 +80,8 @@
       </li>
     </ul>
   </nav>
-  <!-- story bar -->
-  <nav id="story-bar" @scroll.passive="scroll" v-show="show">
+  <!-- suggestion bar -->
+  <nav id="suggestion-bar" @scroll.passive="scroll" v-show="show">
     <ul>
       <li @click="changea">
         <a href="#option">
@@ -99,11 +103,13 @@
   <!--video banner-->
   <div id="banner">
     <img src="img/title.svg" alt="title">
+    <!--
     <iframe frameborder="0" allowfullscreen volumn="0"
             allow="autoplay" title="YouTube video player"
             width="100%" height="100%"
             src="https://www.youtube.com/embed/dH-rxUB_PrY?rel=0&autoplay=1&loop=1&playlist=dH-rxUB_PrY&controls=0&modestbranding=1&fs=0"
             id="widget2"></iframe>
+            -->
   </div>
   <!-- background-->
   <div class="background">
@@ -111,6 +117,7 @@
     <div id="story">
       <page-title title="聽聽他們怎麼說"></page-title>
       <div>
+        <!--
         <div id="option" class="option-center">
           <button @click="changea"><img src="img/people%20story1-01.png" alt="respondent_1"></button>
           <button @click="changeb"><img src="img/people%20story2-01.png" alt="respondent_2"></button>
@@ -130,6 +137,7 @@
         <div class="center">
           <paragraph v-for="text in posts" :key="text.key" :content="text.content"></paragraph>
         </div>
+        -->
       </div>
     </div>
     <!-- cyberbully -->
@@ -140,6 +148,24 @@
           <div>
             <paragraph v-for="text in posts" :key="text.key" :title="text.title" :content="text.content"
                        :img="text.img" :comment="text.comment" :chart="text.chart"></paragraph>
+          </div>
+          <div id="suggestion">
+            <div>
+              <div id="option" class="option-center">
+                <button @click="changea"><img src="img/people%20story1-01.png" alt="role_1"></button>
+                <button @click="changeb"><img src="img/people%20story2-01.png" alt="role_2"></button>
+                <button @click="changec"><img src="img/people%20story3-01.png" alt="role_3"></button>
+              </div>
+              <div class="role-img wrapper">
+                <img v-bind:src="img" alt="character">
+              </div>
+              <div class="role ">
+                <div class="role-inner-line">
+                  <paragraph v-for="text in role" :key="text.key" :title="text.title" :content="text.content"
+                             :img="text.img" :comment="text.comment" :chart="text.chart"></paragraph>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -201,7 +227,9 @@
       `
     })
   </script>
+  
 </main>
+
 <script>
 
   /* paragraph content  */
@@ -317,254 +345,409 @@
 
   var story_1 = [
     {
-      key: '1', title: '原來我交不到女朋友，竟是因為這小貓咪？', content: ''
+      key: '1',
+      title: '只有搞清楚網路霸凌之定義、辨別身邊的霸凌行為，才能進而採取下一步行動',
+      content: '我們每一個人都是他人生活的旁觀者，那麼作為網路霸凌的旁觀者，其實首要任務並不是去制止霸凌行為去為被霸凌者伸張正義；' +
+        '而是應該先了解、再分辨出哪些是生活中有關網路霸凌的行為。' +
+        '根據2016-2019年網絡欺凌的事實和統計數據(Sam Cook,2019)報告指出，全球範圍內的受訪者對網路霸凌認知差距懸殊：',
+      img: '',
+      comment: '',
+      chart: ''
     },
     {
-      key: '2', title: '', content: '我姓李，所以接下來我都會稱呼自己為“L”。接下來要說的，其實是在我身上發生，很小的一件事。'
+      key: '2',
+      title: '',
+      content: '<table class="table table-striped">\n' +
+        '  <caption>資料來源：Awareness of Cyberbullying vs. Country Freedom Score,Samuel Cook,Tableau</caption>\n' +
+        '  <thead>\n' +
+        '    <tr>\n' +
+        '      <th scope="col">有關網路霸凌概念認知前五國家</th>\n' +
+        '      <th scope="col">有關網路霸凌概念認知後五國家</th>\n' +
+        '    </tr>\n' +
+        '  </thead>\n' +
+        '  <tbody>\n' +
+        '    <tr>\n' +
+        '      <td>瑞典  91%</td>\n' +
+        '      <td>沙烏地阿拉伯  37%</td>\n' +
+        '    </tr>\n' +
+        '    <tr>\n' +
+        '      <td>義大利  91%</td>\n' +
+        '      <td>法國  50%</td>\n' +
+        '    </tr>\n' +
+        '    <tr>\n' +
+        '      <td>智利  89%</td>\n' +
+        '      <td>俄羅斯 56%</td>\n' +
+        '    </tr>\n' +
+        '    <tr>\n' +
+        '      <td>南非 88%</td>\n' +
+        '      <td>日本  56%</td>\n' +
+        '    </tr>\n' +
+        '    <tr>\n' +
+        '      <td>墨西哥87%</td>\n' +
+        '      <td>南韓  59%</td>\n' +
+        '    </tr>\n' +
+        '  </tbody>\n' +
+        '</table>',
+      img: '',
+      comment: '',
+      chart: ''
     },
     {
-      key: '3', title: '', content: '當我還是個剛入學的小大一時，機緣巧合下和班上的女生A關係變得還不錯，我們經常會聊一些詩歌詞賦的東西，' +
-        '因為是中文系嘛，聊這些也挺正常的。後來她還曾經邀請我出去吃過飯，我還記得當時是去吃海南雞，嫩滑的肉質不禁想起了易君左的“黃雞白酒嫩菠青”，' +
-        '便又與她討論了起來。她笑起來眼睛會不自覺瞇成一條縫，臉頰不知是不是腮紅的原因看起來紅撲撲的，看起來有一種無拘無束的快樂。'
+      key: '3',
+      title: '',
+      content: '另，下表為家長通報自家孩子為網路霸凌受害者之相關統計：\n',
+      img: '',
+      comment: '',
+      chart: ''
     },
     {
-      key: '4', title: '', content: '後來她知道我的室友B有養貓，便提出想要參觀我和朋友們的租屋處；她看起來很喜歡貓，眼神一直在跟隨那隻貓；' +
-        '當然因為有貓最為很好的話題，她和我的室友們也很快熟絡起來。'
+      key: '4',
+      title: '',
+      content: '<table class="table">\n' +
+        '  <caption>資料來源：yberbullying facts and statistics for 2016-2019, Sam Cook, Comparitech\n</caption>\n' +
+        '  <thead>\n' +
+        '    <tr>\n' +
+        '      <th scope="col">國家</th>\n' +
+        '      <th scope="col">2011</th>\n' +
+        '      <th scope="col">2016</th>\n' +
+        '      <th scope="col">2018</th>\n' +
+        '    </tr>\n' +
+        '  </thead>\n' +
+        '  <tbody>\n' +
+        '    <tr>\n' +
+        '      <th scope="row">印度</th>\n' +
+        '      <td>32</td>\n' +
+        '      <td>32</td>\n' +
+        '      <td>37</td>\n' +
+        '    </tr>\n' +
+        '    <tr>\n' +
+        '      <th scope="row">巴西</th>\n' +
+        '      <td>20</td>\n' +
+        '      <td>19</td>\n' +
+        '      <td>29</td>\n' +
+        '    </tr>\n' +
+        '    <tr>\n' +
+        '      <th scope="row">美國</th>\n' +
+        '      <td>15</td>\n' +
+        '      <td>34</td>\n' +
+        '      <td>26</td>\n' +
+        '    </tr>\n' +
+        '    <tr>\n' +
+        '      <th scope="row">比利時</th>\n' +
+        '      <td>12</td>\n' +
+        '      <td>13</td>\n' +
+        '      <td>25</td>\n' +
+        '    </tr>\n' +
+        '    <tr>\n' +
+        '      <th scope="row">南非</th>\n' +
+        '      <td>10</td>\n' +
+        '      <td>25</td>\n' +
+        '      <td>26</td>\n' +
+        '    </tr>\n' +
+        '  </tbody>\n' +
+        '</table>' +
+        '<b>其中南韓在2018年有13起通報，日本僅有5起。</b>',
+      img: '',
+      comment: '',
+      chart: ''
     },
     {
-      key: '5', title: '', content: '由於我們幾個大男人平時在家都是四角內褲相見，對於這次女生到訪打起了十二分精神，就差穿上帥氣西裝和把頭髮梳成大人模樣，' +
-        '後來我們也正襟危坐在桌子的不同方位，這個畫面怎麼想都覺得很搞笑。'
+      key: '6',
+      title: '各國當前對於網路霸凌的因應之道',
+      content: '美國幾乎各州（除Alaska及Wisconsin外）都制定了針對網路霸凌的專法和學校營運政策；' +
+        '並且也有許多官方組織例如Cyberbullying Research Center，PACER等，這些組織提供了大量有關網路霸凌的研究及相關統計。' +
+        '其中本篇文章就使用了Cyberbullying Research Center關於美國各州霸凌法包含網路霸凌之內容統計數據：\n',
+      img: '',
+      comment: '',
+      chart: ''
     },
     {
-      key: '6', title: '', content: '後來她離開時禮貌性的加了室友們的line，室友們則對這個第一次見面的我的曖昧對象誇讚不已，' +
-        '紛紛舉起大拇指稱我是全村的希望。我當時也曾慷慨表示若在一起，我也會多多撮合她的朋友一起經常聚餐的，只要他們能管我叫爸爸。'
+      key: '7',
+      title: '',
+      content: '<table class="table table-striped">\n' +
+        '  <caption>全美洲霸凌和網路霸凌法律及相關政策</caption>\n' +
+        '  <thead>\n' +
+        '    <tr>\n' +
+        '      <th scope="col">總數</th>\n' +
+        '      <th scope="col">網路霸凌法</th>\n' +
+        '      <th scope="col">刑事制裁</th>\n' +
+        '      <th scope="col">學校法規</th>\n' +
+        '      <th scope="col">學校政策</th>\n' +
+        '      <th scope="col">off-campus</th>\n' +
+        '    </tr>\n' +
+        '  </thead>\n' +
+        '  <tbody>\n' +
+        '    <tr>\n' +
+        '      <th scope="row">50</th>\n' +
+        '      <td>48</td>\n' +
+        '      <td>44</td>\n' +
+        '      <td>45</td>\n' +
+        '      <td>49</td>\n' +
+        '      <td>17</td>\n' +
+        '    </tr>\n' +
+        '  </tbody>\n' +
+        '</table>',
+      img: '',
+      comment: '',
+      chart: ''
     },
     {
-      key: '7', title: '', content: '現在回想起來，那時候真是快樂阿，當時的我真的是意氣風發，一腔熱血覺得世界只要是努力便可以攻克的；' +
-        '不斷持續雞血般的狀態，甚至影響了我的小說創作：“所愛隔山海，山海不可平；海有舟可渡，山有路可行；為愛翻山海，山海皆可平。”'
+      key: '8',
+      title: '',
+      content: '雖然英國法律中並沒有網路霸凌一詞相關概念，也並無網路霸凌專法(Cybersmile)。但許多民間團體基金會經過多年不斷努力，' +
+        '除幫助了許多遭受網絡霸凌困擾的人外，也提供了許多寶貴的網路霸凌數據：<br/>' +
+        '<a href="https://www.bullying.co.uk/cyberbullying/">Bullying </a> UK是一間英國的NGO，' +
+        '該組織可以為父母或孩子提供心理諮商上的免費幫助，並且也會定期舉辦相關教育課程講座或出版期刊。\n<br/>' +
+        '<a href="http://ditchthelabel.org">Ditch the Label </a> 作為一家數位慈善機構，' +
+        '通過網頁及社群不斷幫助12-25歲孩童或年輕人克服霸凌遭遇，其發布的網路霸凌年度報告更是詳細統計了英國網路霸凌現況及趨勢。\n',
+      img: '<img src="img/ditchthelabel.svg" alt="Ditch the Label">',
+      comment: 'Ditch the Label官網截圖 來源 https://www.ditchthelabel.org/',
+      chart: ''
     },
     {
-      key: '8', title: '', content: '可後來我才明白：'
+      key: '9',
+      title: '',
+      content: '反霸凌法(Anti-Bullying Law)是阻止霸凌行為的重要武器之一，但可惜的是並不是每個國家都有制定相關法律，' +
+        '例如台灣目前並沒有針對網路霸凌的專法，如果當事人想要走法律途徑，只能以公然侮辱罪、誹謗罪這樣的擦邊球名義加以控告。\n',
+      img: '',
+      comment: '',
+      chart: ''
     },
     {
-      key: '9', title: '', content: '“山海皆可平，難平是人心。”'
+      key: '10',
+      title: '',
+      content: '那到底如何去做出改變呢？<br>' +
+        '一個人的力量既渺小又微不足道，但是此刻使用電腦的我們不是鍵盤俠，而是打算用鍵盤做一些更厲害的事情，萬一就積沙成塔把那高牆給推翻了呢：',
+      img: '',
+      comment: '',
+      chart: ''
     },
     {
-      key: '10', title: '', content: '我們之間的曖昧就這麼持續了一個學期，再後來的一天因為養貓室友要出國旅遊，便把貓咪交付予我照顧，' +
-        '我也就順嘴問了A要不要來家裏看貓。反正一回生二回熟，家裡的室友們對她也不再像第一次那樣表現得很拘謹，大家聊天聊的很愉快甚至還發了限時。'
-    },
-    {
-      key: '11', title: '', content: '但這次到訪後她對我的態度突然冷了下來，我以為她也許是覺得我們之間還是不合適，' +
-        '畢竟都過了一學期我們之間還沒有什麼實質性進展。'
-    },
-    {
-      key: '12', title: '', content: '但我想錯了，因為隨之而來我收到了她的限時截圖：'
-    },
-    {
-      key: '13', title: '', content: '“真是知人知面不知心，打著看貓名義騙我來你家，結果發現家裏只有你一個，想對我做什麼傻子都明白啊，要不是我反應的快，' +
-        'L你就好自為之吧，希望以後的小學妹不要再被你騙了！”'
-    },
-    {
-      key: '14', title: '', content: '我第一反應是想要辯解，刪刪改改幾次後把希望澄清誤會的訊息傳給了她，但那時我才發現自己早已被她拉黑。'
-    },
-    {
-      key: '15', title: '', content: '但我並沒有放棄，趕緊借用周圍人的帳號試圖聯繫她，但當點開她的頭像的時候我愣住了。'
-    },
-    {
-      key: '16', title: '', content: '因為我發現，她居然和我的室友B在一起了。'
-    },
-    {
-      key: '17', title: '', content: '“這特馬都是殺小？”我的大腦一片空白。'
-    },
-    {
-      key: '18', title: '', content: '當時就如同回馬燈一樣，我的人生開始飛快倒放起來：她第一次見到B時、她離開時加了所有室友line時、' +
-        '她第二次來我們一起逗貓時、還有B最近都早出晚歸感覺很久沒有碰到面的畫面時......'
-    },
-    {
-      key: '19', title: '', content: '憤怒？悲傷？還是覺得好笑，各種情緒充斥著腦海讓我思緒爆炸，只覺得莫名其妙的掉入了平行世界，' +
-        '因為這一切實在是過於匪夷所思。當我整理好情緒準備理智的和室友B談一談時，毫不意外的，我也被B拉黑了。'
-    },
-    {
-      key: '20', title: '', content: '可我以為只要與B斷交，並且祝福這對狗男女天長地久就可以結束這場鬧劇時，才發現流言早就不脛而走，' +
-        '如同星星之火般燎滿了班上同學的動態，這個看貓的故事被傳唱成不同版本，甚至加入了很多我本人都記不清的細節，但毫無疑問我被當作“噁男”已經是板上釘釘，' +
-        '甚至一度升級為變態、犯罪等神劇情發展。其他室友們想要幫我解圍，可由於不同系所且大部分指責都是限時動態，所以只能變成精神鼓勵。'
-    },
-    {
-      key: '21', title: '', content: '本來被人誤解罵一罵也就算了，但是不能忍的是後來只要我和別的女生出去吃飯，她們就會發動態說什麼新的受害者又要出現了之類。' +
-        '久而久之我也不再約女生而是和室友廝混在一起。但我還是依然能從別人看我那微妙的眼神中推斷，她們在講什麼內容：'
-    },
-    {
-      key: '22', title: '', content: '她們總是一開始會竊竊私語，到後來一聲“真的假的!?”來打破前面努力保持的寧靜，但當我轉頭眼神對視的一瞬間，她們便把頭彈開看向其他地方，' +
-        '空氣再度回歸安靜，彷彿剛剛什麼都沒有發生似的。'
-    },
-    {
-      key: '23', title: '', content: '當然了，有時候我也覺得滿腹的委屈，因為這根本就是無妄之災，我甚至都不知道自己做錯了什麼，或哪裏惹到了她們；' +
-        '也許是自己是遭人厭惡已久，便尋個藉口來審判我，也或者我本身就是一個不被接受的存在。'
-    },
-    {
-      key: '24', title: '', content: '那段時間不想看見人，就常常一個人躲起來發呆，一待就是好幾個小時。覺得自己就如「謊言的烙印」主角一般，' +
-        '無緣無故便承受了這個世界的惡意，甚至當所有人都在指責我罪行時，我也開始懷疑自己是不是真的有做過？哪怕想要通過謝罪來平息眾怒也是，' +
-        '思索半天竟不知道有什麼可以拿來道歉的，也許就只有那句：'
-    },
-    {
-      key: '25', title: '', content: '“生而為人，我很抱歉。”來表達此刻心情吧。'
-    },
-    {
-      key: '26', title: '', content: '不過好在身邊朋友一直願意相信我，同時也結交了新的圈子，他們的肯定讓我不再一直自我否定。人啊，只要有了願意相信自己的人真的是會變得強大的。' +
-        '所以這件事也沒有對我造成什麼實質性的傷害，可能最大的傷害就是潛在的女朋友們在目睹我英姿之前就被流言嚇跑了吧。'
-    },
-    {
-      key: '27', title: '', content: '或許以後聊天我可以說「震驚！L大學單身的真相竟然是一隻可愛貓咪？」什麼這樣白痴的事情吧。'
-    },
-    {
-      key: '28', title: '', content: '畢竟後來我想通了，人與人之間的相互交談是需要素材的，比如“今天的天氣真好呢。”“昨天新上的專輯好聽到爆。' +
-        '”這樣無意義的對話可以有效保持空氣不尷尬，讓雙方看起來都體貼又有趣。'
-    },
-    {
-      key: '29', title: '', content: '那關於我身上所發生的一切呢？'
-    },
-    {
-      key: '30', title: '', content: '也不過是構築他們聊天內容的磚塊罷了，真相如何誰會在意？大家在意的只是聊天不要蒼白無趣、索然無味就好。'
-    },
-    {
-      key: '31', title: '', content: '而越是荒誕離奇的故事，就越可以栩栩如生的帶動氣氛、拉近關係。'
-    },
-    {
-      key: '32', title: '', content: '你看，這多好呀。'
+      key: '11',
+      title: '',
+      content: '這是<a href="https://join.gov.tw/index">台灣公共政策網路參與平台</a>，進入註冊會員即可提出點子參與政策計畫，' +
+        '在這裡可以提出關於設立網路霸凌專法的訴求，去幫助那些正在飽受網路霸凌之苦的受害人，讓他們可以使用法律來保護自己不遭受欺凌。',
+      img: '',
+      comment: '',
+      chart: ''
     }
   ];
-
+  
   var story_2 = [
     {
-      key: '1', title: '人物二', content: ''
-    },
-    {key: '2', title: '', content: '政治中心/綜合報導'},
-    {
-      key: '3', title: '', content: '2020總統大選越來越激烈，除了要拚連任的總統蔡英文以及獲得國民黨提名的高雄市長韓國瑜之外，' +
-        ' 日前前副總統呂秀蓮也決定參戰。現在傳出，時代力量有意找立委黃國昌參選2020。' +
-        '時代力量祕書長 吳佩芸表示，黨中央正草擬「時代力量總統候選人提名辦法」，並以徵召黃國昌委員為優先考量選項 之一。'
-    },
-    {
-      key: '4', title: '', content: '針對2020大選，民進黨提名記者會，包含公布賴品妤參戰新北汐止區，時代力量祕書長吳佩芸表示尊重他黨安排，' +
-        '選戰倒數115天，時力將全力支持在地深耕五年的國會辦公室主任賴嘉倫。吳佩芸也強調，時代力量在汐止區不只是已參戰，' +
-        '更以「拿下勝利」為主要目標，延續時力在該選區的深耕經營。'
+      key: '1',
+      title: '',
+      content: '這裡想起一句話：「你永遠不知道，明天和意外哪一個先來？」<br/>' +
+        '也許網路霸凌就這麼橫空當在了生活之中，無關對錯只是將日子變得進退兩難。但不管處境何如艱難，希望依舊可以保持清醒理智，去嘗試解決眼前困難，' +
+        '本文蒐集整理出了一些建議來供參考：',
+      img: '',
+      comment: '',
+      chart: ''
     },
     {
-      key: '5', title: '', content: '針對外界認為時代力量和民進黨兩黨主席對談似乎陷入僵局，' +
-        '吳佩芸表示，作為時力秘書長仍不會放棄與民進黨秘書長羅文嘉展開對談的可能性，' +
-        '不管是立委選區、政策推進、對談形式公開與否，都沒有任何限制，喝咖啡之約隨時有效。\n'
+      key: '2',
+      title: '感受、理解、接受自己的一切情緒，存在即合理本就沒有錯對',
+      content: '如果當你遭遇了霸凌，那麼其實不管是直面解決，還是選擇躲避都是沒有關係的，世界上沒有一個研究或是SOP可以完美解決霸凌遭遇。\n',
+      img: '',
+      comment: '',
+      chart: ''
     },
     {
-      key: '6', title: '', content: '另外，有記者詢問時代力量是否會與柯文哲尋求合作?祕書長吳佩芸表示，柯文哲市長須先放棄「兩\n' +
-        '岸一家親」路線，並向民眾清楚說明台灣主權國家的立場，時代力量與柯文哲才有談下一步的可能。'
+      key: '3',
+      title: '',
+      content: '在之前對被網路霸凌者的訪談中我們得知，每個人對於突如其來的變故都有不一樣的解決方式，有的人直面霸凌者選擇了回嗆；' +
+        '也有人選擇了關閉一切通訊軟體；也有人選擇了尋求別人幫助來保護自己；他們都有各自的理由，但當問到“如果現在可以對正在遭受網路霸凌的人說點什麼，' +
+        '你想傳達的是？<br/>' +
+        '”他們大多都表達了“比起別人的看法意見，自己的心情想法才是真正重要的。”<br/>' +
+        '也就是說，不管是霸凌者的傷害或是身邊人的建議，首先應該傾聽自己的內心，直面或逃避都沒關係，只要自己可以獲得快樂和平靜，就是最好的解決方法。' +
+        '並且要明白「霸凌不會促進成長，拯救自己的過程才是成長的一部分。」',
+      img: '',
+      comment: '',
+      chart: ''
     },
     {
-      key: '7', title: '', content: '針對2020總統選舉，吳佩芸也說明，時代力量黨中央正草擬「時代力量總統候選人提名辦法」' +
-        '，並以徵召黃國昌委員為優先考量選項之一。自提總統候選人是政黨主體性的展現，吳佩芸強調，未來若有機會與羅文嘉對談，' +
-        '將排除總統選舉層次，以免衍生錯誤解讀。'
+      key: '4',
+      title: '你沒有錯，要愛自己',
+      content: '當被人貶低遭受傷害時，許多人第一想法可能檢討自己「也許是我做錯了什麼？才會被圍攻吧。」首先要擯棄這個想法，因為在檢討自己前，' +
+        '需要認識到自己是受害者，是被傷害的那個人，傷害別人的行為才是錯誤的。',
+      img: '',
+      comment: '',
+      chart: ''
+    },
+    {
+      key: '5',
+      title: '',
+      content: '退一步來說，縱使許多被公審肉搜的人有錯在先（被網民認定的錯誤），那也需要通過正當司法程序進行調查、得出結論、做出判決，' +
+        '而不是打著一個漂亮名號去動用私刑。這樣不叫替天行道，這只是一場沾血的網路狂歡；其中歡呼的人們不是什麼江湖好漢，' +
+        '只是想要有個正當理由去肆意渲洩的烏合之眾。',
+      img: '',
+      comment: '',
+      chart: ''
+    },
+    {
+      key: '6',
+      title: '',
+      content: '畢竟當關注點脫離了事實本身，而集中在判決、責罰上時，萬物都會開始失控；這時若責難自己，不僅無法看到事件全貌，而且只能讓自己愈發憂鬱。' +
+        '所以還是多多愛惜自己吧，與自己和解才能去面對這個不合理的世界。',
+      img: '',
+      comment: '',
+      chart: ''
+    },
+    {
+      key: '7',
+      title: '去拯救自己吧',
+      content: '如果說世界上最愛你最了解你的人是誰，那一定是你自己。他人無法百分百理解你此時內心的悲傷和無助，或許依靠他人的力量是一種選擇，' +
+        '但這也是基於自我求救的基礎上的行動。在這裡為蒐集了一些資源可供參考：' +
+        '<ul>' +
+        '   <li>在法律諮商方面，法務局、各區公所及戶政事務所有免費的義務律師提供法律諮詢，只需要去網頁或電話提前預約時間。<br/>' +
+        '   <a href="https://wsdo.gov.taipei/cp.aspx?n=8C91A036C09515F6">文山區公所免費法律諮詢</a><br/>' +
+        '   <a href="https://www.law.ntpc.gov.tw/home.jsp?id=5eed5cacfa562ac6">新北市政府法制局免費法律諮詢服務</a><br/>' +
+        '   或是像臺大也有<a href="https://ntulegalservice.weebly.com/">法律服務社</a>提供民眾法律諮詢，' +
+        '支持線上報名及現場候位</li>',
+      img: '',
+      comment: '',
+      chart: ''
+    },
+    {
+      key: '8',
+      title: '',
+      content: '心理諮商方面除了學校的諮商中心外，各區「健康中心」都有諮商駐點，收費方式健保50+諮商費200共計250，詳細介紹請參考官方網頁。<br/>' +
+        '<a href="https://www.wshc.gov.taipei/News_Content.aspx?n=E175F07FB6C8C366&s=6D58DF7D601ECF2A">臺北市文山區社區心理諮商服務</a>',
+      img: '',
+      comment: '',
+      chart: ''
+    },
+    {
+      key: '9',
+      title: '',
+      content: '或是加入相關反網路霸凌的社團，去和相同遭遇的人傾訴。<br/>' +
+        'FB社團 - <a href="https://www.facebook.com/080club/">網路霸凌防制組織</a>' +
+        'FB社團 - <a href="https://www.facebook.com/StopBullying.Gov/">StopBullying.Gov</a>',
+      img: '',
+      comment: '',
+      chart: ''
     }
   ];
 
   var story_3 = [
     {
-      key: '1', title: '人物三', content: ''
+      key: '1',
+      title: '',
+      content: '人的一生不可能不犯錯誤，雖然有時的無心之失給旁人造成了極大的傷害。',
+      img: '',
+      comment: '',
+      chart: ''
     },
     {
-      key: '2', title: '', content: '在一個再平常不過假日午後，' +
-        '總有許多高三生正為了學測與書本搏鬥著，而我也不例外的是其中一個。'
+      key: '2',
+      title: '',
+      content: '但畢竟「知错能改，善莫大焉」',
+      img: '',
+      comment: '',
+      chart: ''
     },
     {
-      key: '3', title: '', content: '這天，我跟朋友一如往常地約了摩斯漢堡店，打算來趕個考試進度。' +
-        '由於被睡意絆著了腳，我踏進店裡時已經是下午兩點多，而我那位朋友正好在吃著午餐。' +
-        '也沒什麼食慾的我，打算先解決一張考卷再去點餐，殊不知，寫完整張耗費了我四十分鐘之久。'
+      key: '3',
+      title: '',
+      content: '也或許在剛剛了解完網路霸凌的定義後就想起了某個人、某個玩笑或是某句曾經說過的傷人話；這些事情就在某個時間忽然出現在腦海中，' +
+        '雖不是切膚之痛但總歸如同睫毛掉進眼睛裏那般令人不適。甚至不住在想如果可以重來的話，或許會選擇更加溫和成熟的方式去處理，但當日傷害造成了便是無法挽回：',
+      img: '',
+      comment: '',
+      chart: ''
     },
     {
-      key: '4', title: '', content: '而在我正要起身打算去櫃台點餐時，' +
-        '店員正巧走過來詢問：「如果已經用餐完畢的話，可以先把位子讓出來給下一位客人嗎？」' +
-        '在我解釋完畢我仍未用餐之後，店員表示理解前往詢問下一桌。' +
-        '但令人不解的是，該店員竟然詢問了店裡的「每一桌客人」能否先行讓位，' +
-        '我不禁往門口撇了一眼，卻發現只有一組正在排隊等候的客人。' +
-        '當時被諸多課業壓力纏身的我，覺得此舉稍微荒謬且小題大作了些，' +
-        '於是於排隊點餐時，用稍稍帶有抱怨與調侃的語氣在社群網站發文記錄此事件。'
+      key: '4',
+      title: '',
+      content: '有64%的被網路霸凌者表示霸凌事件影響了他們的學習能力和在學校的安全感；並且患有頭痛或胃病的可能性是其他學生的兩倍。' +
+        '被網路霸凌者除了要應付霸凌事件本身，還要面對這一系列負面的身體變化，這樣也導致了他們比其他人更沒有安全感及感到焦慮。<br/>' +
+        '另外根據 <a href="https://www.ditchthelabel.org/wp-content/uploads/2017/07/The-Annual-Bullying-Survey-2017-1.pdf">Ditch the Label 2017</a> ' +
+        '的調查報告中顯示，網路霸凌所造成的影響前三名分別是：社交焦慮的增加（41%）、失望感的增加（37%）、有過自殺念頭（26%）以及刪除社群帳號（26%）。',
+      img: '',
+      comment: '',
+      chart: '<div id="radialBar"></div>'
     },
     {
-      key: '5', title: '', content: '對於一個時常在社群網站發文抒發壓力的人來說，這是再正常不過的一件事，\n' +
-        '然而因為當時並未意識到自己在某項領域累積的聲望是具有一定的程度的，\n' +
-        '所謂「聲望攀升，黑特也會成一定正比的增加」，\n' +
-        '於是我的這篇紓壓文章便遭有心人刻意使用假帳號上傳「靠北音game」，\n' +
-        '並在遭到炮轟「本文與音樂遊戲毫無關聯」後轉而上傳「靠北奧客」並引發了大炎上。'
+      key: '5',
+      title: '',
+      content: '霸凌與自殺行為有很強的關聯性，但這種關係往往是由於其他因素所導致的例如憂鬱、暴力行為及濫用毒品(Reed,Nugent,Cooper,2015)。' +
+        '並且美國疾控中心也指出曾遭受或參與過霸凌的學生，比其他未經歷霸凌的學生有更高的自殺相關行為。\n',
+      img: '',
+      comment: '',
+      chart: ''
     },
     {
-      key: '6', title: '', content: '在眾多不特定的閱覽群中，從事的工作與服務業有關占了一定比率是不可避的，\n' +
-        '因此對於我這篇以「陌生人」的角度來看儼然就是奧客行為的抱怨文感到氣憤無比。\n' +
-        '在我本人得知之後，馬上進行刪文的動作，但仍無法避免此起彼落的負面評論，\n' +
-        '正當批評、幸災樂禍、人身攻擊等等的留言應有盡有，\n' +
-        '即使匿名上傳的文章中是有對我的照片及人名以馬賽克處理，也無法改變我承受砲火傷害的事實。'
+      key: '6',
+      title: '',
+      content: '這些事件對於霸凌者來說也許就是多年後偶然想起的人生插曲，但對於被霸凌者來說，那些恐懼悲傷與不甘早已刻印在心中，此生都會背負其前行。' +
+        '所以不管是無心之過還是有意為之，你是可以去選擇減輕他們的內心負擔；畢竟，這份負擔本該屬於自己。\n',
+      img: '',
+      comment: '',
+      chart: ''
     },
     {
-      key: '7', title: '', content: '然而最意想不到的是，在我重啟帳號之後，竟發現匿名文章被許多網路記者拿去寫了網路新聞，\n' +
-        '不只如此，在「靠北音Game」上一次多了許多篇流言蜚語，似乎是有心人想一舉讓我身敗名裂。\n' +
-        '不禁讓我感嘆，在網路如此發達的社會，同時造就了眾多的「無知酸民」與「鍵盤戰士」，\n' +
-        '認為避不見面就能夠毫無顧忌的大放厥詞，有如深怕對方受不到傷害一般的狠踩，實在令人無奈。'
+      key: '7',
+      title: '',
+      content: '不管擁有什麼理由，去傷害別人，把一個人漸漸推向黑暗都是一件悲傷的事情；對於正在遭受網路霸凌的人，所做之事應是即刻停止傷害，' +
+        '而不是等悲劇發生後在自己限時動態上po文：\n',
+      img: '',
+      comment: '',
+      chart: ''
     },
     {
-      key: '8', title: '', content: '時隔至今已過了兩年，\n' +
-        '學測早已結束，壓力也隨之拋到九霄雲外了，\n' +
-        '而當時的「四十分鐘事件」早已成為了我拿來自嘲的笑話。\n' +
-        '如今再次回想起，已無那時的在意與自責，\n' +
-        '但也只能怪自己當時言行不夠謹慎，且忘了將紓壓文設定成「僅限好友閱覽」。'
+      key: '8',
+      title: '',
+      content: '「當雪崩來臨時，沒有一片雪花是無辜的。」',
+      img: '',
+      comment: '',
+      chart: ''
     },
     {
-      key: '9', title: '', content: '「不經一事，不長一智」，人生總會有許多失言的場合，可大可小。\n' +
-        '萬一炎上真的發生了，必須立刻處理以避免更加擴散的可能，\n' +
-        '盡量嘗試所有可能的解決方案，並在事後仔細思考自己的錯誤且加以改進。\n' +
-        '千千萬萬不能擺著事情不處理，自己卻掉入無止盡的負面情緒當中，\n' +
-        '或者因為情緒一來，就直接在網路上公開跟人互相指責批評，\n' +
-        '此舉不但不能解決問題，反而會讓事態更加嚴重。'
-    },
-    {
-      key: '10', title: '', content: '網路霸凌時時刻刻都在發生，\n' +
-        '不分老少，有不少人都不懂得網路上發言的技巧，以及網路上發言的重要程度。\n' +
-        '不論學校小班群、遊戲社團、粉絲專頁、影片留言區等等，\n' +
-        '往往能看到許多針對性的批評與人身攻擊，\n' +
-        '且發言者「通常」都不瞭解其每一具攻擊性的話都是帶有法律責任的。\n' +
-        '由於有這樣情形的人數完全不在少數，\n' +
-        '我們只能期待這類型的人們終有一天能有所改變，\n' +
-        '或是從根本開始檢討自己的每一則發言是否適合於公開場合發表，\n' +
-        '按下「ENTER鍵」多思考一番，改善網路環境，從自己做起。'
-    },
+      key: '9',
+      title: '',
+      content: '畢竟，你很無辜、我也很無辜，大家都是無辜的<br\>' +
+        '但我們的狂歡卻沾滿了鮮血。\n',
+      img: '',
+      comment: '',
+      chart: ''
+    }
   ];
 
   var game = [
     {
       key: '1',
       title: '',
-      subtitle: '',
       content: '在以「網路霸凌」為主題的劇本裡，製作受害者和加害者是一件極其簡單又極不符合常理的事。網路世界有時就彷彿童話般，處在非黑即白的、' +
         '片面的資訊裡。為了呈現世界的多元性、模糊黑白的分界線，我們決定出兩大前提作為故事的世界觀：其一，角色皆沒有固定性傾向；其二，' +
-        '這是一個沒有人有錯的世界。'
+        '這是一個沒有人有錯的世界。',
+      img: '',
+      comment: '',
+      chart: ''
     },
     {
       key: '2',
       title: '',
-      subtitle: '',
       content: ' 關於第一點，誠如上述提到的多元性，團隊半數成員作為世新大學性別友善社團的社員，表示雖然可以感受到社會逐漸變得友善，' +
         '但是那些深植於老一輩心中的思想卻依舊悄悄地影響我們。近則師長同儕遠則報章雜誌，刻板印象、性霸凌、恐同……等事件時有所聞，' +
         '不禁令人思考人們為何急於劃清男女與性向界線，又為何總對一線之隔的彼方抱以歧視及誤解。我們同生於小小的海島，使用同一種語言，' +
         '卻因為一絲成見而不願理解、尊重，為此，人與人間曾錯失過多少友情和愛情呢？如果早些領悟「我們從不曾不同過」，那人生會有多少改變呢？' +
         '如果能有更多人明白世界比自己所想更寬廣的話，那臺灣會不會更好呢？思至此，即使只是股綿薄之力，我們也覺得有義務將更多的可能性放進故事、' +
-        '融進作品裡，想告訴讀者：接受差異和衝突，別讓成見侷限住視界。'
+        '融進作品裡，想告訴讀者：接受差異和衝突，別讓成見侷限住視界。',
+      img: '',
+      comment: '',
+      chart: ''
     },
     {
       key: '3',
       title: '',
-      subtitle: '',
       content: '關於第二點，網路上流傳過一句霸凌防範標語：「與其抱怨別人玻璃心，你應該問自己一開始為何要舉起你的巴掌。」但是有些人在成為霸凌事件強勢方後，' +
         '卻對於自己成為加害者一事毫無自覺。他們在沒有意圖傷害人的情況下，不知不覺地造就「霸凌」，尤其在發言輕鬆、承擔責任小又不易接收聽者反應的「網路」上。' +
         '身為學生，我們歷經了十多年的社會化，相信每個人都從身旁發生過的不平等待遇中學會抵制霸凌，並警戒自己不要製造霸凌。人人都有溫柔的心。' +
         '我們在網路上形成輿論試圖改變他人、幫助他人、成為公平正義的力量，不過也許，螢幕後的人卻被我們自以為的言論所傷。言論自由、' +
         '公平正義維持了我們的日常生活，在民主社會裡自由、平等絕對重要，只是當某天有人因此受傷時，我們也能點點鍵盤，傳送一份溫柔。' +
-        '運用自由、貫徹平等、創造愛，相信喚起人們心中的一片柔軟才是杜絕霸凌的有效方法。'
+        '運用自由、貫徹平等、創造愛，相信喚起人們心中的一片柔軟才是杜絕霸凌的有效方法。',
+      img: '',
+      comment: '',
+      chart: ''
     }
   ];
 
@@ -595,7 +778,7 @@
   })
 
   /* story component  */
-
+/*
   Vue.component('respondent', {
     props: ['title', 'content'],
     template: `
@@ -609,6 +792,7 @@
     </div>
     `
   });
+  */
 
   /* landingpage's instance  */
 
@@ -625,8 +809,10 @@
       open: hb.open,
       story: 'respondent-1',
       posts: cyberbully_posts,
+      suggestion: 0,
+      instagram: 0,
       show: false,
-      respondent: story_1,
+      role: story_1,
       img: 'img/people%20story1-01.png',
       passive_1: false,
       passive_2: true,
@@ -641,7 +827,10 @@
       third: false
     },
     mounted() {
-      //window.addEventListener('scroll', this.yyy, true);
+      $(window).load((function () {
+        landingpage.suggestion = document.getElementById('option').offsetTop + document.getElementById('option').offsetHeight;
+        console.log(landingpage.suggestion);
+      }));
       // carousel
       window.addEventListener('load', function () {
         this.width = document.body.clientWidth;
@@ -689,32 +878,32 @@
         }
       },
       changea: function () {
-        this.respondent = story_1;
-        this.img = 'img/people%20story1-01.png'
+        this.role = story_1;
+        this.img = 'img/people%20story1-01.png';
       },
       changeb: function () {
-        this.respondent = story_2;
-        this.img = 'img/people%20story2-01.png'
+        this.role = story_2;
+        this.img = 'img/people%20story2-01.png';
       },
       changec: function () {
-        this.respondent = story_3;
-        this.img = 'img/people%20story3-01.png'
+        this.role = story_3;
+        this.img = 'img/people%20story3-01.png';
+        
       },
-      scroll: $(function () {
-        var story = document.getElementById('option').offsetTop + document.getElementById('option').offsetHeight;
-        var instagram = document.getElementById('story').offsetTop + document.getElementById('story').offsetHeight;
+      scroll:
         $(window).scroll(function () {
           var current = $(this).scrollTop();
-          if (current > story) {
+          console.log(current)
+          if (current > landingpage.suggestion) {
             landingpage.show = true;
+            landingpage.instagram = document.getElementById('instagram').offsetTop;
           } else {
             landingpage.show = false;
           }
-          if (current > instagram) {
+          if (current > landingpage.instagram) {
             landingpage.show = false;
           }
-        })
-      }),
+        }),
       node1: function () {
         landingpage.passive_1 = false;
         landingpage.passive_2 = true;
@@ -795,7 +984,6 @@
       }
     }
   })
-
 </script>
 <script src="js/chart.js"></script>
 <footer>

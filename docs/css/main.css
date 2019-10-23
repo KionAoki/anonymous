@@ -46,12 +46,12 @@ p{
   color: #9DDFF8;
 }
 
-#instagram h2{
-  color: #050511;
+#instagram > h2{
+  //color: #050511;
 }
 
 #instagram p{
-  color: #4D4D4D;
+  //color: #4D4D4D;
 }
 
 
@@ -159,23 +159,23 @@ a:not([href]) {
   background: 0 0
 }
 
-/* story bar */
+/* suggestion bar */
 
-#story-bar{
+#suggestion-bar{
   display: flex;
   justify-content: flex-end;
   position: fixed;
-  z-index: 999;
+  z-index: 4;
   background-color: rgb(58,65,81,0.7);
   width: 100%;
 }
 
-#story-bar ul{
+#suggestion-bar ul{
   display: flex;
   list-style: none;
 }
 
-#story-bar li{
+#suggestion-bar li{
   display: flex;
   justify-content: flex-end;
   cursor: pointer;
@@ -301,36 +301,41 @@ a:not([href]) {
   width: 60%;
 }
 
-/* respondent content */
+/* role content */
 
-.respondent-img{
+.role-img{
   position: absolute;
   width: 20%;
 }
 
-.respondent-img > img{
+.role-img > img{
   width: 100%;
 }
 
-.respondent{
-  border-radius: 20px;
-  border: #f0f0f0 solid 2px;
+.role{
   margin-top: 200px;
 }
 
-.respondent-inner-line{
-  padding: 40px;
-  border-top: #f0f0f0 solid 1px;
-  border-left: #f0f0f0 solid 1px;
+.role-inner-line{
+  margin-top: 300px;
 }
 
-/* story title */
+/* table */
 
-.story-title:first-child > h3{
-  display: flex;
-  justify-content: center;
-  align-content: center;
-  margin: 0;
+.table{
+  background: #FFFFFF;
+  color: #4D4D4D;
+}
+
+.table caption{
+  text-align: center;
+  color: #F2F2F2;
+}
+
+/* role img */
+
+[alt="Ditch the Label"]{
+  width: 100%;
 }
 
 /* introduction carousel */
