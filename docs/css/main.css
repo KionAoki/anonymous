@@ -281,23 +281,23 @@ a:not([href]) {
   padding: 30px;
 }
 
-#option{
+.option{
   display: flex;
   justify-content: center;
 }
 
-#option button{
+.option button{
   justify-content: center;
   background-color: transparent;
   border: transparent;
   cursor: pointer;
 }
 
-#option button:focus{
+.option button:focus{
   outline: none;
 }
 
-#option img{
+.option img{
   width: 60%;
 }
 
