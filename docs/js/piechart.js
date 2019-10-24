@@ -2,10 +2,10 @@ var _G = G2,
   Shape = _G.Shape;
 
 var data = [{
-  sex: '男',
+  sex: '不會選擇告訴身邊成年人',
   sold: 0.18
 }, {
-  sex: '女',
+  sex: '會告訴身邊成年人',
   sold: 0.82
 }];
 
@@ -77,8 +77,8 @@ chart.tooltip({
 chart.intervalStack().position('sold').shape('radiusPie').color('sex', COLORS).label('sold', {
   useHtml: true,
   htmlTemplate: function htmlTemplate(text, item) {
-    var src = item.sex === '女' ? 'https://gw.alipayobjects.com/zos/rmsportal/mweUsJpBWucJRixSfWVP.png' : 'https://gw.alipayobjects.com/zos/rmsportal/oeCxrAewtedMBYOETCln.png';
-    var color = item.sex === '女' ? COLORS[1] : COLORS[0];
+    var src = item.point.sex === '會告訴身邊成年人' ? 'https://gw.alipayobjects.com/zos/rmsportal/mweUsJpBWucJRixSfWVP.png' : 'https://gw.alipayobjects.com/zos/rmsportal/oeCxrAewtedMBYOETCln.png';
+    var color = item.point.sex === '會告訴身邊成年人' ? COLORS[1] : COLORS[0];
     var IMG = '<img style="width:40px" src="' + src + '" /><br/>';
     return '<div style="margin: 50px; text-align:center;color:' + color + '">' + IMG + (text * 100).toFixed(0) + '%</div>';
   }
