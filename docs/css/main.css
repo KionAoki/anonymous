@@ -42,11 +42,17 @@ p{
   line-height: 2em;
 }
 
+#introduction p:first-letter {
+  font-size: 2em;
+  padding: 0.1em;
+  vertical-align: middle;
+}
+
 #cyberbully a{
   color: #9DDFF8;
 }
 
-#instagram > h2{
+.qrcode-title > h2, #instagram > .title-wrapper > .title > h2{
   color: #050511;
 }
 
@@ -182,8 +188,6 @@ a:not([href]) {
   margin-right: 50px;
 }
 
-
-
 /* banner video */
 
 #banner {
@@ -234,7 +238,7 @@ a:not([href]) {
 
 .line{
   display: flex;
-  border-top: #FFFFFF solid;
+  border-top: #FFFFFF solid 2px;
   width: 30%;
 }
 
@@ -246,7 +250,16 @@ a:not([href]) {
   width: 20%;
 }
 
+#instagram > .title-wrapper >.line{
+  border-top: #050511 solid 2px;
+}
+
 /* paragraph */
+
+#introduction{
+  padding-top: 150px;
+  padding-bottom: 110px;
+}
 
 .center{
   width: 75%;
@@ -403,6 +416,10 @@ a:not([href]) {
   margin: 10px;
 }
 
+.qrcode-title h2:hover{
+  color: #FFFFFF;
+}
+
 .start{
   display: flex;
   justify-content: center;
@@ -410,7 +427,6 @@ a:not([href]) {
 }
 
 .start img{
-  width: 70%;
   padding-left: 34px;
   border-left: #003955 solid 1px;
 }
@@ -431,7 +447,7 @@ a:not([href]) {
 }
 
 .start p:hover{
-  color: #555B7F;
+  color: #FFFFFF;
 }
 
 /* footer */
