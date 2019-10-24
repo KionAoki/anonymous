@@ -307,9 +307,9 @@
       key: '7',
       title: '',
       content: '據調查只有18%的未成年人會選擇告訴身邊成年人自己遭遇了網路霸凌',
-      img: '<img src="img/qrcode.svg" alt="a">',
-      comment: '表一',
-      chart: ''
+      img: '',
+      comment: '',
+      chart: '<div id="pieChart"></div>'
     },
     {
       key: '8',
@@ -1008,62 +1008,8 @@
   })
 </script>
 <script src="js/chart.js"></script>
-<script>
-  var data = [{
-    "term": "刪除社群帳號",
-    "count": 26
-  }, {
-    "term": "有過自殺念頭",
-    "count": 26
-  }, {
-    "term": "失望感的增加",
-    "count": 37
-  }, {
-    "term": "社交焦慮的增加",
-    "count": 41
-  }];
-  var chart = new G2.Chart({
-    container: 'radialBar',
-    forceFit: true,
-    height: window.innerHeight,
-    padding: [20, 80]
-  });
-  chart.source(data, {
-    count: {
-      max: 100
-    }
-  });
-  chart.coord('theta', {
-    innerRadius: 0.2,
-    endAngle: Math.PI
-  });
-  chart.interval().position('term*count').color('#8543e0').shape('line').select(false).style({
-    lineAppendWidth: 10
-  }); // 线状柱状图
-  chart.point().position('term*count').color('#8543e0').shape('circle');
-  for (var i = 0, l = data.length; i < l; i++) {
-    var obj = data[i];
-    chart.guide().text({
-      position: [obj.term, 0],
-      content: obj.term + ' ',
-      style: {
-        textAlign: 'right'
-      }
-    });
-  }
-  chart.guide().text({
-    position: ['50%', '50%'],
-    content: '影響',
-    style: {
-      textAlign: 'center',
-      fontSize: 24,
-      fill: '#8543e0'
-    }
-  });
-  setTimeout(function () {
-    chart.render();
-  },5000);
-</script>
+<script src="js/piechart.js"></script>
+<script src="js/radiobar.js"></script>
 <footer>
   <div class="wrapper footer">
     <div id="share">

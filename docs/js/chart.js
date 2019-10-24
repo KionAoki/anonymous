@@ -1,21 +1,17 @@
 var data = [{
-  "name": "John",
-  "vote": 35654
+  "name": "被網路霸凌",
+  "vote": 19.6
 }, {
-  "name": "Damon",
-  "vote": 65456
+  "name": "網路霸凌他人",
+  "vote": 10
 }, {
-  "name": "Patrick",
-  "vote": 45724
-}, {
-  "name": "Mark",
-  "vote": 13654
+  "name": "旁觀者",
+  "vote": 54.7
 }];
 var imageMap = {
-  'John': 'https://zos.alipayobjects.com/rmsportal/mYhpaYHyHhjYcQf.png',
-  'Damon': 'https://zos.alipayobjects.com/rmsportal/JBxkqlzhrlkGlLW.png',
-  'Patrick': 'https://zos.alipayobjects.com/rmsportal/zlkGnEMgOawcyeX.png',
-  'Mark': 'https://zos.alipayobjects.com/rmsportal/KzCdIdkwsXdtWkg.png'
+  '被網路霸凌': 'https://zos.alipayobjects.com/rmsportal/mYhpaYHyHhjYcQf.png',
+  '網路霸凌他人': 'https://zos.alipayobjects.com/rmsportal/JBxkqlzhrlkGlLW.png',
+  '旁觀者': 'https://zos.alipayobjects.com/rmsportal/zlkGnEMgOawcyeX.png'
 };
 var chart = new G2.Chart({
   container: 'mountNode',
