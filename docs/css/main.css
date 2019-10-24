@@ -311,7 +311,7 @@ a:not([href]) {
 }
 
 .option img{
-  width: 60%;
+  width: 100%;
 }
 
 /* role content */

@@ -88,24 +88,24 @@
   <!-- suggestion bar -->
   <nav id="suggestion-bar" @scroll.passive="scroll" v-show="show">
     <ul>
-      <li @click="changea">
+      <li @click="bystander">
         <a href="#option">
-          <img src="img/people1-01.png" alt="a-story">
+          <img src="img/bystander_small.png" alt="bystander-suggestion">
         </a>
       </li>
-      <li @click="changeb">
+      <li @click="victim">
         <a href="#option">
-          <img src="img/people2-01.png" alt="b-story">
+          <img src="img/victim_small.png" alt="victim-suggestion">
         </a>
       </li>
-      <li @click="changec">
+      <li @click="bully">
         <a href="#option">
-          <img src="img/people3-01.png" alt="c-story">
+          <img src="img/bully_small.png" alt="bully-suggestion">
         </a>
       </li>
     </ul>
   </nav>
-  <!--video banner-->
+  <!-- banner -->
   <div id="banner">
     <img src="img/title.svg" alt="title">
     <img src="img/banner-01.svg" alt="banner">
@@ -164,12 +164,12 @@
           <div id="suggestion">
             <div>
               <div id="option" class="option-center option">
-                <button @click="changea"><img src="img/people%20story1-01.png" alt="role_1"></button>
-                <button @click="changeb"><img src="img/people%20story2-01.png" alt="role_2"></button>
-                <button @click="changec"><img src="img/people%20story3-01.png" alt="role_3"></button>
+                <button @click="bystander"><img src="img/bystander.png" alt="role_1"></button>
+                <button @click="victim"><img src="img/victim.png" alt="role_2"></button>
+                <button @click="bully"><img src="img/bully.png" alt="role_3"></button>
               </div>
               <div class="role-img wrapper">
-                <img v-bind:src="img" alt="character">
+                <img v-bind:src="role_img" alt="character">
               </div>
               <div class="role ">
                 <div class="role-inner-line">
@@ -815,6 +815,7 @@
       ok1: true,
       ok2: false,
       ok3: false,
+      role_img: 'img/bully.png',
       img: 'img/people%20story1-01.png',
       passive_1: false,
       passive_2: true,
@@ -882,23 +883,14 @@
       changea: function () {
         this.role = story_1;
         this.img = 'img/people%20story1-01.png';
-        this.ok1=true;
-        this.ok2=false;
-        this.ok3=false;
       },
       changeb: function () {
         this.role = story_2;
         this.img = 'img/people%20story2-01.png';
-        this.ok1=false;
-        this.ok2=true;
-        this.ok3=false;
       },
       changec: function () {
         this.role = story_3;
         this.img = 'img/people%20story3-01.png';
-        this.ok1=false;
-        this.ok2=false;
-        this.ok3=true;
       },
       scroll:
         $(window).scroll(function () {
@@ -913,6 +905,27 @@
             landingpage.show = false;
           }
         }),
+      bystander: function (){
+        this.role = story_1;
+        this.role_img = 'img/bystander.png';
+        this.ok1=true;
+        this.ok2=false;
+        this.ok3=false;
+      },
+      victim: function (){
+        this.role = story_2;
+        this.role_img = 'img/victim.png';
+        this.ok1=false;
+        this.ok2=true;
+        this.ok3=false;
+      },
+      bully: function (){
+        this.role = story_3;
+        this.role_img = 'img/bully.png';
+        this.ok1=false;
+        this.ok2=false;
+        this.ok3=true;
+      },
       node1: function () {
         landingpage.passive_1 = false;
         landingpage.passive_2 = true;
