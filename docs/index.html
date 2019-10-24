@@ -770,23 +770,7 @@
               </div>
               `
   })
-
-  /* story component  */
-/*
-  Vue.component('respondent', {
-    props: ['title', 'content'],
-    template: `
-    <div class="wrapper">
-        <div class="story-title">
-          <h3>{{title}}</h3>
-        </div>
-        <div class="block-content">
-          <p>{{content}}</p>
-        </div>
-    </div>
-    `
-  });
-  */
+  
 
   /* landingpage's instance  */
 
@@ -830,7 +814,6 @@
       $(window).load((function () {
         landingpage.suggestion = document.getElementById('option').offsetTop +
           document.getElementById('option').offsetHeight;
-        console.log(landingpage.suggestion);
       }));
       // carousel
       window.addEventListener('load', function () {
@@ -923,6 +906,16 @@
         this.ok1=false;
         this.ok2=false;
         this.ok3=true;
+        var times = document.getElementById("radialBar").getElementsByTagName("div").length;
+        if(times === 0){
+          function loadScript(src, callback) {
+            let script = document.createElement('script');
+            script.src = src;
+            script.onload = () => callback(script);
+            document.head.append(script);
+          }
+          loadScript('js/radiobar.js');
+        }
       },
       node1: function () {
         landingpage.passive_1 = false;
@@ -1007,7 +1000,6 @@
 </script>
 <script src="js/chart.js"></script>
 <script src="js/piechart.js"></script>
-<script src="js/radiobar.js"></script>
 <footer>
   <div class="wrapper footer">
     <div id="share">

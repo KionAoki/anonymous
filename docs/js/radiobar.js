@@ -14,8 +14,18 @@ var data = [{
 var chart = new G2.Chart({
   container: 'radialBar',
   forceFit: true,
-  height: window.innerHeight,
-  padding: [20, 80]
+  height: 500,
+  padding: [20, 80],
+  theme: 'dark',
+  background: {
+    fill: '#3A4151', // 图表背景色
+    fillOpacity: 0 // 图表背景透明度
+  },
+  plotBackground: {
+    fill: '#3A4151', // 图表背景色
+    fillOpacity: 0 // 图表背景透明度
+  }
+
 });
 chart.source(data, {
   count: {
@@ -26,10 +36,10 @@ chart.coord('theta', {
   innerRadius: 0.2,
   endAngle: Math.PI
 });
-chart.interval().position('term*count').color('#8543e0').shape('line').select(false).style({
+chart.interval().position('term*count').color('#F1C320').shape('line').select(false).style({
   lineAppendWidth: 10
 }); // 线状柱状图
-chart.point().position('term*count').color('#8543e0').shape('circle');
+chart.point().position('term*count').color('#F1C320').shape('circle');
 for (var i = 0, l = data.length; i < l; i++) {
   var obj = data[i];
   chart.guide().text({
@@ -46,7 +56,7 @@ chart.guide().text({
   style: {
     textAlign: 'center',
     fontSize: 24,
-    fill: '#8543e0'
+    fill: '#F1C320'
   }
 });
 chart.render();
