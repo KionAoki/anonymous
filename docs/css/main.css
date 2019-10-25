@@ -358,7 +358,6 @@ a:not([href]) {
   display: flex;
   justify-content: center;
   align-items: center;
-  overflow:hidden;
 }
 
 .carousel-img{
@@ -369,16 +368,14 @@ a:not([href]) {
   transition: all .4s ease 0s;
 }
 
-.first{
-  left: 100%;
+.carousel{
+  left: 0;
+  width: 1000px;
 }
 
-.second{
-  left: 0%;
-}
-
-.third{
-  left: -100%;
+.story_content{
+  width: 80%;
+  overflow:hidden;
 }
 
 .arrow{
@@ -388,20 +385,18 @@ a:not([href]) {
 }
 
 .arrow:first-child{
-  z-index: 1;
-  left: 0;
+  left: 5%;
   padding: 50vh 50vh 50vh 30px;
 }
 .arrow:last-child{
-  right: 0;
+  right: 5%;
   padding: 50vh 30px 50vh 50vh;
 }
 
 #circle{
   display: flex;
   justify-content: center;
-  position: absolute;
-  margin-top: 28%;
+  margin-top: 50px;
 }
 #circle i{
   cursor: pointer;

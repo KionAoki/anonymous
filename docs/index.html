@@ -129,22 +129,34 @@
           <button @click="changeb"><img src="img/people%20story2-01.png" alt="respondent_2"></button>
           <button @click="changec"><img src="img/people%20story3-01.png" alt="respondent_3"></button>
         </div>
-        <div id="carousel">
+        <div id="carousel" class="wrapper">
           <div class="arrow" @click="previous">
-            <i class="fas fa-chevron-left fa-2x"></i>
+            <i class="fas fa-chevron-left fa-2x" style="color: #ffffff"></i>
           </div>
-          <div class="carousel-img" :class="{'first':first, 'second':second, 'third':third}">
-            <img src="img/a.jpg" alt="carousel" class="carousel">
-            <img src="img/b.jpg" alt="carousel" class="carousel">
-            <img src="img/story1_1.svg" alt="carousel" class="carousel">
-          </div>
-          <div id="circle">
-            <i @click="clair" :class="{ 'far fa-circle': passive_1, 'fas fa-circle': active_1 }"></i>
-            <i @click="draw" :class="{ 'far fa-circle': passive_2, 'fas fa-circle': active_2 }"></i>
-            <i @click="bunny" :class="{ 'far fa-circle': passive_3, 'fas fa-circle': active_3 }"></i>
+          <div class="story_content">
+            <div class="carousel-img" :class="{'first':first, 'second':second, 'third':third}">
+              <img src="img/story1_1.svg" alt="carousel" class="carousel">
+              <img src="img/story1_2.svg" alt="carousel" class="carousel">
+              <img src="img/story1_3.svg" alt="carousel" class="carousel">
+              <img src="img/story1_4.svg" alt="carousel" class="carousel">
+              <img src="img/story1_5.svg" alt="carousel" class="carousel">
+              <img src="img/story1_6.svg" alt="carousel" class="carousel">
+              <img src="img/story1_7.svg" alt="carousel" class="carousel">
+              <img src="img/story1_8.svg" alt="carousel" class="carousel">
+              <img src="img/story1_9.svg" alt="carousel" class="carousel">
+              <img src="img/story1_10.svg" alt="carousel" class="carousel">
+              <img src="img/story1_11.svg" alt="carousel" class="carousel">
+              <img src="img/story1_12.svg" alt="carousel" class="carousel">
+              <img src="img/story1_13.svg" alt="carousel" class="carousel">
+            </div>
+            <div id="circle">
+              <i @click="clair" :class="{ 'far fa-circle': passive_1, 'fas fa-circle': active_1 }" style="color: #ffffff"></i>
+              <i @click="draw" :class="{ 'far fa-circle': passive_2, 'fas fa-circle': active_2 }" style="color: #ffffff"></i>
+              <i @click="bunny" :class="{ 'far fa-circle': passive_3, 'fas fa-circle': active_3 }" style="color: #ffffff"></i>
+            </div>
           </div>
           <div class="arrow" @click="next">
-            <i class="fas fa-chevron-right fa-2x"></i>
+            <i class="fas fa-chevron-right fa-2x" style="color: #ffffff"></i>
           </div>
         </div>
       </div>
@@ -876,18 +888,24 @@
           document.getElementById('option').offsetHeight;
       }));
       // carousel
+      
       window.addEventListener('load', function () {
-        this.width = document.body.clientWidth;
-        document.getElementsByClassName('carousel')[0].style.width = this.width + 'px';
-        document.getElementsByClassName('carousel')[1].style.width = this.width + 'px';
-        document.getElementsByClassName('carousel')[2].style.width = this.width + 'px';
+        this.width = document.getElementsByClassName('story_content')[0].offsetWidth;
+        var carousel = document.getElementsByClassName('carousel');
+        document.getElementsByClassName('carousel-img')[0].style.width = this.width*carousel.length + 'px';
+        for(let i = 0; i < carousel.length; i++){
+          carousel[i].style.width = this.width + 'px';
+        }
       });
       window.addEventListener('resize', function () {
-        this.width = document.body.clientWidth;
-        document.getElementsByClassName('carousel')[0].style.width = this.width + 'px';
-        document.getElementsByClassName('carousel')[1].style.width = this.width + 'px';
-        document.getElementsByClassName('carousel')[2].style.width = this.width + 'px';
+        this.width = document.getElementsByClassName('story_content')[0].offsetWidth;
+        var carousel = document.getElementsByClassName('carousel');
+        document.getElementsByClassName('carousel-img')[0].style.width = this.width*carousel.length + 'px';
+        for(let i = 0; i < carousel.length; i++){
+          carousel[i].style.width = this.width + 'px';
+        }
       });
+      
       var slide = document.getElementById('carousel');
       var time_id = 0;
       (function loop() {
