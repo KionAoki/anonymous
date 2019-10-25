@@ -417,10 +417,6 @@ a:not([href]) {
   margin: 10px;
 }
 
-.qrcode-title h2:hover{
-  color: #FFFFFF;
-}
-
 .start{
   display: flex;
   justify-content: center;
