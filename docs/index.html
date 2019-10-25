@@ -125,9 +125,9 @@
       <page-title title="聽聽他們怎麼說"></page-title>
       <div>
         <div id="story_option" class="option-center option">
-          <button @click="changea"><img src="img/people%20story1-01.png" alt="respondent_1"></button>
-          <button @click="changeb"><img src="img/people%20story2-01.png" alt="respondent_2"></button>
-          <button @click="changec"><img src="img/people%20story3-01.png" alt="respondent_3"></button>
+          <span><button @click="changea"><img src="img/people%20story1-01.png" alt="respondent_1"></button></span>
+          <span><button @click="changeb"><img src="img/people%20story2-01.png" alt="respondent_2"></button></span>
+          <span><button @click="changec"><img src="img/people%20story3-01.png" alt="respondent_3"></button></span>
         </div>
         <div id="carousel" class="wrapper">
           <div class="arrow" @click="previous">
@@ -149,11 +149,6 @@
               <img src="img/story1_12.svg" alt="carousel" class="carousel">
               <img src="img/story1_13.svg" alt="carousel" class="carousel">
             </div>
-            <div id="circle">
-              <i @click="clair" :class="{ 'far fa-circle': passive_1, 'fas fa-circle': active_1 }" style="color: #ffffff"></i>
-              <i @click="draw" :class="{ 'far fa-circle': passive_2, 'fas fa-circle': active_2 }" style="color: #ffffff"></i>
-              <i @click="bunny" :class="{ 'far fa-circle': passive_3, 'fas fa-circle': active_3 }" style="color: #ffffff"></i>
-            </div>
           </div>
           <div class="arrow" @click="next">
             <i class="fas fa-chevron-right fa-2x" style="color: #ffffff"></i>
@@ -173,9 +168,9 @@
           <div id="suggestion">
             <div>
               <div id="option" class="option-center option">
-                <button @click="bystander"><img src="img/bystander.png" alt="role_1"></button>
-                <button @click="victim"><img src="img/victim.png" alt="role_2"></button>
-                <button @click="bully"><img src="img/bully.png" alt="role_3"></button>
+                <span><button @click="bystander"><img src="img/bystander.png" alt="role_1"></button></span>
+                <span><button @click="victim"><img src="img/victim.png" alt="role_2"></button></span>
+                <span><button @click="bully"><img src="img/bully.png" alt="role_3"></button></span>
               </div>
               <div class="role-img wrapper">
                 <img v-bind:src="role_img" alt="character">
@@ -849,6 +844,9 @@
   var landingpage = new Vue({
     el: '#landing',
     data: {
+      // window width
+      window_width: document.body.clientWidth,
+      // sidebar
       items: [
         {id: 1, link: '#story', title: '聽聽他們怎麼說'},
         {id: 2, link: '#cyberbully', title: '網路霸凌是如何傷害我們的？'},
@@ -857,32 +855,31 @@
       sidebar_open: false,
       sidebar_close: true,
       open: hb.open,
-      story: 'respondent-1',
+      // cyberbully paragraph
       posts: cyberbully_posts,
+      // suggested bar
       suggestion: 0,
       instagram: 0,
       show: false,
+      // suggested section
       role1: story_1,
       role2: story_2,
       role3: story_3,
       ok1: true,
       ok2: false,
       ok3: false,
-      role_img: 'img/bully.png',
+      role_img: 'img/bystander.png',
+      // story paragraph
       img: 'img/people%20story1-01.png',
-      passive_1: false,
-      passive_2: true,
-      passive_3: true,
-      active_1: true,
-      active_2: false,
-      active_3: false,
-      game: game,
+      // carousel next & prev
       width: document.getElementsByClassName('story_content')[0].offsetWidth,
       left:0,
       length: document.getElementsByClassName('carousel').length,
       first: true,
       second: false,
-      third: false
+      third: false,
+      // instagram paragraph
+      game: game,
     },
     mounted() {
       $(window).load((function () {
@@ -900,12 +897,9 @@
         }
       });
       window.addEventListener('resize', function () {
-        this.width = document.getElementsByClassName('story_content')[0].offsetWidth;
-        var carousel = document.getElementsByClassName('carousel');
-        document.getElementsByClassName('carousel-img')[0].style.width = this.width*carousel.length + 'px';
-        for(let i = 0; i < carousel.length; i++){
-          carousel[i].style.width = this.width + 'px';
-        }
+        console.log('before'+this.window_width);
+        landingpage.window_width = document.body.clientWidth;
+        console.log('after'+this.window_width);
       });
       
       var slide = document.getElementById('carousel');
@@ -1038,24 +1032,20 @@
           this.left = 0;
           document.getElementsByClassName('carousel-img')[0].style.left = '0px';
         }
-      },
-      clair: function () {
-        this.first = true;
-        this.second = false;
-        this.third = false;
-        this.node1();
-      },
-      draw: function () {
-        this.first = false;
-        this.second = true;
-        this.third = false;
-        this.node2();
-      },
-      bunny: function () {
-        this.first = false;
-        this.second = false;
-        this.third = true;
-        this.node3();
+      }
+    },
+    watch: {
+      window_width: function () {
+        console.log('watch'+this.window_width);
+        var page = this.left/this.width;
+        this.width = document.getElementsByClassName('story_content')[0].offsetWidth;
+        var carousel = document.getElementsByClassName('carousel');
+        document.getElementsByClassName('carousel-img')[0].style.width = this.width*carousel.length + 'px';
+        for(let i = 0; i < carousel.length; i++){
+          carousel[i].style.width = this.width + 'px';
+        }
+        this.left = this.width*page;
+        console.log('change'+this.width);
       }
     }
   })

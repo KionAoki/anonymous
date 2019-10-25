@@ -312,7 +312,48 @@ a:not([href]) {
 }
 
 .option img{
-  width: 100%;
+  width: 70%;
+}
+
+.option span {
+  position: relative;
+}
+
+.option span::before, .option span::after{
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background-color: #FFE9A4;
+  transform: scaleX(0);
+  transition: transform 0.5s ease;
+  margin: 10px;
+}
+
+.option span::before {
+  top: 0;
+  transform-origin: center right;
+}
+
+.option span:hover::before {
+  transform-origin: center left;
+  transform: scaleX(1);
+}
+
+.option span::after{
+  bottom: 0;
+  transform-origin: center left;
+}
+
+.option span:hover::after {
+  transform-origin: center right;
+  transform: scaleX(1);
+}
+
+.option button:focus ~ span{
+  transform-origin: center right;
+  transform: scaleX(1);
 }
 
 /* role content */
@@ -391,17 +432,6 @@ a:not([href]) {
 .arrow:last-child{
   right: 5%;
   //padding: 50vh 30px 50vh 50px;
-}
-
-#circle{
-  display: flex;
-  justify-content: center;
-  margin-top: 50px;
-}
-#circle i{
-  cursor: pointer;
-  padding: 10px;
-  margin-right: 30px;
 }
 
 /* QRcord */
