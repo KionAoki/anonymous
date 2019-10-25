@@ -366,10 +366,10 @@ a:not([href]) {
   position: relative;
   -webkit-transition: all .4s ease 0s;
   transition: all .4s ease 0s;
+  left: 0;
 }
 
 .carousel{
-  left: 0;
   width: 1000px;
 }
 
@@ -379,18 +379,18 @@ a:not([href]) {
 }
 
 .arrow{
-  position: absolute;
   cursor: pointer;
   align-content: center;
+  padding: 25% 5% 25% 5%;
 }
 
 .arrow:first-child{
   left: 5%;
-  padding: 50vh 50vh 50vh 30px;
+  //padding: 25% 5% 25% 5%;
 }
 .arrow:last-child{
   right: 5%;
-  padding: 50vh 30px 50vh 50vh;
+  //padding: 50vh 30px 50vh 50px;
 }
 
 #circle{

@@ -877,7 +877,9 @@
       active_2: false,
       active_3: false,
       game: game,
-      width: 0,
+      width: document.getElementsByClassName('story_content')[0].offsetWidth,
+      left:0,
+      length: document.getElementsByClassName('carousel').length,
       first: true,
       second: false,
       third: false
@@ -890,11 +892,11 @@
       // carousel
       
       window.addEventListener('load', function () {
-        this.width = document.getElementsByClassName('story_content')[0].offsetWidth;
+        var width = document.getElementsByClassName('story_content')[0].offsetWidth;
         var carousel = document.getElementsByClassName('carousel');
-        document.getElementsByClassName('carousel-img')[0].style.width = this.width*carousel.length + 'px';
+        document.getElementsByClassName('carousel-img')[0].style.width = width*carousel.length + 'px';
         for(let i = 0; i < carousel.length; i++){
-          carousel[i].style.width = this.width + 'px';
+          carousel[i].style.width = width + 'px';
         }
       });
       window.addEventListener('resize', function () {
@@ -1020,39 +1022,21 @@
         landingpage.active_3 = true;
       },
       previous: function () {
-        if (this.first) {
-          this.first = false;
-          this.second = false;
-          this.third = true;
-          this.node3();
-        } else if (this.second) {
-          this.first = true;
-          this.second = false;
-          this.third = false;
-          this.node1();
-        } else if (this.third) {
-          this.first = false;
-          this.second = true;
-          this.third = false;
-          this.node2();
+        if(0 > this.left){
+          this.left = this.left + this.width;
+          document.getElementsByClassName('carousel-img')[0].style.left = this.left + 'px';
+        }else{
+          this.left = this.width*(this.length-1)*-1;
+          document.getElementsByClassName('carousel-img')[0].style.left = this.width*(this.length-1)*-1 + 'px';
         }
       },
       next: function () {
-        if (this.first) {
-          this.first = false;
-          this.second = true;
-          this.third = false;
-          this.node2();
-        } else if (this.second) {
-          this.first = false;
-          this.second = false;
-          this.third = true;
-          this.node3();
-        } else if (this.third) {
-          this.first = true;
-          this.second = false;
-          this.third = false;
-          this.node1();
+        if(this.left > this.width*(this.length-1)*-1){
+          this.left = this.left - this.width;
+          document.getElementsByClassName('carousel-img')[0].style.left = this.left + 'px';
+        }else{
+          this.left = 0;
+          document.getElementsByClassName('carousel-img')[0].style.left = '0px';
         }
       },
       clair: function () {
