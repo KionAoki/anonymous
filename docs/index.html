@@ -910,19 +910,19 @@
           loop();
         }, 3000);
         time_id = time;
+        slide.onmouseover = function () {
+          clearTimeout(time_id);
+        };
+        slide.onmouseout = function () {
+          (function loop() {
+            var time = setTimeout(function () {
+              landingpage.next();
+              loop();
+            }, 3000);
+            time_id = time;
+          })();
+        };
       })();
-      slide.onmouseover = function () {
-        clearTimeout(time_id);
-      };
-      slide.onmouseout = function () {
-        (function loop() {
-          var time = setTimeout(function () {
-            landingpage.next();
-            loop();
-          }, 3000);
-          time_id = time;
-        })();
-      };
     },
     methods: {
       closesidebar: function () {
@@ -1036,7 +1036,6 @@
     },
     watch: {
       window_width: function () {
-        console.log('watch'+this.window_width);
         var page = this.left/this.width;
         this.width = document.getElementsByClassName('story_content')[0].offsetWidth;
         var carousel = document.getElementsByClassName('carousel');
@@ -1045,7 +1044,6 @@
           carousel[i].style.width = this.width + 'px';
         }
         this.left = this.width*page;
-        console.log('change'+this.width);
       }
     }
   })

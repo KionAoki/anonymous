@@ -422,16 +422,14 @@ a:not([href]) {
 .arrow{
   cursor: pointer;
   align-content: center;
-  padding: 25% 5% 25% 5%;
+  padding: 200px 50px 200px 50px;
 }
 
 .arrow:first-child{
   left: 5%;
-  //padding: 25% 5% 25% 5%;
 }
 .arrow:last-child{
   right: 5%;
-  //padding: 50vh 30px 50vh 50px;
 }
 
 /* QRcord */
