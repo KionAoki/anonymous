@@ -1,16 +1,17 @@
 <htmL lang="zh-Hant-TW">
 <head>
   <title>致受害者的你我：網路霸凌是如何傷害我們的？</title>
-  <meta property="og:title" content="致受害者的你我：網路霸凌是如何傷害我們的？" >
+  <meta property="og:title" content="致受害者的你我：網路霸凌是如何傷害我們的？">
   <meta property="og:url" content="https://whoisback.github.io/anonymous/docs/">
   <meta property="og:image" content="要顯示的縮圖網址">
-  <meta property="og:description" content="網頁描述" >
+  <meta property="og:description" content="網頁描述">
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <link rel="shortcut icon" href="img/yeqian.ico"/>
   <link rel="bookmark" href="img/yeqian.ico"/>
   <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.min.js"></script>
   <script>Vue.config.devtools = true;</script>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel=stylesheet type="text/css" href="css/main.css">
   <link rel=stylesheet type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.css">
   <link href="https://fonts.googleapis.com/css?family=Noto+Sans+TC&display=swap" rel="stylesheet">
@@ -110,10 +111,10 @@
   <!-- background-->
   <div class="background">
     <!-- introduction -->
-    <div id="introduction">
+    <div id="introduction" class="star">
       <div class="center shallow">
         <div class="inner">
-          <div >
+          <div>
             <p>據統計台灣高達7成未成年有在網上目睹或是自身遭遇受害的經驗，但他們中只有18%選擇告訴父母有關網路霸凌的遭遇。
               並且與十年前相比，網路霸凌發生的頻率直接翻倍，在這樣的背景下我們訪問了三位網路霸凌受害者，想聽聽網路霸凌是如何改變他們的......</p>
           </div>
@@ -121,7 +122,7 @@
       </div>
     </div>
     <!-- story -->
-    <div id="story">
+    <div id="story" class="star">
       <page-title title="聽聽他們怎麼說"></page-title>
       <div class="wrapper">
         <div id="story_option" class="option-center option">
@@ -158,31 +159,50 @@
     </div>
     <!-- cyberbully -->
     <div id="cyberbully">
-      <page-title title="致受害者的你我：網路霸凌是如何傷害我們的？" id="cyberbully_title"></page-title>
-      <div class="center shallow">
-        <div class="inner">
-          <div>
-            <paragraph v-for="text in posts" :key="text.key" :title="text.title" :content="text.content"
-                       :img="text.img" :comment="text.comment" :chart="text.chart"></paragraph>
-          </div>
-          <div id="suggestion">
+      <page-title title="致受害者的你我：網路霸凌是如何傷害我們的？" id="cyberbully_title" class="star"></page-title>
+      <img src="img/c.jpg" alt="scroll_1">
+      <div class="empty"></div>
+      <div class="star">
+        <div class="center shallow">
+          <div class="inner">
             <div>
-              <div id="option" class="option-center option">
-                <span><button @click="bystander"><img src="img/bystander.png" alt="role_1"></button></span>
-                <span><button @click="victim"><img src="img/victim.png" alt="role_2"></button></span>
-                <span><button @click="bully"><img src="img/bully.png" alt="role_3"></button></span>
-              </div>
-              <div class="role-img wrapper">
-                <img v-bind:src="role_img" alt="character">
-              </div>
-              <div class="role ">
-                <div class="role-inner-line">
-                  <paragraph v-show="ok1" v-for="text in role1" :key="text.key" :title="text.title" :content="text.content"
-                             :img="text.img" :comment="text.comment" :chart="text.chart"></paragraph>
-                  <paragraph v-show="ok2" v-for="text in role2" :key="text.key" :title="text.title" :content="text.content"
-                             :img="text.img" :comment="text.comment" :chart="text.chart"></paragraph>
-                  <paragraph v-show="ok3" v-for="text in role3" :key="text.key" :title="text.title" :content="text.content"
-                             :img="text.img" :comment="text.comment" :chart="text.chart"></paragraph>
+              <paragraph v-for="text in posts" :key="text.key" :title="text.title" :content="text.content"
+                         :img="text.img" :comment="text.comment" :chart="text.chart"></paragraph>
+            </div>
+          </div>
+        </div>
+      </div>
+      <img src="img/bg-01.svg" alt="scroll_2">
+      <div class="empty"></div>
+      <div class="star">
+        <div class="center shallow">
+          <div class="inner">
+            <div>
+              <paragraph v-for="text in posts_2" :key="text.key" :title="text.title" :content="text.content"
+                         :img="text.img" :comment="text.comment" :chart="text.chart"></paragraph>
+            </div>
+            <div id="suggestion">
+              <div>
+                <div id="option" class="option-center option">
+                  <span><button @click="bystander"><img src="img/bystander.png" alt="role_1"></button></span>
+                  <span><button @click="victim"><img src="img/victim.png" alt="role_2"></button></span>
+                  <span><button @click="bully"><img src="img/bully.png" alt="role_3"></button></span>
+                </div>
+                <div class="role-img wrapper">
+                  <img v-bind:src="role_img" alt="character">
+                </div>
+                <div class="role ">
+                  <div class="role-inner-line">
+                    <paragraph v-show="ok1" v-for="text in role1" :key="text.key" :title="text.title"
+                               :content="text.content"
+                               :img="text.img" :comment="text.comment" :chart="text.chart"></paragraph>
+                    <paragraph v-show="ok2" v-for="text in role2" :key="text.key" :title="text.title"
+                               :content="text.content"
+                               :img="text.img" :comment="text.comment" :chart="text.chart"></paragraph>
+                    <paragraph v-show="ok3" v-for="text in role3" :key="text.key" :title="text.title"
+                               :content="text.content"
+                               :img="text.img" :comment="text.comment" :chart="text.chart"></paragraph>
+                  </div>
                 </div>
               </div>
             </div>
@@ -229,7 +249,7 @@
       `
     })
   </script>
-  
+
 </main>
 
 <script>
@@ -277,7 +297,9 @@
       img: '',
       comment: '',
       chart: ''
-    },
+    }
+  ];
+  var cyberbully_posts_2 = [
     {
       key: '4',
       title: '被低估的網路霸凌數據',
@@ -534,7 +556,7 @@
       chart: ''
     }
   ];
-  
+
   var story_2 = [
     {
       key: '1',
@@ -737,7 +759,7 @@
       key: '3',
       title: '',
       content: '關於第一點，誠如上述提到的多元性，團隊半數成員作為世新大學性別友善社團的社員，表示雖然可以感受到社會逐漸變得友善，' +
-  '但是那些深植於老一輩心中的思想卻依舊悄悄地影響我們。',
+        '但是那些深植於老一輩心中的思想卻依舊悄悄地影響我們。',
       img: '',
       comment: '',
       chart: ''
@@ -837,7 +859,7 @@
               </div>
               `
   })
-  
+
 
   /* landingpage's instance  */
 
@@ -857,6 +879,7 @@
       open: hb.open,
       // cyberbully paragraph
       posts: cyberbully_posts,
+      posts_2: cyberbully_posts_2,
       // suggested bar
       suggestion: 0,
       instagram: 0,
@@ -873,7 +896,7 @@
       img: 'img/people%20story1-01.png',
       // carousel next & prev
       width: document.getElementsByClassName('story_content')[0].offsetWidth,
-      left:0,
+      left: 0,
       length: document.getElementsByClassName('carousel').length,
       first: true,
       second: false,
@@ -887,21 +910,21 @@
           document.getElementById('option').offsetHeight;
       }));
       // carousel
-      
+
       window.addEventListener('load', function () {
         var width = document.getElementsByClassName('story_content')[0].offsetWidth;
         var carousel = document.getElementsByClassName('carousel');
-        document.getElementsByClassName('carousel-img')[0].style.width = width*carousel.length + 'px';
-        for(let i = 0; i < carousel.length; i++){
+        document.getElementsByClassName('carousel-img')[0].style.width = width * carousel.length + 'px';
+        for (let i = 0; i < carousel.length; i++) {
           carousel[i].style.width = width + 'px';
         }
       });
       window.addEventListener('resize', function () {
-        console.log('before'+this.window_width);
+        console.log('before' + this.window_width);
         landingpage.window_width = document.body.clientWidth;
-        console.log('after'+this.window_width);
+        console.log('after' + this.window_width);
       });
-      
+
       var slide = document.getElementById('carousel');
       var time_id = 0;
       (function loop() {
@@ -960,34 +983,35 @@
             landingpage.show = false;
           }
         }),
-      bystander: function (){
+      bystander: function () {
         this.role = story_1;
         this.role_img = 'img/bystander.png';
-        this.ok1=true;
-        this.ok2=false;
-        this.ok3=false;
+        this.ok1 = true;
+        this.ok2 = false;
+        this.ok3 = false;
       },
-      victim: function (){
+      victim: function () {
         this.role = story_2;
         this.role_img = 'img/victim.png';
-        this.ok1=false;
-        this.ok2=true;
-        this.ok3=false;
+        this.ok1 = false;
+        this.ok2 = true;
+        this.ok3 = false;
       },
-      bully: function (){
+      bully: function () {
         this.role = story_3;
         this.role_img = 'img/bully.png';
-        this.ok1=false;
-        this.ok2=false;
-        this.ok3=true;
+        this.ok1 = false;
+        this.ok2 = false;
+        this.ok3 = true;
         var times = document.getElementById("radialBar").getElementsByTagName("div").length;
-        if(times === 0){
+        if (times === 0) {
           function loadScript(src, callback) {
             let script = document.createElement('script');
             script.src = src;
             script.onload = () => callback(script);
             document.head.append(script);
           }
+
           loadScript('js/radiobar.js');
         }
       },
@@ -1016,19 +1040,19 @@
         landingpage.active_3 = true;
       },
       previous: function () {
-        if(0 > this.left){
+        if (0 > this.left) {
           this.left = this.left + this.width;
           document.getElementsByClassName('carousel-img')[0].style.left = this.left + 'px';
-        }else{
-          this.left = this.width*(this.length-1)*-1;
-          document.getElementsByClassName('carousel-img')[0].style.left = this.width*(this.length-1)*-1 + 'px';
+        } else {
+          this.left = this.width * (this.length - 1) * -1;
+          document.getElementsByClassName('carousel-img')[0].style.left = this.width * (this.length - 1) * -1 + 'px';
         }
       },
       next: function () {
-        if(this.left > this.width*(this.length-1)*-1){
+        if (this.left > this.width * (this.length - 1) * -1) {
           this.left = this.left - this.width;
           document.getElementsByClassName('carousel-img')[0].style.left = this.left + 'px';
-        }else{
+        } else {
           this.left = 0;
           document.getElementsByClassName('carousel-img')[0].style.left = '0px';
         }
@@ -1036,14 +1060,14 @@
     },
     watch: {
       window_width: function () {
-        var page = this.left/this.width;
+        var page = this.left / this.width;
         this.width = document.getElementsByClassName('story_content')[0].offsetWidth;
         var carousel = document.getElementsByClassName('carousel');
-        document.getElementsByClassName('carousel-img')[0].style.width = this.width*carousel.length + 'px';
-        for(let i = 0; i < carousel.length; i++){
+        document.getElementsByClassName('carousel-img')[0].style.width = this.width * carousel.length + 'px';
+        for (let i = 0; i < carousel.length; i++) {
           carousel[i].style.width = this.width + 'px';
         }
-        this.left = this.width*page;
+        this.left = this.width * page;
       }
     }
   })
