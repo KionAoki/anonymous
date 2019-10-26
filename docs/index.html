@@ -135,7 +135,7 @@
             <i class="fas fa-chevron-left fa-2x" style="color: #ffffff"></i>
           </div>
           <div class="story_content">
-            <div class="carousel-img" :class="{'first':first, 'second':second, 'third':third}">
+            <div class="carousel-img">
               <img src="img/story1_1.svg" alt="carousel" class="carousel">
               <img src="img/story1_2.svg" alt="carousel" class="carousel">
               <img src="img/story1_3.svg" alt="carousel" class="carousel">
@@ -898,17 +898,17 @@
       width: document.getElementsByClassName('story_content')[0].offsetWidth,
       left: 0,
       length: document.getElementsByClassName('carousel').length,
-      first: true,
-      second: false,
-      third: false,
       // instagram paragraph
       game: game,
     },
     mounted() {
-      $(window).load((function () {
-        landingpage.suggestion = document.getElementById('option').offsetTop +
+      // suggested bar
+
+      $(window).scroll((function () {
+        landingpage.suggestion = $("#option").offset().top +
           document.getElementById('option').offsetHeight;
       }));
+      
       // carousel
 
       window.addEventListener('load', function () {
