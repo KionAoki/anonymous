@@ -47,7 +47,7 @@ chart.axis('vote', {
     },
   }
 });
-chart.interval().position('name*vote').color('name', ['#7f8da9', '#fec514', '#db4c3c']);
+chart.interval().position('name*vote').color('name', ['#7f8da9', '#db4c3c', '#fec514']);
 chart.point().position('name*vote').size(50).shape('name', function(name) {
   return ['image', imageMap[name]];
 });
