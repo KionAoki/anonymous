@@ -197,14 +197,13 @@ a:not([href]) {
 #suggestion-bar ul{
   display: flex;
   list-style: none;
-  margin-top: 15px;
+  margin: 15px 10px 15px 0px;
 }
 
 #suggestion-bar li{
   display: flex;
   justify-content: flex-end;
   cursor: pointer;
-  margin-right: 50px;
 }
 
 /* banner video */
@@ -212,6 +211,7 @@ a:not([href]) {
 #banner {
   position: relative;
   max-width: 100%;
+  background-color: #050511;
 }
 
 /* make title img center */
@@ -342,48 +342,23 @@ a:not([href]) {
 }
 
 .option img{
-  width: 70%;
+  width: 100%;
 }
 
-.option span {
-  position: relative;
+.tab{
+  border: #FFE9A4 solid 2px;
+  border-radius: 50%;
+  margin: 0px 10px 0px 10px;
 }
 
-.option span::before, .option span::after{
-  content: '';
-  position: absolute;
-  left: 0;
-  right: 0;
-  height: 2px;
-  background-color: #FFE9A4;
-  transform: scaleX(0);
-  transition: transform 0.5s ease;
-  margin: 10px;
+.pending{
+  border: transparent;
+  opacity: 0.5;
+  margin: 0px 10px 0px 10px;
 }
 
-.option span::before {
-  top: 0;
-  transform-origin: center right;
-}
-
-.option span:hover::before {
-  transform-origin: center left;
-  transform: scaleX(1);
-}
-
-.option span::after{
-  bottom: 0;
-  transform-origin: center left;
-}
-
-.option span:hover::after {
-  transform-origin: center right;
-  transform: scaleX(1);
-}
-
-.option button:focus ~ span{
-  transform-origin: center right;
-  transform: scaleX(1);
+.pending:hover{
+  opacity: 1;
 }
 
 /* role content */
