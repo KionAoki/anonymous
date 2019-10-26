@@ -84,7 +84,7 @@
     </ul>
   </nav>
   <!-- suggestion bar -->
-  <nav id="suggestion-bar" @scroll.passive="scroll" v-show="show">
+  <nav id="suggestion-bar" v-show="show">
     <ul>
       <div  :class="{'tab': tab_4, 'pending':pending_4}">
         <li @click="bystander">
@@ -168,7 +168,7 @@
       <page-title title="什麼是網絡霸凌？霸凌事件中的不同角色該怎麼做？" id="cyberbully_title" class="star"></page-title>
       <img src="img/c.jpg" alt="scroll_1">
       <div class="empty"></div>
-      <div class="star">
+      <div class="star" id="scroll_1">
         <div class="center shallow">
           <div class="inner">
             <div>
@@ -180,7 +180,7 @@
       </div>
       <img src="img/bg-01.svg" alt="scroll_2">
       <div class="empty"></div>
-      <div class="star">
+      <div class="star" id="scroll_2">
         <div class="center shallow">
           <div class="inner">
             <div>
@@ -215,6 +215,8 @@
           </div>
         </div>
       </div>
+      <img src="img/banner-01.svg" alt="scroll_3">
+      <div class="empty"></div>
     </div>
     <!-- instagram -->
     <div id='instagram'>
@@ -887,8 +889,6 @@
       posts: cyberbully_posts,
       posts_2: cyberbully_posts_2,
       // suggested bar
-      suggestion: 0,
-      instagram: 0,
       show: false,
       // suggested section
       role1: story_1,
@@ -923,8 +923,19 @@
       // suggested bar
 
       $(window).scroll((function () {
-        landingpage.suggestion = $("#option").offset().top +
+        var current = $(this).scrollTop();
+        var suggestion = $("#option").offset().top +
           document.getElementById('option').offsetHeight;
+        var instagram = $("#scroll_2").offset().top +
+          document.getElementById('scroll_2').offsetHeight;
+        if (current > suggestion) {
+          landingpage.show = true;
+        } else {
+          landingpage.show = false;
+        }
+        if (current > instagram) {
+          landingpage.show = false;
+        }
       }));
       
       // carousel
@@ -1000,19 +1011,6 @@
         this.pending_2=true;
         this.pending_3=false;
       },
-      scroll:
-        $(window).scroll(function () {
-          var current = $(this).scrollTop();
-          if (current > landingpage.suggestion) {
-            landingpage.show = true;
-            landingpage.instagram = document.getElementById('instagram').offsetTop;
-          } else {
-            landingpage.show = false;
-          }
-          if (current > landingpage.instagram) {
-            landingpage.show = false;
-          }
-        }),
       bystander: function () {
         this.role = story_1;
         this.role_img = 'img/bystander.png';

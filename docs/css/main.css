@@ -303,7 +303,7 @@ a:not([href]) {
   background-color: transparent;
 }
 
-[alt='scroll_1'],[alt='scroll_2']{
+[alt='scroll_1'],[alt='scroll_2'],[alt='scroll_3']{
   position: fixed;
   bottom: 0%;
   max-height: 100%;
@@ -316,6 +316,10 @@ a:not([href]) {
 
 [alt='scroll_2']{
   z-index: -2;
+}
+
+[alt='scroll_3']{
+  z-index: -3;
 }
 
 /* option */
