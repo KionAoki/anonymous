@@ -86,21 +86,21 @@
   <!-- suggestion bar -->
   <nav id="suggestion-bar" v-show="show">
     <ul>
-      <div  :class="{'tab': tab_4, 'pending':pending_4}">
+      <div class="pending" :class="{'tab': tab_4}">
         <li @click="bystander">
           <a href="#option">
             <img src="img/bystander_small.png" alt="bystander-suggestion">
           </a>
         </li>
       </div>
-      <div  :class="{'tab': tab_5, 'pending':pending_5}">
+      <div class="pending" :class="{'tab': tab_5}">
         <li @click="victim">
           <a href="#option">
             <img src="img/victim_small.png" alt="victim-suggestion">
           </a>
         </li>
       </div>
-      <div  :class="{'tab': tab_6, 'pending':pending_6}">
+      <div  class="pending" :class="{'tab': tab_6}">
         <li @click="bully">
           <a href="#option">
             <img src="img/bully_small.png" alt="bully-suggestion">
@@ -132,9 +132,9 @@
       <page-title title="聽聽他們怎麼說"></page-title>
       <div class="wrapper">
         <div id="story_option" class="option-center option">
-          <div :class="{'tab': tab_1, 'pending':pending_1}"><button @click="changea"><img src="img/people%20story1-01.png" alt="respondent_1"></button></div>
-          <div :class="{'tab': tab_2, 'pending':pending_2}"><button @click="changeb"><img src="img/people%20story2-01.png" alt="respondent_2"></button></div>
-          <div :class="{'tab': tab_3, 'pending':pending_3}"><button @click="changec"><img src="img/people%20story3-01.png" alt="respondent_3"></button></div>
+          <div class="pending" :class="{'tab': tab_1}"><button @click="changea"><img src="img/people%20story1-01.png" alt="respondent_1"></button></div>
+          <div class="pending" :class="{'tab': tab_2}"><button @click="changeb"><img src="img/people%20story2-01.png" alt="respondent_2"></button></div>
+          <div class="pending" :class="{'tab': tab_3}"><button @click="changec"><img src="img/people%20story3-01.png" alt="respondent_3"></button></div>
         </div>
         <div id="carousel">
           <div class="arrow" @click="previous">
@@ -190,9 +190,9 @@
             <div id="suggestion">
               <div>
                 <div id="option" class="option-center option">
-                  <div :class="{'tab': tab_4, 'pending':pending_4}"><button @click="bystander"><img src="img/bystander.png" alt="role_1"></button></div>
-                  <div :class="{'tab': tab_5, 'pending':pending_5}"><button @click="victim"><img src="img/victim.png" alt="role_2"></button></div>
-                  <div :class="{'tab': tab_6, 'pending':pending_6}"><button @click="bully"><img src="img/bully.png" alt="role_3"></button></div>
+                  <div class="pending" :class="{'tab': tab_4}"><button @click="bystander"><img src="img/bystander.png" alt="role_1"></button></div>
+                  <div class="pending" :class="{'tab': tab_5}"><button @click="victim"><img src="img/victim.png" alt="role_2"></button></div>
+                  <div class="pending" :class="{'tab': tab_6}"><button @click="bully"><img src="img/bully.png" alt="role_3"></button></div>
                 </div>
                 <div class="role-img wrapper">
                   <img v-bind:src="role_img" alt="character">
@@ -900,17 +900,11 @@
       tab_4: true,
       tab_5: false,
       tab_6: false,
-      pending_4: false,
-      pending_5: true,
-      pending_6: true,
       role_img: 'img/bystander.png',
       // story paragraph
       tab_1: true,
       tab_2: false,
       tab_3: false,
-      pending_1: false,
-      pending_2: true,
-      pending_3: true,
       img: 'img/people%20story1-01.png',
       // parallax scrolling z-index
       bye1: false,
@@ -1006,25 +1000,16 @@
         this.tab_1=true;
         this.tab_2=false;
         this.tab_3=false;
-        this.pending_1=false;
-        this.pending_2=true;
-        this.pending_3=true;
       },
       changeb: function () {
         this.tab_1=false;
         this.tab_2=true;
         this.tab_3=false;
-        this.pending_1=true;
-        this.pending_2=false;
-        this.pending_3=true;
       },
       changec: function () {
         this.tab_1=false;
         this.tab_2=false;
         this.tab_3=true;
-        this.pending_1=true;
-        this.pending_2=true;
-        this.pending_3=false;
       },
       bystander: function () {
         this.role = story_1;
