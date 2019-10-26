@@ -166,7 +166,7 @@
     <!-- cyberbully -->
     <div id="cyberbully">
       <page-title title="什麼是網絡霸凌？霸凌事件中的不同角色該怎麼做？" id="cyberbully_title" class="star"></page-title>
-      <img src="img/c.jpg" alt="scroll_1">
+      <img src="img/c.jpg" alt="scroll_1" :class="{'bye': bye1}">
       <div class="empty"></div>
       <div class="star" id="scroll_1">
         <div class="center shallow">
@@ -178,7 +178,7 @@
           </div>
         </div>
       </div>
-      <img src="img/bg-01.svg" alt="scroll_2">
+      <img src="img/bg-01.svg" alt="scroll_2" :class="{'bye': bye2}">
       <div class="empty"></div>
       <div class="star" id="scroll_2">
         <div class="center shallow">
@@ -912,6 +912,9 @@
       pending_2: true,
       pending_3: true,
       img: 'img/people%20story1-01.png',
+      // parallax scrolling z-index
+      bye1: false,
+      bye2: false,
       // carousel next & prev
       width: document.getElementsByClassName('story_content')[0].offsetWidth,
       left: 0,
@@ -926,12 +929,24 @@
         var current = $(this).scrollTop();
         var suggestion = $("#option").offset().top +
           document.getElementById('option').offsetHeight;
+        var scroll1 = $("#scroll_1").offset().top;
+        var scroll2 = $("#scroll_2").offset().top;
         var instagram = $("#scroll_2").offset().top +
           document.getElementById('scroll_2').offsetHeight;
         if (current > suggestion) {
           landingpage.show = true;
         } else {
           landingpage.show = false;
+        }
+        if(current > scroll1){
+          landingpage.bye1=true;
+        }else{
+          landingpage.bye1=false;
+        }
+        if(current > scroll2){
+          landingpage.bye2=true;
+        }else{
+          landingpage.bye2=false;
         }
         if (current > instagram) {
           landingpage.show = false;
