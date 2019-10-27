@@ -100,7 +100,7 @@
           </a>
         </li>
       </div>
-      <div  class="pending" :class="{'tab': tab_6}">
+      <div class="pending" :class="{'tab': tab_6}">
         <li @click="bully">
           <a href="#option">
             <img src="img/bully_small.png" alt="bully-suggestion">
@@ -118,11 +118,13 @@
   <div class="background">
     <!-- introduction -->
     <div id="introduction" class="star">
-      <div class="center shallow">
-        <div class="inner">
-          <div class="wrapper-content">
-            <p>據統計台灣高達7成未成年有在網上目睹或是自身遭遇受害的經驗，但他們中只有18%選擇告訴父母有關網路霸凌的遭遇。
-              並且與十年前相比，網路霸凌發生的頻率直接翻倍，在這樣的背景下我們訪問了三位網路霸凌受害者，想聽聽網路霸凌是如何改變他們的......</p>
+      <div class="wrapper">
+        <div class="center shallow">
+          <div class="inner">
+            <div class="wrapper-content">
+              <p>據統計台灣高達7成未成年有在網上目睹或是自身遭遇受害的經驗，但他們中只有18%選擇告訴父母有關網路霸凌的遭遇。
+                並且與十年前相比，網路霸凌發生的頻率直接翻倍，在這樣的背景下我們訪問了三位網路霸凌受害者，想聽聽網路霸凌是如何改變他們的......</p>
+            </div>
           </div>
         </div>
       </div>
@@ -134,9 +136,15 @@
       <page-title title="聽聽他們怎麼說"></page-title>
       <div class="wrapper">
         <div id="story_option" class="option-center option">
-          <div class="pending" :class="{'tab': tab_1}"><button @click="changea"><img src="img/people%20story1-01.png" alt="respondent_1"></button></div>
-          <div class="pending" :class="{'tab': tab_2}"><button @click="changeb"><img src="img/people%20story2-01.png" alt="respondent_2"></button></div>
-          <div class="pending" :class="{'tab': tab_3}"><button @click="changec"><img src="img/people%20story3-01.png" alt="respondent_3"></button></div>
+          <div class="pending" :class="{'tab': tab_1}">
+            <button @click="changea"><img src="img/people%20story1-01.png" alt="respondent_1"></button>
+          </div>
+          <div class="pending" :class="{'tab': tab_2}">
+            <button @click="changeb"><img src="img/people%20story2-01.png" alt="respondent_2"></button>
+          </div>
+          <div class="pending" :class="{'tab': tab_3}">
+            <button @click="changec"><img src="img/people%20story3-01.png" alt="respondent_3"></button>
+          </div>
         </div>
         <div id="carousel">
           <div class="arrow" @click="previous">
@@ -197,9 +205,15 @@
             <div id="suggestion">
               <div>
                 <div id="option" class="option-center option">
-                  <div class="pending" :class="{'tab': tab_4}"><button @click="bystander"><img src="img/bystander.png" alt="role_1"></button></div>
-                  <div class="pending" :class="{'tab': tab_5}"><button @click="victim"><img src="img/victim.png" alt="role_2"></button></div>
-                  <div class="pending" :class="{'tab': tab_6}"><button @click="bully"><img src="img/bully.png" alt="role_3"></button></div>
+                  <div class="pending" :class="{'tab': tab_4}">
+                    <button @click="bystander"><img src="img/bystander.png" alt="role_1"></button>
+                  </div>
+                  <div class="pending" :class="{'tab': tab_5}">
+                    <button @click="victim"><img src="img/victim.png" alt="role_2"></button>
+                  </div>
+                  <div class="pending" :class="{'tab': tab_6}">
+                    <button @click="bully"><img src="img/bully.png" alt="role_3"></button>
+                  </div>
                 </div>
                 <div class="role-img wrapper">
                   <img v-bind:src="role_img" alt="character">
@@ -880,21 +894,21 @@
         } else {
           landingpage.show = false;
         }
-        if(current > scroll1){
-          landingpage.bye1=true;
-        }else{
-          landingpage.bye1=false;
+        if (current > scroll1) {
+          landingpage.bye1 = true;
+        } else {
+          landingpage.bye1 = false;
         }
-        if(current > scroll2){
-          landingpage.bye2=true;
-        }else{
-          landingpage.bye2=false;
+        if (current > scroll2) {
+          landingpage.bye2 = true;
+        } else {
+          landingpage.bye2 = false;
         }
         if (current > instagram) {
           landingpage.show = false;
         }
       }));
-      
+
       // carousel
 
       window.addEventListener('load', function () {
@@ -945,19 +959,19 @@
         }
       },
       changea: function () {
-        this.tab_1=true;
-        this.tab_2=false;
-        this.tab_3=false;
+        this.tab_1 = true;
+        this.tab_2 = false;
+        this.tab_3 = false;
       },
       changeb: function () {
-        this.tab_1=false;
-        this.tab_2=true;
-        this.tab_3=false;
+        this.tab_1 = false;
+        this.tab_2 = true;
+        this.tab_3 = false;
       },
       changec: function () {
-        this.tab_1=false;
-        this.tab_2=false;
-        this.tab_3=true;
+        this.tab_1 = false;
+        this.tab_2 = false;
+        this.tab_3 = true;
       },
       bystander: function () {
         this.role = story_1;
@@ -965,12 +979,12 @@
         this.ok1 = true;
         this.ok2 = false;
         this.ok3 = false;
-        this.tab_4=true;
-        this.tab_5=false;
-        this.tab_6=false;
-        this.pending_4=false;
-        this.pending_5=true;
-        this.pending_6=true;
+        this.tab_4 = true;
+        this.tab_5 = false;
+        this.tab_6 = false;
+        this.pending_4 = false;
+        this.pending_5 = true;
+        this.pending_6 = true;
       },
       victim: function () {
         this.role = story_2;
@@ -978,12 +992,12 @@
         this.ok1 = false;
         this.ok2 = true;
         this.ok3 = false;
-        this.tab_4=false;
-        this.tab_5=true;
-        this.tab_6=false;
-        this.pending_4=true;
-        this.pending_5=false;
-        this.pending_6=true;
+        this.tab_4 = false;
+        this.tab_5 = true;
+        this.tab_6 = false;
+        this.pending_4 = true;
+        this.pending_5 = false;
+        this.pending_6 = true;
       },
       bully: function () {
         this.role = story_3;
@@ -991,12 +1005,12 @@
         this.ok1 = false;
         this.ok2 = false;
         this.ok3 = true;
-        this.tab_4=false;
-        this.tab_5=false;
-        this.tab_6=true;
-        this.pending_4=true;
-        this.pending_5=true;
-        this.pending_6=false;
+        this.tab_4 = false;
+        this.tab_5 = false;
+        this.tab_6 = true;
+        this.pending_4 = true;
+        this.pending_5 = true;
+        this.pending_6 = false;
         var times = document.getElementById("radialBar").getElementsByTagName("div").length;
         if (times === 0) {
           function loadScript(src, callback) {
