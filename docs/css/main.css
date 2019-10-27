@@ -8,14 +8,18 @@ body {
   margin: 0px;
 }
 
-/* wrapper margin*/
+/* wrapper padding*/
 
 .wrapper {
-  padding: 40px;
+  padding: 60px;
 }
 
-.block-content {
+.wrapper-content{
+  padding: 25px;
+}
 
+.block-content h3{
+  margin-bottom: 40px;
 }
 
 /* font size */
