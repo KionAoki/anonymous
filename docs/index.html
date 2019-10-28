@@ -211,18 +211,24 @@
                     <div id="suggestion">
                       <div>
                         <div id="option" class="option-center option">
-                          <div class="pending" :class="{'tab': tab_4}">
-                            <button @click="bystander"><img src="img/bystander.png" alt="role_1"></button>
+                          <div class="button-center">
+                            <div class="pending" :class="{'tab': tab_4}">
+                              <button @click="bystander"><img src="img/bystander.png" alt="role_1"></button>
+                            </div>
+                            <p>旁觀者</p>
                           </div>
-                          <div class="pending" :class="{'tab': tab_5}">
-                            <button @click="victim"><img src="img/victim.png" alt="role_2"></button>
+                         <div class="button-center">
+                           <div class="pending" :class="{'tab': tab_5}">
+                             <button @click="victim"><img src="img/victim.png" alt="role_2"></button>
+                           </div>
+                           <p>被霸凌者</p>
+                         </div>
+                          <div class="button-center">
+                            <div class="pending" :class="{'tab': tab_6}">
+                              <button @click="bully"><img src="img/bully.png" alt="role_3"></button>
+                            </div>
+                            <p>霸凌者</p>
                           </div>
-                          <div class="pending" :class="{'tab': tab_6}">
-                            <button @click="bully"><img src="img/bully.png" alt="role_3"></button>
-                          </div>
-                        </div>
-                        <div class="role-img wrapper">
-                          <img v-bind:src="role_img" alt="character">
                         </div>
                         <div class="role ">
                           <div class="role-inner-line">
@@ -257,13 +263,12 @@
                    :subtitle="text.subtitle"></paragraph>
       </div>
       <div id="character">
-        <img :src="draw" alt="character">
+        <img :src="draw" alt="character"
+             @click="draw_click">
         <img :src="clair" alt="character"
-             @mouseover="clair_hover"
-             @mouseleave="clair_leave">
+             @click="clair_click">
         <img :src="bunny" alt="character"
-             @mouseover="bunny_hover"
-             @mouseleave="bunny_leave">
+             @click="bunny_click">
       </div>
       <div class="center">
         <div class="wrapper">
@@ -428,6 +433,14 @@
   ];
   
   var story_1 = [
+    {
+      key: '0',
+      title: '',
+      content: '',
+      img: '<img src="img/bully2-01.svg" alt="cyberbully">',
+      comment: '',
+      chart: ''
+    },
     {
       key: '1',
       title: '先有意識，後有行動',
@@ -619,6 +632,14 @@
 
   var story_2 = [
     {
+      key: '0',
+      title: '',
+      content: '',
+      img: '<img src="img/bully3-01.svg" alt="cyberbully">',
+      comment: '',
+      chart: ''
+    },
+    {
       key: '1',
       title: '',
       content: '這裡想起一句話：「你永遠不知道，明天和意外哪一個先來？」<br/>' +
@@ -714,6 +735,14 @@
   ];
 
   var story_3 = [
+    {
+      key: '0',
+      title: '',
+      content: '',
+      img: '<img src="img/bully1-01.svg" alt="cyberbully">',
+      comment: '',
+      chart: ''
+    },
     {
       key: '1',
       title: '',
@@ -894,7 +923,6 @@
       tab_4: true,
       tab_5: false,
       tab_6: false,
-      role_img: 'img/bystander.png',
       // story paragraph
       tab_1: true,
       tab_2: false,
@@ -1011,42 +1039,30 @@
       },
       bystander: function () {
         this.role = story_1;
-        this.role_img = 'img/bystander.png';
         this.ok1 = true;
         this.ok2 = false;
         this.ok3 = false;
         this.tab_4 = true;
         this.tab_5 = false;
         this.tab_6 = false;
-        this.pending_4 = false;
-        this.pending_5 = true;
-        this.pending_6 = true;
       },
       victim: function () {
         this.role = story_2;
-        this.role_img = 'img/victim.png';
         this.ok1 = false;
         this.ok2 = true;
         this.ok3 = false;
         this.tab_4 = false;
         this.tab_5 = true;
         this.tab_6 = false;
-        this.pending_4 = true;
-        this.pending_5 = false;
-        this.pending_6 = true;
       },
       bully: function () {
         this.role = story_3;
-        this.role_img = 'img/bully.png';
         this.ok1 = false;
         this.ok2 = false;
         this.ok3 = true;
         this.tab_4 = false;
         this.tab_5 = false;
         this.tab_6 = true;
-        this.pending_4 = true;
-        this.pending_5 = true;
-        this.pending_6 = false;
         var times = document.getElementById("radialBar").getElementsByTagName("div").length;
         if (times === 0) {
           function loadScript(src, callback) {
@@ -1077,21 +1093,20 @@
           document.getElementsByClassName('carousel-img')[0].style.left = '0px';
         }
       },
-      clair_hover: function () {
-        this.draw='img/hong_s.svg';
-        this.clair='img/xu_l.svg'
-      },
-      clair_leave: function () {
+      draw_click: function(){
         this.draw='img/hong_l.svg';
-        this.clair='img/xu_s.svg'
+        this.clair='img/xu_s.svg';
+        this.bunny='img/xuan_s.svg';
       },
-      bunny_hover: function () {
+      clair_click: function () {
         this.draw='img/hong_s.svg';
-        this.bunny='img/xuan_l.svg'
+        this.clair='img/xu_l.svg';
+        this.bunny='img/xuan_s.svg';
       },
-      bunny_leave: function () {
-        this.draw='img/hong_l.svg';
-        this.bunny='img/xuan_s.svg'
+      bunny_click: function () {
+        this.draw='img/hong_s.svg';
+        this.clair='img/xu_s.svg';
+        this.bunny='img/xuan_l.svg';
       }
     },
     watch: {
