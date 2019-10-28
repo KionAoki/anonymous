@@ -217,12 +217,12 @@
                             </div>
                             <p>旁觀者</p>
                           </div>
-                         <div class="button-center">
-                           <div class="pending" :class="{'tab': tab_5}">
-                             <button @click="victim"><img src="img/victim.png" alt="role_2"></button>
-                           </div>
-                           <p>被霸凌者</p>
-                         </div>
+                          <div class="button-center">
+                            <div class="pending" :class="{'tab': tab_5}">
+                              <button @click="victim"><img src="img/victim.png" alt="role_2"></button>
+                            </div>
+                            <p>被霸凌者</p>
+                          </div>
                           <div class="button-center">
                             <div class="pending" :class="{'tab': tab_6}">
                               <button @click="bully"><img src="img/bully.png" alt="role_3"></button>
@@ -308,7 +308,7 @@
 <script>
 
   /* paragraph content  */
-  
+
   var introduction = [
     {
       key: '1',
@@ -364,7 +364,7 @@
       chart: ''
     }
   ];
-  
+
   var cyberbully_posts_2 = [
     {
       key: '4',
@@ -431,7 +431,7 @@
       chart: ''
     },
   ];
-  
+
   var story_1 = [
     {
       key: '0',
@@ -877,7 +877,7 @@
       sidebar_close: true,
       open: hb.open,
       // introduction paragraph
-      introduction : introduction,
+      introduction: introduction,
       // cyberbully paragraph
       posts: cyberbully_posts,
       posts_2: cyberbully_posts_2,
@@ -914,7 +914,7 @@
     },
     mounted() {
       // suggested bar
-      
+
       $(window).scroll((function () {
         var current = $(this).scrollTop();
         var suggestion = $("#option").offset().top +
@@ -1063,20 +1063,20 @@
           document.getElementsByClassName('carousel-img')[0].style.left = '0px';
         }
       },
-      draw_click: function(){
-        this.draw='img/hong_l.svg';
-        this.clair='img/xu_s.svg';
-        this.bunny='img/xuan_s.svg';
+      draw_click: function () {
+        this.draw = 'img/hong_l.svg';
+        this.clair = 'img/xu_s.svg';
+        this.bunny = 'img/xuan_s.svg';
       },
       clair_click: function () {
-        this.draw='img/hong_s.svg';
-        this.clair='img/xu_l.svg';
-        this.bunny='img/xuan_s.svg';
+        this.draw = 'img/hong_s.svg';
+        this.clair = 'img/xu_l.svg';
+        this.bunny = 'img/xuan_s.svg';
       },
       bunny_click: function () {
-        this.draw='img/hong_s.svg';
-        this.clair='img/xu_s.svg';
-        this.bunny='img/xuan_l.svg';
+        this.draw = 'img/hong_s.svg';
+        this.clair = 'img/xu_s.svg';
+        this.bunny = 'img/xuan_l.svg';
       }
     },
     watch: {

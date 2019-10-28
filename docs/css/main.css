@@ -274,7 +274,6 @@ a:not([href]) {
   background-color: #050511;
   min-height: 130vh;
   background-repeat: no-repeat;
-  background-position: bottom 10px left;
 }
 
 .web-title{
@@ -416,10 +415,6 @@ a:not([href]) {
   outline: none;
 }
 
-.option img {
-  width: 100%;
-}
-
 .pending {
   border: transparent;
   opacity: 0.5;
@@ -543,14 +538,13 @@ a:not([href]) {
 /* character */
 
 #character{
-  width: 100%;
   display: flex;
   justify-content: center;
 }
 
 [alt="character"]{
-  min-height: 100vh;
   cursor: pointer;
+  height: 100vh;
 }
 
 /* QRcord */
