@@ -582,7 +582,7 @@ a:not([href]) {
 }
 
 .start p:hover {
-  color: #FFFFFF;
+  color: #555B7F !important;
 }
 
 /* footer */
