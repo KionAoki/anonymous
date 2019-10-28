@@ -242,10 +242,20 @@
     <!-- instagram -->
     <div id='instagram'>
       <page-title title="IG 遊戲介紹"></page-title>
-      
       <div class="center">
         <paragraph v-for="text in game" :key="text.key" :content="text.content" :title="text.title"
                    :subtitle="text.subtitle"></paragraph>
+      </div>
+      <div id="character">
+        <img :src="draw" alt="character">
+        <img :src="clair" alt="character"
+             @mouseover="clair_hover"
+             @mouseleave="clair_leave">
+        <img :src="bunny" alt="character"
+             @mouseover="bunny_hover"
+             @mouseleave="bunny_leave">
+      </div>
+      <div class="center">
         <div class="wrapper">
           <div class="qrcode-title">
             <h2>「你...可以拯救要自殺的 ta 嗎？」</h2>
@@ -877,10 +887,14 @@
       length: document.getElementsByClassName('carousel').length,
       // instagram paragraph
       game: game,
+      // character
+      draw: 'img/hong_l.svg',
+      clair: 'img/xu_s.svg',
+      bunny: 'img/xuan_s.svg'
     },
     mounted() {
       // suggested bar
-
+      
       $(window).scroll((function () {
         var current = $(this).scrollTop();
         var suggestion = $("#option").offset().top +
@@ -1040,6 +1054,22 @@
           this.left = 0;
           document.getElementsByClassName('carousel-img')[0].style.left = '0px';
         }
+      },
+      clair_hover: function () {
+        this.draw='img/hong_s.svg';
+        this.clair='img/xu_l.svg'
+      },
+      clair_leave: function () {
+        this.draw='img/hong_l.svg';
+        this.clair='img/xu_s.svg'
+      },
+      bunny_hover: function () {
+        this.draw='img/hong_s.svg';
+        this.bunny='img/xuan_l.svg'
+      },
+      bunny_leave: function () {
+        this.draw='img/hong_l.svg';
+        this.bunny='img/xuan_s.svg'
       }
     },
     watch: {
