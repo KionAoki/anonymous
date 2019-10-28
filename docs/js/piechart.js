@@ -77,9 +77,9 @@ chart.tooltip({
 chart.intervalStack().position('sold').shape('radiusPie').color('sex', COLORS).label('sold', {
   useHtml: true,
   htmlTemplate: function htmlTemplate(text, item) {
-    var src = item.point.sex === '會告訴身邊成年人' ? 'https://gw.alipayobjects.com/zos/rmsportal/mweUsJpBWucJRixSfWVP.png' : 'https://gw.alipayobjects.com/zos/rmsportal/oeCxrAewtedMBYOETCln.png';
+    var src = item.point.sex === '會告訴身邊成年人' ? 'img/conversation.svg' : 'img/gossip.svg';
     var color = item.point.sex === '會告訴身邊成年人' ? COLORS[1] : COLORS[0];
-    var IMG = '<img style="width:40px" src="' + src + '" /><br/>';
+    var IMG = '<img style="width:80px" src="' + src + '" /><br/>';
     return '<div style="margin: 50px; text-align:center;color:' + color + '">' + IMG + (text * 100).toFixed(0) + '%</div>';
   }
 });
