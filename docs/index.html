@@ -119,18 +119,20 @@
   <div class="background">
     <!-- introduction -->
     <div id="introduction" class="star">
-      <div class="wrapper">
-        <div class="center shallow">
-          <div class="inner">
-            <div>
-              <paragraph v-for="text in introduction" :key="text.key" :title="text.title" :content="text.content"
-                         :img="text.img" :comment="text.comment" :chart="text.chart"></paragraph>
+      <div class="planet1">
+        <div class="planet5">
+          <div class="wrapper">
+            <div class="center shallow">
+              <div class="inner">
+                <div>
+                  <paragraph v-for="text in introduction" :key="text.key" :title="text.title" :content="text.content"
+                             :img="text.img" :comment="text.comment" :chart="text.chart"></paragraph>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
-      <img src="img/planet1.svg" alt="planet decoration">
-      <img src="img/planet5.svg" alt="planet decoration">
     </div>
     <!-- story -->
     <div id="story" class="star">
@@ -178,58 +180,63 @@
     <div id="cyberbully">
       <page-title title="什麼是網絡霸凌？霸凌事件中的不同角色該怎麼做？" id="cyberbully_title" class="star"></page-title>
       <img src="img/c.jpg" alt="scroll_1" :class="{'bye': bye1}">
-      <img src="img/planet3.svg" alt="planet decoration">
       <div class="empty"></div>
       <div class="star" id="scroll_1">
-        <div class="center shallow">
-          <div class="inner">
-            <div>
-              <paragraph v-for="text in posts" :key="text.key" :title="text.title" :content="text.content"
-                         :img="text.img" :comment="text.comment" :chart="text.chart"></paragraph>
+        <div class="planet3">
+          <div class="center shallow">
+            <div class="inner">
+              <div>
+                <paragraph v-for="text in posts" :key="text.key" :title="text.title" :content="text.content"
+                           :img="text.img" :comment="text.comment" :chart="text.chart"></paragraph>
+              </div>
             </div>
           </div>
         </div>
       </div>
       <img src="img/bg-01.svg" alt="scroll_2" :class="{'bye': bye2}">
       <div class="empty"></div>
-      <img src="img/planet6.svg" alt="planet decoration">
-      <img src="img/planet7.svg" alt="planet decoration">
-      <img src="img/planet4.svg" alt="planet decoration">
-      <img src="img/planet2.svg" alt="planet decoration">
       <div class="star" id="scroll_2">
-        <div class="center shallow">
-          <div class="inner">
-            <div>
-              <paragraph v-for="text in posts_2" :key="text.key" :title="text.title" :content="text.content"
-                         :img="text.img" :comment="text.comment" :chart="text.chart"></paragraph>
-            </div>
-            <div id="suggestion">
-              <div>
-                <div id="option" class="option-center option">
-                  <div class="pending" :class="{'tab': tab_4}">
-                    <button @click="bystander"><img src="img/bystander.png" alt="role_1"></button>
-                  </div>
-                  <div class="pending" :class="{'tab': tab_5}">
-                    <button @click="victim"><img src="img/victim.png" alt="role_2"></button>
-                  </div>
-                  <div class="pending" :class="{'tab': tab_6}">
-                    <button @click="bully"><img src="img/bully.png" alt="role_3"></button>
-                  </div>
-                </div>
-                <div class="role-img wrapper">
-                  <img v-bind:src="role_img" alt="character">
-                </div>
-                <div class="role ">
-                  <div class="role-inner-line">
-                    <paragraph v-show="ok1" v-for="text in role1" :key="text.key" :title="text.title"
-                               :content="text.content"
-                               :img="text.img" :comment="text.comment" :chart="text.chart"></paragraph>
-                    <paragraph v-show="ok2" v-for="text in role2" :key="text.key" :title="text.title"
-                               :content="text.content"
-                               :img="text.img" :comment="text.comment" :chart="text.chart"></paragraph>
-                    <paragraph v-show="ok3" v-for="text in role3" :key="text.key" :title="text.title"
-                               :content="text.content"
-                               :img="text.img" :comment="text.comment" :chart="text.chart"></paragraph>
+        <div class="planet6">
+          <div class="planet7">
+            <div class="planet4">
+              <div class="planet2">
+                <div class="center shallow">
+                  <div class="inner">
+                    <div>
+                      <paragraph v-for="text in posts_2" :key="text.key" :title="text.title" :content="text.content"
+                                 :img="text.img" :comment="text.comment" :chart="text.chart"></paragraph>
+                    </div>
+                    <div id="suggestion">
+                      <div>
+                        <div id="option" class="option-center option">
+                          <div class="pending" :class="{'tab': tab_4}">
+                            <button @click="bystander"><img src="img/bystander.png" alt="role_1"></button>
+                          </div>
+                          <div class="pending" :class="{'tab': tab_5}">
+                            <button @click="victim"><img src="img/victim.png" alt="role_2"></button>
+                          </div>
+                          <div class="pending" :class="{'tab': tab_6}">
+                            <button @click="bully"><img src="img/bully.png" alt="role_3"></button>
+                          </div>
+                        </div>
+                        <div class="role-img wrapper">
+                          <img v-bind:src="role_img" alt="character">
+                        </div>
+                        <div class="role ">
+                          <div class="role-inner-line">
+                            <paragraph v-show="ok1" v-for="text in role1" :key="text.key" :title="text.title"
+                                       :content="text.content"
+                                       :img="text.img" :comment="text.comment" :chart="text.chart"></paragraph>
+                            <paragraph v-show="ok2" v-for="text in role2" :key="text.key" :title="text.title"
+                                       :content="text.content"
+                                       :img="text.img" :comment="text.comment" :chart="text.chart"></paragraph>
+                            <paragraph v-show="ok3" v-for="text in role3" :key="text.key" :title="text.title"
+                                       :content="text.content"
+                                       :img="text.img" :comment="text.comment" :chart="text.chart"></paragraph>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -289,7 +296,6 @@
       `
     })
   </script>
-
 </main>
 
 <script>
@@ -306,7 +312,7 @@
       comment: '',
       chart: ''
     }
-  ]
+  ];
 
   var cyberbully_posts = [
     {
@@ -351,6 +357,7 @@
       chart: ''
     }
   ];
+  
   var cyberbully_posts_2 = [
     {
       key: '4',
@@ -417,8 +424,7 @@
       chart: ''
     },
   ];
-
-
+  
   var story_1 = [
     {
       key: '1',
@@ -853,7 +859,6 @@
               `
   })
 
-
   /* landingpage's instance  */
 
   var landingpage = new Vue({
@@ -1161,7 +1166,7 @@
         {id: 1, work: '數據、文字整理', name: 'Seo Joo Kim'},
         {id: 2, work: '設計', name: 'Chew Hui Jing'},
         {id: 3, work: '工程', name: 'Kion'},
-        {id: 4, work: '遊戲設計', name: '翁子涵'}
+        {id: 4, work: '遊戲設計', name: 'Sora ☆'}
       ]
     }
   })

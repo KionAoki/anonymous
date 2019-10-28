@@ -8,10 +8,11 @@ var data = [{
   "name": "旁觀者",
   "vote": 54.7
 }];
+
 var imageMap = {
-  '被網路霸凌': 'img/victim_chart.svg',
-  '網路霸凌他人': 'img/bully_chart.svg',
-  '旁觀者': 'img/bystander_chart.svg'
+  '被網路霸凌': window.location.href + 'img/victim_chart.svg',
+  '網路霸凌他人': window.location.href + 'img/bully_chart.svg',
+  '旁觀者': window.location.href + 'img/bystander_chart.svg'
 };
 var chart = new G2.Chart({
   container: 'mountNode',
