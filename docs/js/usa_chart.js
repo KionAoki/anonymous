@@ -31,11 +31,11 @@ var chart = new G2.Chart({
   theme: 'dark',
   background: {
     fill: '#3A4151', // 图表背景色
-    fillOpacity: 0.1 // 图表背景透明度
+    fillOpacity: 0 // 图表背景透明度
   },
   plotBackground: {
     fill: '#3A4151', // 图表背景色
-    fillOpacity: 0.1 // 图表背景透明度
+    fillOpacity: 0 // 图表背景透明度
   }
 });
 chart.source(data, {
