@@ -45,11 +45,11 @@ chart.tooltip({
 // 辅助文本
 chart.guide().html({
   position: ['50%', '50%'],
-  html: '<div style="color:#F2F2F2;font-size: 14px;text-align: center;width: 10em;">台灣網路霸凌情形</div>',
+  html: '<div style="color:#8c8c8c;font-size: 14px;text-align: center;width: 10em;">台灣網路霸凌情形</div>',
   alignX: 'middle',
   alignY: 'middle'
 });
-var interval = chart.intervalStack().position('percent').color('item').label('percent', {
+var interval = chart.intervalStack().position('percent').color('item', ['#7f8da9', '#db4c3c', '#fec514','#daf0fd', '#9BD782']).label('percent', {
   formatter: function formatter(val, item) {
     return item.point.item + ': ' + val;
   }

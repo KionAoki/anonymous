@@ -2,10 +2,10 @@ var _G = G2,
   Shape = _G.Shape;
 
 var data = [{
-  sex: '不會選擇告訴身邊成年人',
+  sex: '會告訴身邊成年人',
   sold: 0.18
 }, {
-  sex: '會告訴身邊成年人',
+  sex: '不會告訴身邊成年人',
   sold: 0.82
 }];
 
@@ -65,7 +65,7 @@ var chart = new G2.Chart({
   padding: [20, 30, 30, 20]
 });
 
-var COLORS = ['#1890ff', '#f04864'];
+var COLORS = ['#7f8da9', '#db4c3c'];
 
 chart.coord('theta', {
   radius: 0.8
@@ -77,8 +77,10 @@ chart.tooltip({
 chart.intervalStack().position('sold').shape('radiusPie').color('sex', COLORS).label('sold', {
   useHtml: true,
   htmlTemplate: function htmlTemplate(text, item) {
+    console.log(item.point.sex);
     var src = item.point.sex === '會告訴身邊成年人' ? 'img/conversation.svg' : 'img/gossip.svg';
-    var color = item.point.sex === '會告訴身邊成年人' ? COLORS[1] : COLORS[0];
+    console.log(src);
+    var color = item.point.sex === '不會告訴身邊成年人' ? COLORS[1] : COLORS[0];
     var IMG = '<img style="width:80px" src="' + src + '" /><br/>';
     return '<div style="margin: 50px; text-align:center;color:' + color + '">' + IMG + (text * 100).toFixed(0) + '%</div>';
   }
