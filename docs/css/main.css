@@ -185,7 +185,7 @@ a:not([href]) {
   -webkit-transform: translateX(250px);
   transform: translateX(250px);
   background: #FFFFFF;
-  opacity: 0.8;
+  //opacity: 0.8;
 }
 
 .open {
