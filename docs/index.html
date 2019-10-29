@@ -927,6 +927,7 @@
 
       $(window).scroll((function () {
         var current = $(this).scrollTop();
+        var story =$("#story").offset().top;
         var suggestion = $("#option").offset().top +
           document.getElementById('option').offsetHeight;
         var scroll1 = $("#scroll_1").offset().top;
@@ -938,6 +939,11 @@
           landingpage.show = true;
         } else {
           landingpage.show = false;
+        }
+        if(story > current){
+          landingpage.bye1 = true;
+        } else {
+          landingpage.bye1 = false;
         }
         if (current > scroll1) {
           landingpage.bye1 = true;
