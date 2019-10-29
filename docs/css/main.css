@@ -272,7 +272,7 @@ a:not([href]) {
   align-items: center;
   background-image: url('../img/banner-01.svg');
   background-color: #050511;
-  min-height: 130vh;
+  min-height: 110vh;
   background-size: 100vw;
   background-repeat: no-repeat;
 }
