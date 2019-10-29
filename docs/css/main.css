@@ -83,12 +83,12 @@ p {
 }
 
 .white{
-  background-image: url('../img/star.svg'), linear-gradient(#BDCCD4 0%, #ffffff 70%);
+  background-image: url('../img/star.svg'), linear-gradient(#BDCCD4 0%, rgb(255, 243, 215) 60%);
   padding-top: 100px;
 }
 
 footer {
-  background-color: #ffffff;
+  background-color: rgb(255, 243, 215);
 }
 
 /* planet */
@@ -270,7 +270,7 @@ a:not([href]) {
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  background-image: url('../img/banner-01.svg');
+  background-image: url('../img/banner-01.jpg');
   background-color: #050511;
   min-height: 110vh;
   background-size: 100vw;
