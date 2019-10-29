@@ -25,7 +25,7 @@ body {
 /* font size */
 
 h1 {
-  font-size: 60px;
+  font-size: 40px;
   font-family: 'Noto Sans TC', sans-serif;
   color: #ffffff;
 }
@@ -268,23 +268,20 @@ a:not([href]) {
 
 #banner {
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
   background-image: url('../img/banner-01.svg');
   background-color: #050511;
   min-height: 130vh;
+  background-size: 100vw;
   background-repeat: no-repeat;
 }
 
 .web-title{
   display: flex;
   flex-direction: column;
-  align-items: center;
-  margin-top: 50vh;
-}
-
-.web-title h2{
-  color: #F1C320;
+  align-items: flex-start;
+  margin-right: 150px;
 }
 
 /* make title img center */
