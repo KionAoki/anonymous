@@ -25,7 +25,7 @@ body {
 /* font size */
 
 h1 {
-  font-size: 40px;
+  font-size: 50px;
   font-family: 'Noto Sans TC', sans-serif;
   color: #ffffff;
 }
@@ -642,4 +642,102 @@ footer p {
 
 #share a:last-child {
   padding-left: 30px;
+}
+
+@media (max-width:480px) {
+  /* font size */
+
+  h1{
+    font-size: 30px;
+  }
+  h2{
+    font-size: 20px;
+  }
+  /* banner */
+  #banner{
+    min-height: 30vh;
+    justify-content: center;
+  }
+
+  .web-title{
+    margin-top: 15vh;
+    margin-right:0;
+    align-items: center;
+  }
+
+  /* img */
+
+  img{
+    width: 100%;
+  }
+
+  /* paragraph */
+
+  .wrapper{
+    padding: 0px;
+  }
+  .center{
+    padding: 0px;
+  }
+  .inner{
+    padding: 0px;
+  }
+
+  /* introduction */
+
+  #introduction{
+    padding-top: 20px;
+    padding-bottom: 0px;
+  }
+
+  .planet5{
+    padding-bottom: 0px;
+  }
+
+  /* option */
+
+  .option{
+    max-width: 100vw;
+  }
+
+  /* carousel */
+
+  .arrow{
+    position: absolute;
+    z-index: 2;
+    padding: 0px;
+  }
+
+  .arrow:first-child {
+    left: 2%;
+  }
+
+  .arrow:last-child {
+    right: 2%;
+  }
+
+  /* scroll */
+  .empty{
+    min-height: 30vh;
+  }
+
+  [alt='scroll_1'], [alt='scroll_2'], [alt='scroll_3'], [alt='scroll_4'] {
+    min-height: 100vh;
+    min-width: 100vw;
+  }
+
+  /* footer */
+
+  .footer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  #share {
+    display: flex;
+    flex-direction: column;
+    margin-right: 0px;
+    margin-bottom: 10px;
+  }
 }
