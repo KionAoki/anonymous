@@ -181,7 +181,7 @@
     <!-- cyberbully -->
     <div id="cyberbully">
       <page-title title="什麼是網絡霸凌？霸凌事件中的不同角色該怎麼做？" id="cyberbully_title" class="star"></page-title>
-      <img src="img/c.jpg" alt="scroll_1" :class="{'bye': bye1}">
+      <img src="img/bg-01.svg" alt="scroll_1" :class="{'bye': bye1}">
       <div class="empty"></div>
       <div class="star" id="scroll_1">
         <div class="planet3">
@@ -195,7 +195,7 @@
           </div>
         </div>
       </div>
-      <img src="img/bg-01.svg" alt="scroll_2" :class="{'bye': bye2}">
+      <img src="img/bg-02.svg" alt="scroll_2" :class="{'bye': bye2}">
       <div class="empty"></div>
       <div class="star" id="scroll_2">
         <div class="planet6">
@@ -252,37 +252,46 @@
           </div>
         </div>
       </div>
-      <img src="img/banner-01.svg" alt="scroll_3">
+      <img src="img/bg-03.svg" alt="scroll_3"  :class="{'bye': bye3}">
       <div class="empty"></div>
     </div>
     <!-- instagram -->
     <div id='instagram'>
-      <page-title title="IG 遊戲介紹"></page-title>
-      <div class="center">
-        <paragraph v-for="text in game" :key="text.key" :content="text.content" :title="text.title"
-                   :subtitle="text.subtitle"></paragraph>
+      <div class="gay">
+        <page-title title="IG 遊戲介紹"></page-title>
+        <div class="center">
+          <paragraph v-for="text in game" :key="text.key" :content="text.content" :title="text.title"
+                     :subtitle="text.subtitle"></paragraph>
+        </div>
       </div>
-      <div id="character">
-        <img :src="draw" alt="character"
-             @click="draw_click">
-        <img :src="clair" alt="character"
-             @click="clair_click">
-        <img :src="bunny" alt="character"
-             @click="bunny_click">
-      </div>
-      <div class="center">
-        <div class="wrapper">
-          <div class="qrcode-title">
-            <h2>「你...可以拯救要自殺的 ta 嗎？」</h2>
+      <img src="img/bg-08.svg" alt="scroll_4" :class="{'bye': bye2}">
+      <div class="empty"></div>
+      <div class="white">
+        <div id="character">
+          <img :src="draw" alt="character"
+               @click="draw_click">
+          <img :src="clair" alt="character"
+               @click="clair_click">
+          <img :src="bunny" alt="character"
+               @click="bunny_click">
+        </div>
+        <div class="center">
+          <div class="wrapper">
+            <div class="qrcode-title">
+              <h2>「你...可以拯救要自殺的 ta 嗎？」</h2>
+            </div>
+            <div class="start">
+              <a href="https://www.instagram.com/student_hate.u/">
+                <p>開始遊戲</p>
+              </a>
+              <a href="https://www.instagram.com/student_hate.u/">
+                <img src='img/QRcord.png' alt='QRcode'/>
+              </a>
+            </div>
           </div>
-          <div class="start">
-            <a href="https://www.instagram.com/student_hate.u/">
-              <p>開始遊戲</p>
-            </a>
-            <a href="https://www.instagram.com/student_hate.u/">
-              <img src='img/QRcord.png' alt='QRcode'/>
-            </a>
-          </div>
+        </div>
+        <div>
+          <img src="img/bg-04.svg">
         </div>
       </div>
     </div>
@@ -901,6 +910,7 @@
       // parallax scrolling z-index
       bye1: false,
       bye2: false,
+      bye3: false,
       // carousel next & prev
       width: document.getElementsByClassName('story_content')[0].offsetWidth,
       left: 0,
@@ -921,8 +931,9 @@
           document.getElementById('option').offsetHeight;
         var scroll1 = $("#scroll_1").offset().top;
         var scroll2 = $("#scroll_2").offset().top;
-        var instagram = $("#scroll_2").offset().top +
+        var scroll2_bottom = $("#scroll_2").offset().top +
           document.getElementById('scroll_2').offsetHeight;
+        var instagram =  $("#instagram").offset().top;
         if (current > suggestion) {
           landingpage.show = true;
         } else {
@@ -938,8 +949,13 @@
         } else {
           landingpage.bye2 = false;
         }
-        if (current > instagram) {
+        if (current > scroll2_bottom) {
           landingpage.show = false;
+        }
+        if(current > instagram){
+          landingpage.bye3 = true;
+        } else {
+          landingpage.bye3 = false;
         }
       }));
 
