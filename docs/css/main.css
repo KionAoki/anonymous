@@ -440,6 +440,32 @@ a:not([href]) {
   opacity: 1;
 }
 
+/* chart */
+
+.g2-guide-html {
+  width: 110px;
+  height: 120px;
+  vertical-align: middle;
+  text-align: center;
+  line-height: 0.4
+}
+
+.g2-guide-html .title {
+  font-size: 14px;
+  color: #F2F2F2;
+  font-weight: 300;
+}
+
+.g2-guide-html .value {
+  font-size: 24px;
+  color: #F2F2F2;
+  font-weight: bold;
+}
+
+#cognition_2{
+  padding-bottom: 30px;
+}
+
 /* table */
 
 .table {
