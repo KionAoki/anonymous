@@ -924,8 +924,6 @@
       bunny: 'img/xuan_s.svg'
     },
     mounted() {
-      // suggested bar
-
       $(window).scroll((function () {
         var current = $(this).scrollTop();
         var story =$("#story").offset().top;
@@ -936,11 +934,20 @@
         var scroll2_bottom = $("#scroll_2").offset().top +
           document.getElementById('scroll_2').offsetHeight;
         var instagram =  $("#instagram").offset().top;
+        
+        // suggested bar
+        
         if (current > suggestion) {
           landingpage.show = true;
         } else {
           landingpage.show = false;
         }
+        if (current > scroll2_bottom) {
+          landingpage.show = false;
+        }
+        
+        // parallax scrolling
+        
         if(story > current){
           landingpage.bye1 = true;
         } else {
@@ -956,9 +963,6 @@
         } else {
           landingpage.bye2 = false;
         }
-        if (current > scroll2_bottom) {
-          landingpage.show = false;
-        }
         if(current > instagram){
           landingpage.bye3 = true;
         } else {
@@ -970,10 +974,12 @@
 
       window.addEventListener('load', function () {
         var width = document.getElementsByClassName('story_content')[0].offsetWidth;
+        var height = width/1876*980;
         var carousel = document.getElementsByClassName('carousel');
         document.getElementsByClassName('carousel-img')[0].style.width = width * carousel.length + 'px';
         for (let i = 0; i < carousel.length; i++) {
           carousel[i].style.width = width + 'px';
+          carousel[i].style.height = height + 'px';
         }
       });
       window.addEventListener('resize', function () {
