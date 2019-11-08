@@ -118,5 +118,5 @@ chart.legend({
     return '<div class="g2-legend-list-item" data-value="' + value + '">' + markerDom + nameDom + '</div>';
   }
 });
-chart.line().position('year*value').color('type', ['#ff4d4f', '#facc14', '#73d13d', '#36cfc9', '#40a9ff']);
+chart.line().position('year*value').color('type', ['#db4c3c', '#fec514', '#9BD782', '#daf0fd', '#7f8da9']);
 chart.render();
