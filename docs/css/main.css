@@ -55,7 +55,7 @@ p {
   vertical-align: middle;
 }
 
-#cyberbully a {
+#role a {
   color: #9DDFF8;
 }
 
@@ -78,7 +78,7 @@ p {
   background-color: #050511;
 }
 
-.gay {
+.gray {
   background-image: url('../img/star.svg'), linear-gradient(#050511 0%, #BDCCD4 20%);
 }
 
@@ -131,7 +131,7 @@ footer {
 
 .planet4{
   background-image: url(../img/planet4.svg);
-  background-position: top 50% right 0%;
+  background-position: top 35% right 0%;
   background-repeat: no-repeat;
   background-size: 30%;
 }
