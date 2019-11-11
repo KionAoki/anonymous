@@ -22,7 +22,7 @@ body {
   margin-bottom: 40px;
 }
 
-/* font size */
+/* font size & color */
 
 h1 {
   font-size: 50px;
@@ -43,7 +43,7 @@ h3 {
 }
 
 p {
-  font-size: 17px;
+  font-size: 18px;
   color: #F2F2F2;
   font-family: 'Noto Sans TC', sans-serif;
   line-height: 2em;
@@ -69,6 +69,20 @@ p {
 
 #instagram p {
   color: #4D4D4D;
+}
+
+/* underline */
+
+b{
+  border-bottom:2px #F1C320 solid;
+}
+
+h1 b{
+  border-bottom:0px #F1C320 solid;
+}
+
+h2 b{
+  border-bottom:0px #F1C320 solid;
 }
 
 /* background */
@@ -355,6 +369,20 @@ a:not([href]) {
 .block-content h3 {
   display: flex;
   justify-content: center;
+}
+
+/* list */
+
+.list-no-decoration, .source, ol{
+  margin-top: 50px;
+}
+
+.list-no-decoration li, .source li, ol li{
+  margin-top: 20px;
+}
+
+.list-no-decoration{
+  list-style: none;
 }
 
 /* paragraph image */
