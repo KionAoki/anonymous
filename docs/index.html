@@ -264,6 +264,8 @@
         </div>
       </div>
     </div>
+    <img src="img/bg-08.jpg" alt="scroll_4" :class="{'bye': bye2}">
+    <div class="empty" id="scroll_4"></div>
     <!-- instagram -->
     <div id='instagram'>
       <div class="gray">
@@ -273,8 +275,7 @@
                      :subtitle="text.subtitle"></paragraph>
         </div>
       </div>
-      <img src="img/bg-08.jpg" alt="scroll_4" :class="{'bye': bye2}">
-      <div class="empty"></div>
+
       <div class="white">
         <div id="character">
           <img :src="draw" alt="character"
@@ -867,10 +868,11 @@
           document.getElementById('option').offsetHeight;
         var scroll1 = $("#scroll_1").offset().top;
         var scroll2 = $("#scroll_2").offset().top;
-        var scroll2_bottom = $("#scroll_2").offset().top +
+        var scroll2_bottom = scroll2 +
           document.getElementById('scroll_2').offsetHeight;
         var role = $("#role").offset().top;
-
+        var scroll4 = $("#scroll_4").offset().top;
+        
         // suggested bar
 
         if (current > suggestion) {
@@ -878,7 +880,8 @@
         } else {
           landingpage.show = false;
         }
-        if (current > scroll2_bottom) {
+        
+        if (current > scroll4) {
           landingpage.show = false;
         }
 
