@@ -1,28 +1,50 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <Hamburger/>
+    <main id="landing">
+      <SideBar/>
+    </main>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Hamburger from './components/Hamburger.vue'
+import SideBar from './components/SideBar.vue'
 
 export default {
   name: 'app',
   components: {
-    HelloWorld
+    Hamburger,
+    SideBar
   }
 }
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+/* font size & color */
+
+h1 {
+  font-size: 50px;
+  font-family: 'Noto Sans TC', sans-serif;
+  color: #ffffff;
+}
+
+h2 {
+  font-size: 34px;
+  color: #FFFFFF;
+  font-family: 'Noto Sans TC', sans-serif;
+}
+
+h3 {
+  font-size: 24px;
+  color: #F1C320;
+  font-family: 'Noto Sans TC', sans-serif;
+}
+
+p {
+  font-size: 18px;
+  color: #F2F2F2;
+  font-family: 'Noto Sans TC', sans-serif;
+  line-height: 2em;
 }
 </style>
