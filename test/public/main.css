@@ -43,10 +43,6 @@ p {
 
 /* background */
 
-.star {
-  background-image: url('assets/star.svg');
-  background-color: #050511;
-}
 .center {
   width: 75%;
   margin: auto;

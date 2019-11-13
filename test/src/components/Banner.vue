@@ -33,4 +33,15 @@ export default {
     margin-right: 150px;
   }
 
+  /* underline */
+
+  h1 b{
+    border-bottom:0px #F1C320 solid;
+  }
+
+  h2 b{
+    border-bottom:0px #F1C320 solid;
+  }
+
+
 </style>
