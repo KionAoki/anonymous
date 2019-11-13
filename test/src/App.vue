@@ -5,6 +5,7 @@
       <SideBar/>
       <Banner/>
       <Introduction/>
+      <Story/>
     </main>
   </div>
 </template>
@@ -14,7 +15,7 @@ import Hamburger from './components/Hamburger.vue'
 import SideBar from './components/SideBar.vue'
 import Banner from './components/Banner.vue'
 import Introduction from './components/Introduction.vue'
-
+import Story from './components/Story.vue'
 
 export default {
   name: 'app',
@@ -22,7 +23,8 @@ export default {
     Hamburger,
     SideBar,
     Banner,
-    Introduction
+    Introduction,
+    Story
   }
 }
 </script>

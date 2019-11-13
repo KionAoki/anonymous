@@ -1,0 +1,179 @@
+<template>
+  <div id="story" class="star">
+    <page-title title="聽聽他們怎麼說"></page-title>
+    <div class="wrapper">
+      <div id="story_option" class="option-center option">
+        <div class="pending" :class="{'tab': tab_1}">
+          <button @click="changea"><img src="../assets/people-story1-01.png" alt="respondent_1"></button>
+        </div>
+        <div class="pending" :class="{'tab': tab_2}">
+          <button @click="changeb"><img src="../assets/people-story2-01.png" alt="respondent_2"></button>
+        </div>
+        <div class="pending" :class="{'tab': tab_3}">
+          <button @click="changec"><img src="../assets/people-story3-01.png" alt="respondent_3"></button>
+        </div>
+      </div>
+      <div id="carousel">
+        <div class="arrow" @click="previous">
+          <i class="fas fa-chevron-left fa-2x" style="color: #ffffff"></i>
+        </div>
+        <div class="story_content">
+          <div class="carousel-img">
+            <img src="../assets/story1_1.jpg" alt="carousel" class="carousel">
+            <img src="../assets/story1_2.jpg" alt="carousel" class="carousel">
+            <img src="../assets/story1_3.jpg" alt="carousel" class="carousel">
+            <img src="../assets/story1_4.jpg" alt="carousel" class="carousel">
+            <img src="../assets/story1_5.jpg" alt="carousel" class="carousel">
+            <img src="../assets/story1_6.jpg" alt="carousel" class="carousel">
+            <img src="../assets/story1_7.jpg" alt="carousel" class="carousel">
+            <img src="../assets/story1_8.jpg" alt="carousel" class="carousel">
+            <img src="../assets/story1_9.jpg" alt="carousel" class="carousel">
+            <img src="../assets/story1_10.jpg" alt="carousel" class="carousel">
+            <img src="../assets/story1_11.jpg" alt="carousel" class="carousel">
+            <img src="../assets/story1_12.jpg" alt="carousel" class="carousel">
+            <img src="../assets/story1_13.jpg" alt="carousel" class="carousel">
+          </div>
+        </div>
+        <div class="arrow" @click="next">
+          <i class="fas fa-chevron-right fa-2x" style="color: #ffffff"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
+<script>
+import PageTitle from './PageTitle'
+
+export default {
+  name: 'Story',
+  components:{
+    PageTitle
+  },
+  data: function () {
+    return {
+      // option
+      tab_1: true,
+      tab_2: false,
+      tab_3: false,
+      img: './people%20story1-01.png',
+      // window width
+      window_width: document.body.clientWidth,
+      //carousel
+      width: document.getElementsByClassName('story_content')[0].offsetWidth,
+      left: 0,
+      length: document.getElementsByClassName('carousel').length,
+    }
+  },
+  mounted() {
+    window.addEventListener('load', function () {
+      var width = document.getElementsByClassName('story_content')[0].offsetWidth;
+      var height = width / 1876 * 980;
+      var carousel = document.getElementsByClassName('carousel');
+      document.getElementsByClassName('carousel-img')[0].style.width = width * carousel.length + 'px';
+      for (let i = 0; i < carousel.length; i++) {
+        carousel[i].style.width = width + 'px';
+        carousel[i].style.height = height + 'px';
+      }
+    });
+    window.addEventListener('resize', function () {
+      this.window_width = document.body.clientWidth;
+    });
+
+    var slide = document.getElementById('carousel');
+    var time_id = 0;
+    (function loop() {
+      var time = setTimeout(function () {
+        this.next();
+        loop();
+      }, 3000);
+      time_id = time;
+      slide.onmouseover = function () {
+        clearTimeout(time_id);
+      };
+      slide.onmouseout = function () {
+        (function loop() {
+          var time = setTimeout(function () {
+            this.next();
+            loop();
+          }, 3000);
+          time_id = time;
+        })();
+      };
+    })();
+  },
+  methods: {
+    previous: function () {
+      if (0 > this.left) {
+        this.left = this.left + this.width;
+        document.getElementsByClassName('carousel-img')[0].style.left = this.left + 'px';
+      } else {
+        this.left = this.width * (this.length - 1) * -1;
+        document.getElementsByClassName('carousel-img')[0].style.left = this.width * (this.length - 1) * -1 + 'px';
+      }
+    },
+    next: function () {
+      if (this.left > this.width * (this.length - 1) * -1) {
+        this.left = this.left - this.width;
+        document.getElementsByClassName('carousel-img')[0].style.left = this.left + 'px';
+      } else {
+        this.left = 0;
+        document.getElementsByClassName('carousel-img')[0].style.left = '0px';
+      }
+    }
+  },
+  watch: {
+    window_width: function () {
+      var page = this.left / this.width;
+      this.width = document.getElementsByClassName('story_content')[0].offsetWidth;
+      var carousel = document.getElementsByClassName('carousel');
+      document.getElementsByClassName('carousel-img')[0].style.width = this.width * carousel.length + 'px';
+      for (let i = 0; i < carousel.length; i++) {
+        carousel[i].style.width = this.width + 'px';
+      }
+      this.left = this.width * page;
+    }
+  }
+}
+</script>
+<style>
+  /* carousel */
+  
+  #carousel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .carousel-img {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    -webkit-transition: all .4s ease 0s;
+    transition: all .4s ease 0s;
+    left: 0;
+  }
+  
+  .carousel {
+    width: 1000px;
+  }
+  
+  .story_content {
+    width: 80%;
+    overflow: hidden;
+  }
+  
+  .arrow {
+    cursor: pointer;
+    align-content: center;
+    padding: 200px 50px 200px 50px;
+  }
+  
+  .arrow:first-child {
+    left: 5%;
+  }
+  
+  .arrow:last-child {
+    right: 5%;
+  }
+
+</style>

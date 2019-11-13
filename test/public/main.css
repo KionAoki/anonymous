@@ -1,3 +1,26 @@
+html {
+  scroll-behavior: smooth;
+}
+
+/* body margin */
+
+body {
+  margin: 0px;
+}
+
+/* wrapper padding*/
+
+.wrapper {
+  padding: 60px;
+}
+
+.wrapper-content{
+  padding: 25px;
+}
+
+.block-content h3{
+  margin-bottom: 40px;
+}
 /* font size & color */
 
 h1 {
@@ -58,4 +81,60 @@ p {
 
 .inner {
   padding: 40px;
+}
+
+/* option */
+
+.option-center {
+  margin: auto;
+  padding: 30px;
+}
+
+.option {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 60px;
+}
+
+#suggestion .option{
+  margin-bottom: 0px;
+}
+
+.button-center{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: auto;
+}
+
+.option button {
+  justify-content: center;
+  background-color: transparent;
+  border: transparent;
+  cursor: pointer;
+}
+
+.option button:focus {
+  outline: none;
+}
+
+.pending {
+  border: transparent;
+  opacity: 0.5;
+  margin: auto;
+}
+
+#suggestion-bar .pending{
+  margin: 0px 10px 0px 10px;
+}
+
+.tab {
+  border: #FFE9A4 solid 2px;
+  border-radius: 50%;
+  opacity: 1;
+}
+
+.pending:hover {
+  opacity: 1;
 }
