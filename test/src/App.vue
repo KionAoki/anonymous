@@ -3,6 +3,7 @@
     <Hamburger/>
     <main id="landing">
       <SideBar/>
+      <Banner/>
     </main>
   </div>
 </template>
@@ -10,12 +11,14 @@
 <script>
 import Hamburger from './components/Hamburger.vue'
 import SideBar from './components/SideBar.vue'
+import Banner from './components/Banner.vue'
 
 export default {
   name: 'app',
   components: {
     Hamburger,
-    SideBar
+    SideBar,
+    Banner
   }
 }
 </script>
@@ -46,5 +49,44 @@ p {
   color: #F2F2F2;
   font-family: 'Noto Sans TC', sans-serif;
   line-height: 2em;
+}
+
+#role a {
+  color: #9DDFF8;
+}
+
+.qrcode-title > h2 {
+  color: #050511;
+}
+
+#instagram h3{
+  color: #11283A;
+}
+
+#instagram p {
+  color: #4D4D4D;
+}
+
+/* background */
+
+.star {
+  background-image: url('assets/star.svg');
+  background-color: #050511;
+}
+.center {
+  width: 75%;
+  margin: auto;
+  padding: 30px;
+}
+
+.shallow {
+  position: relative;
+  background-color: rgb(58, 65, 81, 0.7);
+  border-radius: 20px;
+  z-index: 2;
+}
+
+.inner {
+  padding: 40px;
 }
 </style>
