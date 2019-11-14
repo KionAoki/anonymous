@@ -76,6 +76,32 @@ export default {
       this.width = document.getElementsByClassName('story_content')[0].offsetWidth;
       this.length = document.getElementsByClassName('carousel').length;
       this.window_width = document.body.clientWidth;
+
+      var slide = document.getElementById('carousel');
+      var time_id = 0;
+      var f = () => {
+        this.next();
+      };
+
+      (function loop() {
+        var time = setTimeout(function () {
+          f();
+          loop();
+        }, 3000);
+        time_id = time;
+        slide.onmouseover = function () {
+          clearTimeout(time_id);
+        };
+        slide.onmouseout = function () {
+          (function loop() {
+            var time = setTimeout(function () {
+              f();
+              loop();
+            }, 3000);
+            time_id = time;
+          })();
+        };
+      })();
     });
     window.addEventListener('resize', () => {
       this.window_width = document.body.clientWidth;
@@ -129,63 +155,6 @@ export default {
     }
   }
 }
-
-/*
-,
-  data: function () {
-    return {
-      // window width
-      window_width: document.body.clientWidth,
-      //carousel
-      width: document.getElementsByClassName('story_content')[0].offsetWidth,
-      left: 0,
-      length: document.getElementsByClassName('carousel').length,
-    }
-  },
-  mounted() {
-   
-    window.addEventListener('resize', function () {
-      this.window_width = document.body.clientWidth;
-    });
-
-    var slide = document.getElementById('carousel');
-    var time_id = 0;
-    (function loop() {
-      var time = setTimeout(function () {
-        this.next();
-        loop();
-      }, 3000);
-      time_id = time;
-      slide.onmouseover = function () {
-        clearTimeout(time_id);
-      };
-      slide.onmouseout = function () {
-        (function loop() {
-          var time = setTimeout(function () {
-            this.next();
-            loop();
-          }, 3000);
-          time_id = time;
-        })();
-      };
-    })();
-  },
-  methods: {
-  
-  },
-  watch: {
-    window_width: function () {
-      var page = this.left / this.width;
-      this.width = document.getElementsByClassName('story_content')[0].offsetWidth;
-      var carousel = document.getElementsByClassName('carousel');
-      document.getElementsByClassName('carousel-img')[0].style.width = this.width * carousel.length + 'px';
-      for (let i = 0; i < carousel.length; i++) {
-        carousel[i].style.width = this.width + 'px';
-      }
-      this.left = this.width * page;
-    }
-  }
- */
 </script>
 <style>
   /* carousel */
