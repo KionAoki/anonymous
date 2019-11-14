@@ -27,6 +27,7 @@ export default {
     Story
   }
 }
+
 </script>
 
 <style>

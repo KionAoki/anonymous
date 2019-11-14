@@ -18,7 +18,7 @@
 <script>
   export default {
     name: 'Paragraph',
-    props: ['key', 'content', 'title', 'img', 'comment', 'chart']
+    props: ['content', 'title', 'img', 'comment', 'chart']
   }
 </script>
 <style>
