@@ -156,6 +156,7 @@
         // parallax scrolling z-index
         bye1: false,
         bye2: false,
+        bye3: false,
       }
     },
     mounted() {
@@ -163,6 +164,7 @@
         var current = document.documentElement.scrollTop;
         var scroll1 = document.getElementById('scroll_1').offsetTop;
         var scroll2 = document.getElementById('scroll_2').offsetTop;
+        var role = document.getElementById('role').offsetTop;
         var story = document.getElementById('story').offsetTop + document.getElementById('story').offsetHeight;
 
         // parallax scrolling
@@ -182,7 +184,12 @@
         } else {
           this.bye2 = false;
         }
-      });
+        if (current > role) {
+          this.bye3 = true;
+        } else {
+          this.bye3 = false;
+        }
+      }, {passive: true});
     }
   }
 </script>

@@ -77,9 +77,7 @@ chart.tooltip({
 chart.intervalStack().position('sold').shape('radiusPie').color('sex', COLORS).label('sold', {
   useHtml: true,
   htmlTemplate: function htmlTemplate(text, item) {
-    console.log(item.point.sex);
     var src = item.point.sex === '會告訴身邊成年人' ? './conversation.svg' : './gossip.svg';
-    console.log(src);
     var color = item.point.sex === '不會告訴身邊成年人' ? COLORS[1] : COLORS[0];
     var IMG = '<img style="width:80px" src="' + src + '" /><br/>';
     return '<div style="margin: 50px; text-align:center;color:' + color + '">' + IMG + (text * 100).toFixed(0) + '%</div>';

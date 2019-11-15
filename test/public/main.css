@@ -48,10 +48,6 @@ p {
   line-height: 2em;
 }
 
-#role a {
-  color: #9DDFF8;
-}
-
 .qrcode-title > h2 {
   color: #050511;
 }
@@ -97,10 +93,6 @@ p {
   margin-bottom: 60px;
 }
 
-#suggestion .option{
-  margin-bottom: 0px;
-}
-
 .button-center{
   display: flex;
   flex-direction: column;
@@ -123,10 +115,6 @@ p {
   border: transparent;
   opacity: 0.5;
   margin: auto;
-}
-
-#suggestion-bar .pending{
-  margin: 0px 10px 0px 10px;
 }
 
 .tab {
