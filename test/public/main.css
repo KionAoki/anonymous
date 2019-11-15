@@ -138,3 +138,40 @@ p {
 .pending:hover {
   opacity: 1;
 }
+
+/* scroll */
+
+.empty {
+  position: relative;
+  min-height: 100vh;
+  z-index: auto;
+  background-color: transparent;
+}
+
+[alt='scroll_1'], [alt='scroll_2'], [alt='scroll_3'], [alt='scroll_4'] {
+  position: fixed;
+  bottom: 0%;
+  max-height: 100vh;
+  min-width: 100vw;
+  background: #050511;
+}
+
+[alt='scroll_1'] {
+  z-index: -1;
+}
+
+[alt='scroll_2'] {
+  z-index: -2;
+}
+
+[alt='scroll_3'] {
+  z-index: -3;
+}
+
+[alt='scroll_4'] {
+  z-index: -4;
+}
+
+.bye {
+  z-index: -99999;
+}

@@ -1,6 +1,6 @@
 <template>
   <div id="story" class="star">
-    <page-title title="聽聽他們怎麼說"></page-title>
+    <PageTitle title="聽聽他們怎麼說"></PageTitle>
     <div class="wrapper">
       <div id="story_option" class="option-center option">
         <div class="pending" :class="{'tab': tab_1}">
@@ -185,6 +185,7 @@ export default {
   }
 }
 </script>
+
 <style>
   /* carousel */
   

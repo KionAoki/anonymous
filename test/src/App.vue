@@ -6,6 +6,7 @@
       <Banner/>
       <Introduction/>
       <Story/>
+      <Cyberbully/>
     </main>
   </div>
 </template>
@@ -16,6 +17,7 @@ import SideBar from './components/SideBar.vue'
 import Banner from './components/Banner.vue'
 import Introduction from './components/Introduction.vue'
 import Story from './components/Story.vue'
+import Cyberbully from './components/Cyberbully.vue'
 
 export default {
   name: 'app',
@@ -24,7 +26,8 @@ export default {
     SideBar,
     Banner,
     Introduction,
-    Story
+    Story,
+    Cyberbully
   }
 }
 
