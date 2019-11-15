@@ -61,6 +61,7 @@ export default {
       width: 0,
       left: 0,
       length: 0,
+      scrollStatus: false
     }
   },
   mounted() {
@@ -76,36 +77,28 @@ export default {
       this.width = document.getElementsByClassName('story_content')[0].offsetWidth;
       this.length = document.getElementsByClassName('carousel').length;
       this.window_width = document.body.clientWidth;
-
-      var slide = document.getElementById('carousel');
-      var time_id = 0;
-      var f = () => {
-        this.next();
-      };
-
-      (function loop() {
-        var time = setTimeout(function () {
-          f();
-          loop();
-        }, 3000);
-        time_id = time;
-        slide.onmouseover = function () {
-          clearTimeout(time_id);
-        };
-        slide.onmouseout = function () {
-          (function loop() {
-            var time = setTimeout(function () {
-              f();
-              loop();
-            }, 3000);
-            time_id = time;
-          })();
-        };
-      })();
     });
+    
     window.addEventListener('resize', () => {
       this.window_width = document.body.clientWidth;
     });
+    
+    window.addEventListener('scroll', () => {
+      // scroll
+      var current = document.documentElement.scrollTop;
+      var option = document.getElementById('story_option').offsetTop;
+      var story = document.getElementById('story').offsetTop + document.getElementById('story').offsetHeight;
+      
+      if(current > option){
+        this.scrollStatus = true;
+      }
+      if(current < option){
+        this.scrollStatus = false;
+      }
+      if(current > story){
+        this.scrollStatus = false;
+      }
+    })
   },
   methods: {
     changea: function () {
@@ -152,6 +145,42 @@ export default {
         carousel[i].style.width = this.width + 'px';
       }
       this.left = this.width * page;
+    },
+    scrollStatus: function () {
+      // carousel
+      var slide = document.getElementById('carousel');
+      var time_id = 0;
+      var f = () => {
+        this.next();
+      };
+      
+      var loop = () => {
+        if(this.scrollStatus){
+          var time = setTimeout(function () {
+            f();
+            loop();
+          }, 5000);
+          time_id = time;
+          slide.onmouseover = function () {
+            clearTimeout(time_id);
+          };
+          slide.onmouseout = function () {
+            (function loop() {
+              var time = setTimeout(function () {
+                f();
+                loop();
+              }, 5000);
+              time_id = time;
+            })();
+          };
+        }else {
+          clearTimeout(time_id);
+        }
+      };
+      
+      if(this.scrollStatus){
+        loop();
+      }
     }
   }
 }
