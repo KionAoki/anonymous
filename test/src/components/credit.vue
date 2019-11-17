@@ -33,13 +33,13 @@
           {
             key: 'ca',
             link: 'https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwhoisback.github.io%2Fanonymous%2F&amp;src=sdkpreparse',
-            image: './share_nav_fb.svg',
+            image: './contentImg/share_nav_fb.svg',
             alt: 'fb_share'
           },
           {
             key: 'cb',
             link: 'https://social-plugins.line.me/lineit/share?url=https%3A%2F%2Fwhoisback.github.io%2Fanonymous%2F',
-            image: './share_nav_line.svg',
+            image: './contentImg/share_nav_line.svg',
             alt: 'line_share'
           }
         ],

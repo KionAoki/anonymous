@@ -95,7 +95,7 @@
       key: 'b',
       title: '',
       content: '',
-      img: '<img src="./bully2-01.svg" alt="cyberbully">',
+      img: '<img src="./contentImg/bully2-01.svg" alt="cyberbully">',
       comment: '',
       chart: ''
     },
@@ -153,7 +153,7 @@
         '該組織可以 <b>為父母或孩子提供心理諮商上的免費幫助</b>，並且也會定期舉辦相關教育課程講座或出版期刊。\n<br/>' +
         '<a href="http://ditchthelabel.org">Ditch the Label </a> 作為一家數位慈善機構，' +
         '<b>通過網頁及社群不斷幫助12-25歲孩童或年輕人克服霸凌遭遇</b> ，其發布的網路霸凌年度報告更是詳細統計了英國網路霸凌現況及趨勢。\n',
-      img: '<img src="./ditchthelabel.jpg" alt="Ditch the Label">',
+      img: '<img src="./contentImg/ditchthelabel.jpg" alt="Ditch the Label">',
       comment: 'Ditch the Label官網截圖 來源 https://www.ditchthelabel.org/',
       chart: ''
     },
@@ -162,7 +162,7 @@
       title: '',
       content: '<b>反霸凌法(Anti-Bullying Law)是阻止霸凌行為的重要武器之一</b> ，但可惜的是 <b>並不是每個國家都有制定相關法律</b> ，' +
         '像 <b>台灣目前並沒有針對網路霸凌的專法</b>，如果當事人想要走法律途徑，只能以公然侮辱罪、誹謗罪這樣的擦邊球名義加以控告。\n',
-      img: '<img src="./chat2-01.svg" alt="law">',
+      img: '<img src="./contentImg/chat2-01.svg" alt="law">',
       comment: '資料來源：自行整理',
       chart: ''
     },
@@ -191,7 +191,7 @@
       key: 'l',
       title: '',
       content: '',
-      img: '<img src="./bully3-01.svg" alt="cyberbully">',
+      img: '<img src="./contentImg/bully3-01.svg" alt="cyberbully">',
       comment: '',
       chart: ''
     },
@@ -298,7 +298,7 @@
       key: 'u',
       title: '',
       content: '',
-      img: '<img src="./bully1-01.svg" alt="cyberbully">',
+      img: '<img src="./contentImg/bully1-01.svg" alt="cyberbully">',
       comment: '',
       chart: ''
     },
@@ -459,7 +459,7 @@
         this.tab_6 = true;
         var times = document.getElementById("radialBar").getElementsByTagName("div").length;
         if (times === 0) {
-          this.loadScript('./radiobar.js');
+          this.loadScript('./chartJS/radiobar.js');
         }
       }
     }

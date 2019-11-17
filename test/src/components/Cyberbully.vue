@@ -57,7 +57,7 @@
         '<b>網絡霸凌 (Cyberbullying) 是霸凌行為的一種。</b> 網路霸凌的場合是手機，電腦和平板等電子產品；其發生可以通過SMS，簡訊和應用程序進行，' +
         '也可以在社交媒體，論壇或遊戲中進行，人們可以在上述介質中查看，參與或共享內容。<br/>' +
         '<b>網絡霸凌行為包括發送，發布或共享有關他人的負面，有害，虛假等負面內容；也可以是共享有關他人之隱私信息，從而導致當事人感到尷尬或屈辱。</b>',
-      img: '<img src="./bully_procedure.svg" alt="bully procedure">',
+      img: '<img src="./contentImg/bully_procedure.svg" alt="bully procedure">',
       comment: '圖一：網路霸凌示意圖',
       chart: ''
     },

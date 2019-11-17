@@ -44,26 +44,26 @@
     data: function () {
       return {
         // character
-        draw: './hong_l.svg',
-        clair: './xu_s.svg',
-        bunny: './xuan_s.svg'
+        draw: './contentImg/hong_l.svg',
+        clair: './contentImg/xu_s.svg',
+        bunny: './contentImg/xuan_s.svg'
       }
     },
     methods: {
       draw_click: function () {
-        this.draw = './hong_l.svg';
-        this.clair = './xu_s.svg';
-        this.bunny = './xuan_s.svg';
+        this.draw = './contentImg/hong_l.svg';
+        this.clair = './contentImg/xu_s.svg';
+        this.bunny = './contentImg/xuan_s.svg';
       },
       clair_click: function () {
-        this.draw = './hong_s.svg';
-        this.clair = './xu_l.svg';
-        this.bunny = './xuan_s.svg';
+        this.draw = './contentImg/hong_s.svg';
+        this.clair = './contentImg/xu_l.svg';
+        this.bunny = './contentImg/xuan_s.svg';
       },
       bunny_click: function () {
-        this.draw = './hong_s.svg';
-        this.clair = './xu_s.svg';
-        this.bunny = './xuan_l.svg';
+        this.draw = './contentImg/hong_s.svg';
+        this.clair = './contentImg/xu_s.svg';
+        this.bunny = './contentImg/xuan_l.svg';
       }
     }
   }
