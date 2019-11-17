@@ -15,6 +15,11 @@ npm run serve
 npm run build
 ```
 
+### Compiles and deploy to the GitHub Page
+```
+npm run deploy
+```
+
 ### Lints and fixes files
 ```
 npm run lint
