@@ -482,6 +482,12 @@
     background-size: 45%;
   }
   
+  /* text */
+
+  #role a {
+    color: #9DDFF8;
+  }
+  
   /* suggestion bar */
   
   #suggestion-bar {
@@ -514,8 +520,10 @@
     margin-bottom: 0px;
   }
   
-  #role a {
-    color: #9DDFF8;
+  #suggestion-bar a{
+    display: flex;
+    align-content: center;
+    padding: 2px 0px 0px 2px;
   }
   
   /* title */
@@ -525,6 +533,14 @@
   
   #role_title .line {
     width: 20%;
+  }
+  
+  /* option */
+
+  #option button{
+    display: flex;
+    align-content: center;
+    padding: 3.5px 1.5px 1px 3px;
   }
   
   /* list */

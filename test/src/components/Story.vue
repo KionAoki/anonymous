@@ -187,6 +187,13 @@ export default {
 </script>
 
 <style>
+  /* img */
+  
+  #story_option button{
+    display: flex;
+    align-content: center;
+    padding: 1px 2px 2px 1px;
+  }
   /* carousel */
   
   #carousel {
