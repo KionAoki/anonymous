@@ -9,6 +9,6 @@ git init
 git add -A
 git commit -m 'deploy'
 # 部署到 https://github.com/whoisback/anonymous.git 分支為 gh-pages
-git push -f https://github.com/whoisback/anonymous.git master:gh-pages
+git push -f git@github.com:whoisback/anonymous.git master:gh-pages
 
 cd -
