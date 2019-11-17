@@ -77,13 +77,18 @@
   
   /* text */
 
-
+/*
   #instagram h3{
     color: #11283A;
   }
+*/
 
   #instagram p {
     color: #4D4D4D;
+  }
+
+  .qrcode-title > h2 {
+    color: #050511;
   }
 
   /* character */

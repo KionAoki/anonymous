@@ -11,7 +11,7 @@
       <Instagram/>
     </main>
     <footer>
-    
+      <shareCredit/>
     </footer>
   </div>
 </template>
@@ -25,6 +25,7 @@ import Story from './components/Story.vue'
 import Cyberbully from './components/Cyberbully.vue'
 import Role from './components/Role.vue'
 import Instagram from './components/Instagram.vue'
+import shareCredit from './components/credit.vue'
 
 export default {
   name: 'app',
@@ -36,7 +37,8 @@ export default {
     Story,
     Cyberbully,
     Role,
-    Instagram
+    Instagram,
+    shareCredit
   }
 }
 </script>
