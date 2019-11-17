@@ -8,7 +8,11 @@
       <Story/>
       <Cyberbully/>
       <Role/>
+      <Instagram/>
     </main>
+    <footer>
+    
+    </footer>
   </div>
 </template>
 
@@ -20,6 +24,7 @@ import Introduction from './components/Introduction.vue'
 import Story from './components/Story.vue'
 import Cyberbully from './components/Cyberbully.vue'
 import Role from './components/Role.vue'
+import Instagram from './components/Instagram.vue'
 
 export default {
   name: 'app',
@@ -30,10 +35,10 @@ export default {
     Introduction,
     Story,
     Cyberbully,
-    Role
+    Role,
+    Instagram
   }
 }
-
 </script>
 
 <style>
