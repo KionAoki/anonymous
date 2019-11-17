@@ -194,15 +194,6 @@
   }
 </script>
 <style>
-  /* title */
-  #cyberbully_title .page-title {
-    width: 60%;
-  }
-  
-  #cyberbully_title .line {
-    width: 20%;
-  }
-  
   /* planet */
   
   .planet3 {
