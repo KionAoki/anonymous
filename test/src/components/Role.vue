@@ -75,8 +75,10 @@
   </div>
 </template>
 <script>
+  
   import PageTitle from './PageTitle'
   import Paragraph from './Paragraph'
+  
 
   var role_post = [
     {
@@ -142,7 +144,8 @@
         '其中本篇文章就使用了<a href="https://cyberbullying.org/bullying-laws"> Cyberbullying Research Center </a>關於美國各州霸凌法包含網路霸凌之內容統計數據：\n',
       img: '',
       comment: '',
-      chart: '<div id="usa"></div>'
+      chart: '<div id="usa"><div id="tooltip"></div>' +
+        '<svg id="statesvg"></svg></div>'
     },
     {
       key: 'h',
@@ -637,6 +640,66 @@
     height: 100%;
     vertical-align: middle;
     content: '';
+  }
+  
+  /* USA */
+  #usa{
+    display: flex;
+    max-width: 100vw;
+  }
+  
+  #statesvg{
+    display: flex;
+    height: 600px;
+    width: 960px;
+  }
+
+  .state{
+    fill: none;
+    stroke: #a9a9a9;
+    stroke-width: 1;
+  }
+  .state:hover{
+    fill-opacity:0.5;
+  }
+  #tooltip {
+    position: absolute;
+    text-align: center;
+    padding: 20px;
+    margin: 10px;
+    font: 12px sans-serif;
+    background: lightsteelblue;
+    border: 1px;
+    border-radius: 2px;
+    pointer-events: none;
+  }
+  #tooltip h4{
+    margin:0;
+    font-size:14px;
+  }
+  #tooltip{
+    background:rgba(256,256,256,0.9);
+    border:1px solid #FFE9A4;
+    border-radius:5px;
+    font-size:12px;
+    width:auto;
+    padding:4px;
+    color: #000000;
+    opacity:0;
+  }
+  #tooltip table{
+    table-layout:fixed;
+  }
+  #tooltip tr td{
+    padding:0;
+    margin:0;
+  }
+  #tooltip tr td:nth-child(1){
+    width:150px;
+    height: 50px;
+  }
+  #tooltip tr td:nth-child(2){
+    text-align:center;
   }
 
 </style>
