@@ -646,12 +646,14 @@
   #usa{
     display: flex;
     max-width: 100vw;
+    position: relative;
   }
   
   #statesvg{
     display: flex;
     height: 600px;
     width: 960px;
+    cursor: pointer;
   }
 
   .state{
@@ -679,7 +681,7 @@
   }
   #tooltip{
     background:rgba(256,256,256,0.9);
-    border:1px solid #FFE9A4;
+    border:1px solid lightsteelblue;
     border-radius:5px;
     font-size:12px;
     width:auto;

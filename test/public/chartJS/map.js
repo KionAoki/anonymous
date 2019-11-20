@@ -208,9 +208,15 @@
     var uStates = {};
 
     uStates.draw = function(id, data, toolTip) {
-      function mouseOver(d) {
+      function click(d) {
+        var b = document.getElementById('role').offsetTop -
+          document.getElementById('usa').offsetTop -
+          document.getElementById('usa').offsetHeight;
+        var a = document.getElementById('role').offsetTop +
+          document.getElementById('role').offsetHeight +
+          document.getElementById('instagram').offsetHeight - b;
         d3.select("#tooltip").transition().duration(200).style("opacity", .9);
-        d3.select("#tooltip").html(toolTip(d.n, data[d.id])).style("left", (d3.event.pageX) + "px").style("top", (d3.event.pageY) + "px");
+        d3.select("#tooltip").html(toolTip(d.n, data[d.id])).style("left", (d3.event.pageX - 150) + "px").style("top", (d3.event.pageY - a + 100) + "px");
       }
 
       function mouseOut() {
@@ -221,7 +227,7 @@
         return d.d;
       }).style("fill", function(d) {
         return data[d.id].color;
-      }).on("click", mouseOver);
+      }).on("click", click).on("mouseout", mouseOut);
     }
     this.uStates = uStates;
   }
