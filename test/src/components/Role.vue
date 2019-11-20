@@ -562,12 +562,8 @@
   }
   
   /* paragraph image */
-  
-  [alt="law"] {
-    height: 400px;
-  }
-  
-  [alt="cyberbully"] {
+
+  [alt="cyberbully"], [alt="law"] {
     height: 400px;
   }
   
@@ -704,5 +700,13 @@
   #tooltip tr td:nth-child(2){
     text-align:center;
   }
+  
+  @media only screen and (min-width: 736px) and (max-width: 1024px) {
+    [alt="cyberbully"], [alt="law"] {
+      height: 300px;
+    }
+  }
 
+  @media only screen and (min-width: 320px) and (max-width: 735px) {}
+  
 </style>

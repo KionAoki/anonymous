@@ -195,7 +195,7 @@ export default {
 
   .sidebar-nav > .sidebar-brand {
     font-size: 1.1rem;
-    height: 90px;
+    height: 70px;
     line-height: 60px;
     padding: 10.5px 0px 1px 20px;
     margin-top: 65px;
@@ -210,5 +210,20 @@ export default {
     color: #666666;
     background: 0 0
   }
+
+  .sidebar-nav-item{
+    height: 40px;
+  }
+
+  @media only screen and (min-width: 736px) and (max-width: 1024px) {
+    .sidebar-nav > .sidebar-brand {
+      height: 50px;
+    }
+    .sidebar-nav-item{
+      height: 30px;
+    }
+  }
+
+  @media only screen and (min-width: 320px) and (max-width: 735px) {}
   
 </style>

@@ -233,5 +233,27 @@ export default {
   .arrow:last-child {
     right: 5%;
   }
+  
+  @media only screen and (min-width: 736px) and (max-width: 1024px) {
+    #story .wrapper{
+      padding: 30px;
+    }
+    .arrow{
+      padding: 120px 30px 120px 30px;
+      cursor: pointer;
+    }
+    .arrow:first-child {
+      left: 5%;
+      padding-right: 20px;
+    }
+    .arrow:last-child {
+      right: 5%;
+      padding-left: 20px;
+    }
+    .story_content {
+      width: 100%;
+    }
+  }
 
+  @media only screen and (min-width: 320px) and (max-width: 735px) {}
 </style>

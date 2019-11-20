@@ -148,4 +148,18 @@
     color: #6D6F75 !important;
   }
 
+  @media only screen and (min-width: 736px) and (max-width: 1024px) {
+    #character{
+      margin-top: 0px;
+    }
+    [alt="character"] {
+      height: 50vh;
+    }
+    #instagram .center .wrapper {
+      padding: 0px 0px 60px 0px;
+    }
+  }
+
+  @media only screen and (min-width: 320px) and (max-width: 735px) {}
+
 </style>

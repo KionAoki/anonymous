@@ -43,5 +43,19 @@ export default {
     border-bottom:0px #F1C320 solid;
   }
 
+  @media only screen and (min-width: 736px) and (max-width: 1024px) {
+    #banner{
+      min-height: 50vh;
+      justify-content: center;
+      align-items: flex-end;
+    }
+    .web-title {
+      align-items: center;
+      margin-right: 0px;
+    }
+  }
+
+@media only screen and (min-width: 320px) and (max-width: 735px) {}
+
 
 </style>

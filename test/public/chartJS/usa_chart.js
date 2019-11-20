@@ -93,9 +93,6 @@ function resize(){
   svg.attr("width", targetWidth);
   svg.attr("height", Math.round(targetWidth/aspect));
 
-  console.log ("width : " + targetWidth);
-  console.log ("height : " + Math.round(targetWidth/aspect));
-
   // update projection
   projection.translate([width / 2, height / 2])
     .scale(width);

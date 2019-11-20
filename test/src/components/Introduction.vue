@@ -68,4 +68,16 @@
     background-size: 20%;
     padding-bottom: 100px;
   }
+  
+  @media only screen and (min-width: 736px) and (max-width: 1024px) {
+    #introduction {
+      padding-bottom: 0px;
+    }
+    .planet5 {
+      padding-bottom: 0px;
+    }
+  
+  }
+
+  @media only screen and (min-width: 320px) and (max-width: 735px) {}
 </style>

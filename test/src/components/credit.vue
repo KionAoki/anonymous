@@ -100,4 +100,11 @@
   #share a:last-child {
     padding-left: 30px;
   }
+  @media only screen and (min-width: 736px) and (max-width: 1024px) {
+    #share{
+      margin-right: 100px;
+    }
+  }
+
+  @media only screen and (min-width: 320px) and (max-width: 735px) {}
 </style>

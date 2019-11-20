@@ -223,4 +223,11 @@
     height: 300px;
   }
 
+  @media only screen and (min-width: 736px) and (max-width: 1024px) {
+    [alt="bully procedure"] {
+      height: 200px;
+    }
+  }
+
+  @media only screen and (min-width: 320px) and (max-width: 735px) {}
 </style>
