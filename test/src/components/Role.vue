@@ -145,7 +145,8 @@
       img: '',
       comment: '',
       chart: '<div id="usa"><div id="tooltip"></div>' +
-        '<svg id="statesvg"></svg></div>'
+        '<svg id="statesvg" width="960" height="600"\n' +
+        '     viewBox="0 0 960 600"  preserveAspectRatio="xMidYMid"></svg></div>'
     },
     {
       key: 'h',

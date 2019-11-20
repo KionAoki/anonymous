@@ -71,3 +71,35 @@ var sampleData ={};	/* Sample random data. */
 /* draw states on id #statesvg */
 
 uStates.draw("#statesvg", sampleData, tooltipHtml);
+
+
+/* draw states on id #statesvg */
+uStates.draw("#statesvg", sampleData, tooltipHtml);
+d3.select(self.frameElement).style("height", "600px");
+
+var svgContainer = $("#statesvg");
+var width = svgContainer.width();
+var height = svgContainer.height();
+var aspect = width/height;
+var container = svgContainer.parent();
+
+var svg = d3.select("svg");
+
+//responsive map
+function resize(){
+  // adjust things when the window size changes
+  var targetWidth = container.width();
+
+  svg.attr("width", targetWidth);
+  svg.attr("height", Math.round(targetWidth/aspect));
+
+  console.log ("width : " + targetWidth);
+  console.log ("height : " + Math.round(targetWidth/aspect));
+
+  // update projection
+  projection.translate([width / 2, height / 2])
+    .scale(width);
+
+  // resize the map
+  svg.select('.lga').attr('d', path);
+}
