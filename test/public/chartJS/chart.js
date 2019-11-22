@@ -1,13 +1,13 @@
 var data = [{
-  item: '被網路霸凌',
+  item: '被霸凌者',
   count: 19.6,
   percent: 0.196
 }, {
-  item: '網路霸凌別人',
+  item: '霸凌者',
   count: 10,
   percent: 0.10
 }, {
-  item: '旁觀網路霸凌',
+  item: '旁觀者',
   count: 54.7,
   percent: 0.547
 }];
@@ -51,14 +51,16 @@ chart.guide().html({
 });
 var interval = chart.intervalStack().position('percent').color('item', ['#7f8da9', '#db4c3c', '#fec514','#daf0fd', '#9BD782']).label('percent', {
   formatter: function formatter(val, item) {
+    if(736 < document.documentElement.clientWidth){
     return item.point.item + ': ' + val;
+    }
   }
 }).tooltip('item*percent', function(item, percent) {
-  percent = percent * 100 + '%';
-  return {
-    name: item,
-    value: percent
-  };
+    percent = percent * 100 + '%';
+    return {
+      name: item,
+      value: percent
+    };
 }).style({
   lineWidth: 1,
   stroke: '#fff'

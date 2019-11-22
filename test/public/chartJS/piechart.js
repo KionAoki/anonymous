@@ -78,9 +78,10 @@ chart.intervalStack().position('sold').shape('radiusPie').color('sex', COLORS).l
   useHtml: true,
   htmlTemplate: function htmlTemplate(text, item) {
     var src = item.point.sex === '會告訴身邊成年人' ? './contentImg/conversation.svg' : './contentImg/gossip.svg';
+    var alt = 'chartIcon';
     var color = item.point.sex === '不會告訴身邊成年人' ? COLORS[1] : COLORS[0];
-    var IMG = '<img style="width:80px" src="' + src + '" /><br/>';
-    return '<div style="margin: 50px; text-align:center;color:' + color + '">' + IMG + (text * 100).toFixed(0) + '%</div>';
+    var IMG = '<img src="' + src + '" alt="'+ alt +'"/><br/>';
+    return '<div class="iconImg" style="text-align:center;color:' + color + '">' + IMG + (text * 100).toFixed(0) + '%</div>';
   }
 });
 

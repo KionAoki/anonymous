@@ -106,5 +106,13 @@
     }
   }
 
-  @media only screen and (min-width: 320px) and (max-width: 735px) {}
+  @media only screen and (min-width: 320px) and (max-width: 735px) {
+    .footer{
+      flex-direction: column;
+      justify-items: center;
+    }
+    #share{
+      margin: 20px 0px 20px 0px;
+    }
+  }
 </style>

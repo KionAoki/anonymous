@@ -69,15 +69,17 @@
     padding-bottom: 100px;
   }
   
-  @media only screen and (min-width: 736px) and (max-width: 1024px) {
+  @media only screen and (min-width: 320px) and (max-width: 1024px) {
     #introduction {
       padding-bottom: 0px;
     }
     .planet5 {
       padding-bottom: 0px;
     }
-  
   }
-
-  @media only screen and (min-width: 320px) and (max-width: 735px) {}
+  @media only screen and (min-width: 320px) and (max-width: 735px) {
+    .planet5{
+      background-position: 10% 103%;
+    }
+  }
 </style>

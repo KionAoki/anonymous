@@ -223,11 +223,22 @@
     height: 300px;
   }
 
+  [alt="chartIcon"]{
+    width: 80px;
+  }
+
   @media only screen and (min-width: 736px) and (max-width: 1024px) {
     [alt="bully procedure"] {
       height: 200px;
     }
   }
 
-  @media only screen and (min-width: 320px) and (max-width: 735px) {}
+  @media only screen and (min-width: 320px) and (max-width: 735px) {
+    [alt="chartIcon"]{
+      width: 60px;
+    }
+    .iconImg{
+      margin: 0px 40px 40px 40px;
+    }
+  }
 </style>

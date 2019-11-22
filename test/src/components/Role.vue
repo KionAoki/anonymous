@@ -146,7 +146,8 @@
       comment: '',
       chart: '<div id="usa"><div id="tooltip"></div>' +
         '<svg id="statesvg" width="960" height="600"\n' +
-        '     viewBox="0 0 960 600"  preserveAspectRatio="xMidYMid"></svg></div>'
+        '     viewBox="0 0 960 600"  preserveAspectRatio="xMidYMid"></svg></div>' +
+        '<div><p style="text-align: center;">立法完整度高（深）——> 低（淺）</p></div>'
     },
     {
       key: 'h',
@@ -705,8 +706,15 @@
     [alt="cyberbully"], [alt="law"] {
       height: 300px;
     }
+    #statesvg{
+      height:400px;;
+    }
   }
 
-  @media only screen and (min-width: 320px) and (max-width: 735px) {}
+  @media only screen and (min-width: 320px) and (max-width: 735px) {
+    #statesvg{
+      height:200px;;
+    }
+  }
   
 </style>

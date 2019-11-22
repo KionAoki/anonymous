@@ -211,9 +211,51 @@ p {
   }
 
   .option button img{
-    width: 50%;
-    height: 50%;
+    width: 70%;
+    height: 70%;
   }
 }
 
-@media only screen and (min-width: 320px) and (max-width: 735px) {}
+@media only screen and (min-width: 320px) and (max-width: 735px) {
+  /* text */
+
+  h1{
+    font-size: 30px;
+  }
+
+  h2{
+    font-size: 20px;
+  }
+
+  p{
+    font-size: 16px;
+    line-height: 3em;
+  }
+  /* wrapper */
+
+  .wrapper-content{
+    padding: 0px;
+  }
+
+  .inner{
+    padding: 10px;
+  }
+
+  .wrapper {
+    padding: 20px;
+  }
+
+  /* option */
+  .option{
+    margin-bottom: 60px;
+  }
+
+  .option button img{
+    width: 95%;
+    height: 95%;
+  }
+
+  .option-center {
+    padding: 0px;
+  }
+}

@@ -255,5 +255,12 @@ export default {
     }
   }
 
-  @media only screen and (min-width: 320px) and (max-width: 735px) {}
+  @media only screen and (min-width: 320px) and (max-width: 735px) {
+    .arrow{
+      display: none;
+    }
+    .story_content {
+      width: 100%;
+    }
+  }
 </style>

@@ -5,12 +5,25 @@
     </div>
     <div>
       <div id="character">
-        <img :src="draw" alt="character"
-             @click="draw_click">
-        <img :src="clair" alt="character"
-             @click="clair_click">
-        <img :src="bunny" alt="character"
-             @click="bunny_click">
+        <div v-show="desktop">
+          <img :src="draw" alt="character"
+               @click="draw_click">
+          <img :src="clair" alt="character"
+               @click="clair_click">
+          <img :src="bunny" alt="character"
+               @click="bunny_click">
+        </div>
+        <div id="mobileCharacter" v-show="mobile">
+          <a href="https://www.instagram.com/draw_r.b/">
+            <img src="../assets/hong_l.svg" alt="mobileCharacter">
+          </a>
+          <a href="https://www.instagram.com/clair0324/">
+            <img src="../assets/xu_l.svg" alt="mobileCharacter">
+          </a>
+          <a href="https://www.instagram.com/bunny_love_herself/">
+            <img src="../assets/xuan_l.svg" alt="mobileCharacter">
+          </a>
+        </div>
       </div>
       <div class="center">
         <div class="wrapper">
@@ -46,8 +59,18 @@
         // character
         draw: './contentImg/hong_l.svg',
         clair: './contentImg/xu_s.svg',
-        bunny: './contentImg/xuan_s.svg'
+        bunny: './contentImg/xuan_s.svg',
+        desktop: false,
+        mobile:true
       }
+    },
+    mounted() {
+      window.addEventListener('load',function () {
+        if(document.documentElement.clientWidth > 735){
+          this.desktop = true;
+          this.mobile = false;
+        }
+      })
     },
     methods: {
       draw_click: function () {
@@ -160,6 +183,36 @@
     }
   }
 
-  @media only screen and (min-width: 320px) and (max-width: 735px) {}
+  @media only screen and (min-width: 320px) and (max-width: 735px) {
+    #character{
+      margin-top: 0px;
+    }
+    #mobileCharacter{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    [alt="mobileCharacter"]{
+      width: 90vw;
+      margin-bottom: 20px;
+    }
+    #instagram .center .wrapper {
+      padding: 0px 0px 60px 0px;
+    }
+    .qrcode-title > h2{
+      font-size: 17px;
+      text-align: center;
+    }
+    .start img{
+      width: 100%;
+      padding-left: 20px;
+    }
+    .start p{
+      letter-spacing: 1.5em;
+      font-size: 20px;
+      margin-left: 0px;
+      padding: 55px 10px 10px 0px;
+    }
+  }
 
 </style>
