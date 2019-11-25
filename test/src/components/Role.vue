@@ -725,7 +725,7 @@
       height: 150px;
     }
     [alt="law"] {
-      height: 600px;
+      height: 300px;
     }
   }
   
