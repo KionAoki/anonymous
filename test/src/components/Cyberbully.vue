@@ -1,7 +1,10 @@
 <template>
   <div id="cyberbully">
     <PageTitle title="什麼是網絡霸凌？" class="star"></PageTitle>
-    <img src="../assets/bg-01.jpg" alt="scroll_1" :class="{'bye': bye1}">
+    <picture>
+      <source media="(max-width: 735px)" srcset="../assets/bgp-01.jpg">
+      <img src="../assets/bg-01.jpg" alt="scroll_1" :class="{'bye': bye1}">
+    </picture>
     <div class="empty"></div>
     <div class="star" id="scroll_1">
       <div class="planet3">
@@ -15,7 +18,10 @@
         </div>
       </div>
     </div>
-    <img src="../assets/bg-02.jpg" alt="scroll_2" :class="{'bye': bye2}">
+    <picture>
+      <source media="(max-width: 735px)" srcset="../assets/bgp-02.jpg">
+      <img src="../assets/bg-02.jpg" alt="scroll_2" :class="{'bye': bye2}">
+    </picture>
     <div class="empty"></div>
     <div class="star" id="scroll_2">
       <div class="planet6">
@@ -31,7 +37,10 @@
         </div>
       </div>
     </div>
-    <img src="../assets/bg-03.jpg" alt="scroll_3" :class="{'bye': bye3}">
+    <picture>
+      <source media="(max-width: 735px)" srcset="../assets/bgp-03.jpg">
+      <img src="../assets/bg-03.jpg" alt="scroll_3" :class="{'bye': bye3}">
+    </picture>
     <div class="empty"></div>
   </div>
 </template>

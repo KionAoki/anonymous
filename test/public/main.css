@@ -258,4 +258,11 @@ p {
   .option-center {
     padding: 0px;
   }
+
+  /* Scroll */
+
+  [alt='scroll_1'], [alt='scroll_2'], [alt='scroll_3'], [alt='scroll_4'] {
+    max-width: 100vw;
+    bottom: 20%;
+  }
 }

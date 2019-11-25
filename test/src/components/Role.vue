@@ -70,7 +70,10 @@
         </div>
       </div>
     </div>
-    <img src="../assets/bg-08.jpg" alt="scroll_4">
+    <picture>
+      <source media="(max-width: 735px)" srcset="../assets/bgp-08.jpg">
+      <img src="../assets/bg-08.jpg" alt="scroll_4">
+    </picture>
     <div class="empty" id="scroll_4"></div>
   </div>
 </template>
@@ -167,7 +170,10 @@
       title: '',
       content: '<b>反霸凌法(Anti-Bullying Law)是阻止霸凌行為的重要武器之一</b> ，但可惜的是 <b>並不是每個國家都有制定相關法律</b> ，' +
         '像 <b>台灣目前並沒有針對網路霸凌的專法</b>，如果當事人想要走法律途徑，只能以公然侮辱罪、誹謗罪這樣的擦邊球名義加以控告。\n',
-      img: '<img src="./contentImg/chat2-01.svg" alt="law">',
+      img: '<picture>' +
+        '<source srcset="./contentImg/chat2.svg" media="(max-width: 735px)">' +
+        '<img src="./contentImg/chat2-01.svg" alt="law">' +
+        '</picture>',
       comment: '資料來源：自行整理',
       chart: ''
     },
@@ -714,6 +720,12 @@
   @media only screen and (min-width: 320px) and (max-width: 735px) {
     #statesvg{
       height:200px;;
+    }
+    [alt="cyberbully"]{
+      height: 150px;
+    }
+    [alt="law"] {
+      height: 600px;
     }
   }
   

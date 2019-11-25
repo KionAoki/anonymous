@@ -41,7 +41,10 @@
         </div>
       </div>
       <div>
-        <img src="../assets/bg-04.jpg" alt="ending-image">
+        <picture>
+          <source media="(max-width: 735px)" srcset="../assets/bgp-07.jpg">
+          <img src="../assets/bg-04.jpg" alt="ending-image">
+        </picture>
       </div>
     </div>
   </div>
