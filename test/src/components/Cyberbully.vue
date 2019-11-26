@@ -2,7 +2,7 @@
   <div id="cyberbully">
     <PageTitle title="什麼是網絡霸凌？" class="star"></PageTitle>
     <picture>
-      <source media="(max-width: 735px)" srcset="../assets/bgp-01.jpg">
+      <source media="(max-width: 1024px)" srcset="../assets/bgp-01.jpg">
       <img src="../assets/bg-01.jpg" alt="scroll_1" :class="{'bye': bye1}">
     </picture>
     <div class="empty"></div>
@@ -19,7 +19,7 @@
       </div>
     </div>
     <picture>
-      <source media="(max-width: 735px)" srcset="../assets/bgp-02.jpg">
+      <source media="(max-width: 1024px)" srcset="../assets/bgp-02.jpg">
       <img src="../assets/bg-02.jpg" alt="scroll_2" :class="{'bye': bye2}">
     </picture>
     <div class="empty"></div>
@@ -38,7 +38,7 @@
       </div>
     </div>
     <picture>
-      <source media="(max-width: 735px)" srcset="../assets/bgp-03.jpg">
+      <source media="(max-width: 1024px)" srcset="../assets/bgp-03.jpg">
       <img src="../assets/bg-03.jpg" alt="scroll_3" :class="{'bye': bye3}">
     </picture>
     <div class="empty"></div>

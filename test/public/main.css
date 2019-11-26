@@ -153,8 +153,9 @@ p {
 }
 
 @media only screen and (min-height: 1023px){
+  /*
   [alt='scroll_1'], [alt='scroll_2'], [alt='scroll_3'], [alt='scroll_4'] {
-    bottom: 15%;
+     bottom: 15%;
   }
   [alt='scroll_1']{
     left: -49%;
@@ -165,21 +166,14 @@ p {
   [alt='scroll_3']{
     left: -30%;
   }
+  */
 }
 
 @media only screen and (min-width: 1023px) and (max-width: 1280px){
-  [alt='scroll_1']{
-    left: -49%;
-  }
-  [alt='scroll_2']{
-    left: -50%;
-  }
-  [alt='scroll_3']{
-    left: -30%;
-  }
+
 }
 
-@media only screen and (min-width: 736px) and (max-width: 1024px) {
+@media only screen and (min-width: 736px) and (max-width: 1025px) {
 
   /* text */
 
@@ -213,6 +207,11 @@ p {
   .option button img{
     width: 70%;
     height: 70%;
+  }
+
+  /* scroll */
+  [alt='scroll_1'], [alt='scroll_2'], [alt='scroll_3'], [alt='scroll_4'] {
+    max-height: 130vh;
   }
 }
 

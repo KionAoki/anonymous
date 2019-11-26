@@ -71,7 +71,7 @@
       </div>
     </div>
     <picture>
-      <source media="(max-width: 735px)" srcset="../assets/bgp-08.jpg">
+      <source media="(max-width: 1024px)" srcset="../assets/bgp-08.jpg">
       <img src="../assets/bg-08.jpg" alt="scroll_4">
     </picture>
     <div class="empty" id="scroll_4"></div>
