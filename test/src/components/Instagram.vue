@@ -3,6 +3,10 @@
     <div>
       <page-title title="IG 故事人物介紹"></page-title>
     </div>
+      <div class="center">
+        <Paragraph v-for="text in wedge" :key="text.key" :title="text.title" :content="text.content"
+                   :img="text.img" :comment="text.comment" :chart="text.chart"/>
+      </div>
     <div>
       <div id="character">
         <div v-show="desktop">
@@ -51,14 +55,37 @@
 </template>
 <script>
   import PageTitle from './PageTitle'
+  import Paragraph from './Paragraph'
+
+  var wedge = [
+    {
+      key: 'ba',
+      title: '',
+      content: '世新資傳的系聚辦在2019年9月14號。<br/>' +
+        '那晚杯觥交錯、喧鬧聲四起，人人都迷醉在最後一年的青春裡。<br/>' +
+        '<br/>' +
+        '如果說青春是放聲歡笑的一群人，愛是驟然走近的兩個人。<br/>' +
+        '那麼生命，便是飽受悲傷絕望的一個人。<br/>' +
+        '<br/>' +
+        '看過多少冷暖、歷經幾番波折。<br/>' +
+        '<br/>' +
+        '我們是活下來了，<br/>' +
+        '但，不是活著。',
+      img: '',
+      comment: '',
+      chart: ''
+    }
+  ];
   
   export default {
     name: 'Instagram',
     components: {
-      PageTitle
+      PageTitle,
+      Paragraph
     },
     data: function () {
       return {
+        wedge : wedge,
         // character
         draw: './contentImg/hong_l.svg',
         clair: './contentImg/xu_s.svg',
@@ -67,11 +94,21 @@
         mobile:true
       }
     },
-    mounted() {
-      window.addEventListener('load',function () {
+    beforeCreate() {
+      window.addEventListener('load',() => {
         if(document.documentElement.clientWidth > 735){
           this.desktop = true;
           this.mobile = false;
+        }
+      })
+      window.addEventListener('resize',() => {
+        if(document.documentElement.clientWidth > 735){
+          this.desktop = true;
+          this.mobile = false;
+        }
+        if(document.documentElement.clientWidth < 735){
+          this.desktop = false;
+          this.mobile = true;
         }
       })
     },
@@ -179,7 +216,7 @@
       margin-top: 0px;
     }
     [alt="character"] {
-      height: 50vh;
+      height: 35vh;
     }
     #instagram .center .wrapper {
       padding: 0px 0px 60px 0px;
