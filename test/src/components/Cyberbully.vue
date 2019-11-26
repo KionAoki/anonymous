@@ -243,6 +243,10 @@
   }
 
   @media only screen and (min-width: 320px) and (max-width: 735px) {
+    .page-title{
+      width: 50%;
+    }
+    
     [alt="chartIcon"]{
       width: 60px;
     }
@@ -250,4 +254,6 @@
       margin: 0px 40px 40px 40px;
     }
   }
+  
+  
 </style>
