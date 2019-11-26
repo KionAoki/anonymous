@@ -66,7 +66,10 @@
         '<b>網絡霸凌 (Cyberbullying) 是霸凌行為的一種。</b> 網路霸凌的場合是手機，電腦和平板等電子產品；其發生可以通過SMS，簡訊和應用程序進行，' +
         '也可以在社交媒體，論壇或遊戲中進行，人們可以在上述介質中查看，參與或共享內容。<br/>' +
         '<b>網絡霸凌行為包括發送，發布或共享有關他人的負面，有害，虛假等負面內容；也可以是共享有關他人之隱私信息，從而導致當事人感到尷尬或屈辱。</b>',
-      img: '<img src="./contentImg/bully_procedure.svg" alt="bully procedure">',
+      img: '<picture>' +
+        '<source srcset="./contentImg/bully_procedure2.svg" media="(max-width: 735px)">' +
+        '<img src="./contentImg/bully_procedure.svg" alt="bully procedure">' +
+        '</picture>',
       comment: '圖一：網路霸凌示意圖',
       chart: ''
     },
@@ -75,16 +78,20 @@
       title: '',
       content: '網路霸凌與傳統霸凌相比，有什麼不同：' +
         '<ol><li><b>因為網路匿名性而不知道誰是霸凌者，或為什麼將自己作為目標</b><br/>' +
+        '<img src="./contentImg/bullychat-01.jpg" alt="bullychat"><br/>' +
         '根據一份對全台地區網路使用者的調查顯示：六成網路霸凌受害者不知道加害對象的身份（廖國良，2012）。' +
         '此外，四成的網路霸凌受害者甚至不明白為何對方要霸凌自己（謝意苹，2013）。</li>' +
         '<li><b>網絡霸凌不會受制時間與空間</b><br/>' +
+        '<img src="./contentImg/bullychat-02.jpg" alt="bullychat"><br/>' +
         '傳統校園霸凌的時間與空閒往往是有特定性，例如被霸凌者回到家就不會繼續受到傷害；可網路霸凌是可以隨時隨地進行，' +
         '哪怕被霸凌者回到家、關閉手機電腦，也不能停止相關資訊在網路上流傳。還有就是在網路上，霸凌者由於無法看到霸凌者，' +
         '更有可能採取惡毒語言或是殘酷手段。</li>' +
         '<li><b>凡走過必留痕跡，很難完全清除被霸凌遭遇</b><br/>' +
+        '<img src="./contentImg/bullychat-03.jpg" alt="bullychat"><br/>' +
         '網路大大提高了傳播速度，很多內容被快速複製保存；傳統霸凌內容大多停留在當事人記憶，無關人員不太容易獲取內容。' +
         '網路霸凌只需要一個關鍵字就可以找出當時的霸凌現場，相關截圖錄屏讓事件更容易被轉發。</li>' +
         '<li><b>父母和監護人很難管理網絡霸凌</b><br/>' +
+        '<img src="./contentImg/bullychat-04.jpg" alt="bullychat"><br/>' +
         '網路匿名性無法隨意去調閱 IP  位址，當父母與監護人發現自家小孩遭遇網絡霸凌時很難有效去制止霸凌行為。</li></ol>',
       img: '',
       comment: '',
@@ -235,6 +242,11 @@
   [alt="chartIcon"]{
     width: 80px;
   }
+  
+  [alt="bullychat"]{
+    width: 50%;
+    margin: 10px;
+  }
 
   @media only screen and (min-width: 736px) and (max-width: 1024px) {
     [alt="bully procedure"] {
@@ -249,11 +261,27 @@
     
     [alt="chartIcon"]{
       width: 60px;
+      margin: 0px;
     }
+  
+    [alt="bully procedure"] {
+      height: 700px;
+    }
+  
+    [alt="bullychat"]{
+      width: 100%;
+      margin: 10px;
+    }
+    
     .iconImg{
       margin: 0px 40px 40px 40px;
     }
   }
-  
+
+  @media only screen and (min-width: 320px) and (max-width: 400px) {
+    .iconImg{
+      margin: 0px 20px 20px 40px;
+    }
+  }
   
 </style>
