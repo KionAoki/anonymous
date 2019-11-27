@@ -147,9 +147,11 @@
         '其中本篇文章就使用了<a href="https://cyberbullying.org/bullying-laws"> Cyberbullying Research Center </a>關於美國各州霸凌法包含網路霸凌之內容統計數據：\n',
       img: '',
       comment: '',
-      chart: '<div id="usa"><div id="tooltip"></div>' +
+      chart: '<div id="usa"><div class="touch"></div>' +
+        '<div id="tooltip"></div>' +
         '<svg id="statesvg" width="960" height="600"\n' +
-        '     viewBox="0 0 960 600"  preserveAspectRatio="xMidYMid"></svg></div>' +
+        '     viewBox="0 0 960 600"  preserveAspectRatio="xMidYMid"></svg>' +
+        '</div>' +
         '<div><p style="text-align: center;">立法完整度高（深）——> 低（淺）</p></div>'
     },
     {
@@ -726,6 +728,12 @@
     }
     [alt="law"] {
       height: 300px;
+    }
+    .touch{
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      background-color: transparent;
     }
   }
   
