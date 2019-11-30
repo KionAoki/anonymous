@@ -20,6 +20,17 @@
         <div class="story_content">
           <div class="carousel-img">
             <picture>
+              <source media="(max-width: 735px)" :srcset="v1">
+              <img :src="h1" alt="carousel" :class="{carousel: isActive_1}">
+            </picture>
+            <picture>
+              <source media="(max-width: 735px)" :srcset="v2">
+              <img :src="h2" alt="carousel" :class="{carousel: isActive_1}">
+            </picture>
+          </div>
+          <!--
+          <div class="carousel-img">
+            <picture>
               <source media="(max-width: 735px)" srcset="../assets/story1_1_v.jpg">
               <img src="../assets/story1_1_h.jpg" alt="carousel" class="carousel">
             </picture>
@@ -72,6 +83,7 @@
               <img src="../assets/story1_13_h.jpg" alt="carousel" class="carousel">
             </picture>
           </div>
+          -->
         </div>
         <div class="arrow" @click="next">
           <i class="fas fa-chevron-right fa-2x" style="color: #ffffff"></i>
@@ -97,6 +109,12 @@
         tab_2: false,
         tab_3: false,
         //carousel
+        v1: './contentImg/story1_1_v.jpg',
+        h1: './contentImg/story1_1_h.jpg',
+        v2: './contentImg/story1_2_v.jpg',
+        h2: './contentImg/story1_2_h.jpg',
+        isActive_1: true,
+        isActive_2: false,
         width: 0,
         left: 0,
         length: 0,
@@ -137,11 +155,25 @@
         this.tab_1 = true;
         this.tab_2 = false;
         this.tab_3 = false;
+        this.isActive_1 = true;
+        this.isActive_2 = false;
+        this.v1 = './contentImg//story1_1_v.jpg';
+        this.h1 = '../contentImg/story1_1_h.jpg';
+        this.v2 = './contentImg/story1_2_v.jpg';
+        this.h2 = '../contentImg/story1_2_h.jpg';
+        this.left = 0;
       },
       changeb: function () {
         this.tab_1 = false;
         this.tab_2 = true;
         this.tab_3 = false;
+        this.isActive_1 = false;
+        this.isActive_2 = true;
+        this.v1 = './contentImg/story2_1_v.jpg';
+        this.h1 = './contentImg/story2_1_h.jpg';
+        this.v2 = './contentImg/story2_2_v.jpg';
+        this.h2 = './contentImg/story2_2_h.jpg';
+        this.left = 0;
       },
       changec: function () {
         this.tab_1 = false;
@@ -213,6 +245,9 @@
         if (this.scrollStatus) {
           loop();
         }
+      },
+      left: function () {
+        document.getElementsByClassName('carousel-img')[0].style.left = this.left + 'px';
       }
     }
   }
