@@ -2,6 +2,19 @@ html {
   scroll-behavior: smooth;
 }
 
+/* loading */
+
+.loading{
+  position: fixed;
+  z-index: 100000;
+  min-width: 100vw;
+  min-height: 100vh;
+}
+
+.loadend{
+  display: none;
+}
+
 /* body margin */
 
 body {
