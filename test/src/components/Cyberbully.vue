@@ -10,6 +10,9 @@
       <div class="planet3">
         <div class="center shallow">
           <div class="inner">
+            <div class="sheet_content">
+              <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScJG-SFDMHUznt_y-_nk616bdv9_JvdXZMqfAFW2y9cXsF-TA/viewform?embedded=true" class="sheet" frameborder="0" marginheight="0" marginwidth="0">載入中…</iframe>
+            </div>
             <div>
               <Paragraph v-for="text in posts" :key="text.key" :title="text.title" :content="text.content"
                          :img="text.img" :comment="text.comment" :chart="text.chart"></Paragraph>
@@ -231,6 +234,18 @@
     background-position: 0% 20%;
     background-repeat: no-repeat;
     background-size: 20%;
+  }
+  
+  /* sheet */
+  
+  .sheet_content{
+    display: flex;
+    justify-content: center;
+  }
+  
+  .sheet{
+    width: 100%;
+    min-height: 100vh;
   }
   
   /* paragraph image */
