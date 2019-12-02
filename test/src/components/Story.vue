@@ -13,170 +13,172 @@
           <button @click="changec"><img src="../assets/people-story3-01.png" alt="respondent_3"></button>
         </div>
       </div>
+      <v-touch v-on:swipeleft="onSwipeLeft" v-on:swiperight="onSwipeRight">
       <div id="carousel">
-        <div class="arrow" @click="previous">
-          <i class="fas fa-chevron-left fa-2x" style="color: #ffffff"></i>
-        </div>
-        <div class="story_content">
-          <div class="carousel-img" v-if="isActive_1">
-            <picture>
-              <source media="(max-width: 735px)" srcset="../assets/story1_1_v.jpg">
-              <img src="../assets/story1_1_h.jpg" alt="carousel" class="carousel">
-            </picture>
-            <picture>
-              <source media="(max-width: 735px)" srcset="../assets/story1_2_v.jpg">
-              <img src="../assets/story1_2_h.jpg" alt="carousel" class="carousel">
-            </picture>
-            <picture>
-              <source media="(max-width: 735px)" srcset="../assets/story1_3_v.jpg">
-              <img src="../assets/story1_3_h.jpg" alt="carousel" class="carousel">
-            </picture>
-            <picture>
-              <source media="(max-width: 735px)" srcset="../assets/story1_4_v.jpg">
-              <img src="../assets/story1_4_h.jpg" alt="carousel" class="carousel">
-            </picture>
-            <picture>
-              <source media="(max-width: 735px)" srcset="../assets/story1_5_v.jpg">
-              <img src="../assets/story1_5_h.jpg" alt="carousel" class="carousel">
-            </picture>
-            <picture>
-              <source media="(max-width: 735px)" srcset="../assets/story1_6_v.jpg">
-              <img src="../assets/story1_6_h.jpg" alt="carousel" class="carousel">
-            </picture>
-            <picture>
-              <source media="(max-width: 735px)" srcset="../assets/story1_7_v.jpg">
-              <img src="../assets/story1_7_h.jpg" alt="carousel" class="carousel">
-            </picture>
-            <picture>
-              <source media="(max-width: 735px)" srcset="../assets/story1_8_v.jpg">
-              <img src="../assets/story1_8_h.jpg" alt="carousel" class="carousel">
-            </picture>
-            <picture>
-              <source media="(max-width: 735px)" srcset="../assets/story1_9_v.jpg">
-              <img src="../assets/story1_9_h.jpg" alt="carousel" class="carousel">
-            </picture>
-            <picture>
-              <source media="(max-width: 735px)" srcset="../assets/story1_10_v.jpg">
-              <img src="../assets/story1_10_h.jpg" alt="carousel" class="carousel">
-            </picture>
-            <picture>
-              <source media="(max-width: 735px)" srcset="../assets/story1_11_v.jpg">
-              <img src="../assets/story1_11_h.jpg" alt="carousel" class="carousel">
-            </picture>
-            <picture>
-              <source media="(max-width: 735px)" srcset="../assets/story1_12_v.jpg">
-              <img src="../assets/story1_12_h.jpg" alt="carousel" class="carousel">
-            </picture>
-            <picture>
-              <source media="(max-width: 735px)" srcset="../assets/story1_13_v.jpg">
-              <img src="../assets/story1_13_h.jpg" alt="carousel" class="carousel">
-            </picture>
+          <div class="arrow" @click="previous">
+            <i class="fas fa-chevron-left fa-2x" style="color: #ffffff"></i>
           </div>
-          <div class="carousel-img" v-if="isActive_2">
-            <picture>
-              <source media="(max-width: 735px)" srcset="../assets/story2_1_v.jpg">
-              <img src="../assets/story2_1_h.jpg" alt="carousel" class="carousel">
-            </picture>
-            <picture>
-              <source media="(max-width: 735px)" srcset="../assets/story2_2_v.jpg">
-              <img src="../assets/story2_2_h.jpg" alt="carousel" class="carousel">
-            </picture>
-            <picture>
-              <source media="(max-width: 735px)" srcset="../assets/story2_3_v.jpg">
-              <img src="../assets/story2_3_h.jpg" alt="carousel" class="carousel">
-            </picture>
-            <picture>
-              <source media="(max-width: 735px)" srcset="../assets/story2_4_v.jpg">
-              <img src="../assets/story2_4_h.jpg" alt="carousel" class="carousel">
-            </picture>
-            <picture>
-              <source media="(max-width: 735px)" srcset="../assets/story2_5_v.jpg">
-              <img src="../assets/story2_5_h.jpg" alt="carousel" class="carousel">
-            </picture>
-            <picture>
-              <source media="(max-width: 735px)" srcset="../assets/story2_6_v.jpg">
-              <img src="../assets/story2_6_h.jpg" alt="carousel" class="carousel">
-            </picture>
-            <picture>
-              <source media="(max-width: 735px)" srcset="../assets/story2_7_v.jpg">
-              <img src="../assets/story2_7_h.jpg" alt="carousel" class="carousel">
-            </picture>
-            <picture>
-              <source media="(max-width: 735px)" srcset="../assets/story2_8_v.jpg">
-              <img src="../assets/story2_8_h.jpg" alt="carousel" class="carousel">
-            </picture>
-            <picture>
-              <source media="(max-width: 735px)" srcset="../assets/story2_9_v.jpg">
-              <img src="../assets/story2_9_h.jpg" alt="carousel" class="carousel">
-            </picture>
-            <picture>
-              <source media="(max-width: 735px)" srcset="../assets/story2_10_v.jpg">
-              <img src="../assets/story2_10_h.jpg" alt="carousel" class="carousel">
-            </picture>
-            <picture>
-              <source media="(max-width: 735px)" srcset="../assets/story2_11_v.jpg">
-              <img src="../assets/story2_11_h.jpg" alt="carousel" class="carousel">
-            </picture>
+          <div class="story_content">
+            <div class="carousel-img" v-if="isActive_1">
+              <picture>
+                <source media="(max-width: 735px)" srcset="../assets/story1_1_v.jpg">
+                <img src="../assets/story1_1_h.jpg" alt="carousel" class="carousel">
+              </picture>
+              <picture>
+                <source media="(max-width: 735px)" srcset="../assets/story1_2_v.jpg">
+                <img src="../assets/story1_2_h.jpg" alt="carousel" class="carousel">
+              </picture>
+              <picture>
+                <source media="(max-width: 735px)" srcset="../assets/story1_3_v.jpg">
+                <img src="../assets/story1_3_h.jpg" alt="carousel" class="carousel">
+              </picture>
+              <picture>
+                <source media="(max-width: 735px)" srcset="../assets/story1_4_v.jpg">
+                <img src="../assets/story1_4_h.jpg" alt="carousel" class="carousel">
+              </picture>
+              <picture>
+                <source media="(max-width: 735px)" srcset="../assets/story1_5_v.jpg">
+                <img src="../assets/story1_5_h.jpg" alt="carousel" class="carousel">
+              </picture>
+              <picture>
+                <source media="(max-width: 735px)" srcset="../assets/story1_6_v.jpg">
+                <img src="../assets/story1_6_h.jpg" alt="carousel" class="carousel">
+              </picture>
+              <picture>
+                <source media="(max-width: 735px)" srcset="../assets/story1_7_v.jpg">
+                <img src="../assets/story1_7_h.jpg" alt="carousel" class="carousel">
+              </picture>
+              <picture>
+                <source media="(max-width: 735px)" srcset="../assets/story1_8_v.jpg">
+                <img src="../assets/story1_8_h.jpg" alt="carousel" class="carousel">
+              </picture>
+              <picture>
+                <source media="(max-width: 735px)" srcset="../assets/story1_9_v.jpg">
+                <img src="../assets/story1_9_h.jpg" alt="carousel" class="carousel">
+              </picture>
+              <picture>
+                <source media="(max-width: 735px)" srcset="../assets/story1_10_v.jpg">
+                <img src="../assets/story1_10_h.jpg" alt="carousel" class="carousel">
+              </picture>
+              <picture>
+                <source media="(max-width: 735px)" srcset="../assets/story1_11_v.jpg">
+                <img src="../assets/story1_11_h.jpg" alt="carousel" class="carousel">
+              </picture>
+              <picture>
+                <source media="(max-width: 735px)" srcset="../assets/story1_12_v.jpg">
+                <img src="../assets/story1_12_h.jpg" alt="carousel" class="carousel">
+              </picture>
+              <picture>
+                <source media="(max-width: 735px)" srcset="../assets/story1_13_v.jpg">
+                <img src="../assets/story1_13_h.jpg" alt="carousel" class="carousel">
+              </picture>
+            </div>
+            <div class="carousel-img" v-if="isActive_2">
+              <picture>
+                <source media="(max-width: 735px)" srcset="../assets/story2_1_v.jpg">
+                <img src="../assets/story2_1_h.jpg" alt="carousel" class="carousel">
+              </picture>
+              <picture>
+                <source media="(max-width: 735px)" srcset="../assets/story2_2_v.jpg">
+                <img src="../assets/story2_2_h.jpg" alt="carousel" class="carousel">
+              </picture>
+              <picture>
+                <source media="(max-width: 735px)" srcset="../assets/story2_3_v.jpg">
+                <img src="../assets/story2_3_h.jpg" alt="carousel" class="carousel">
+              </picture>
+              <picture>
+                <source media="(max-width: 735px)" srcset="../assets/story2_4_v.jpg">
+                <img src="../assets/story2_4_h.jpg" alt="carousel" class="carousel">
+              </picture>
+              <picture>
+                <source media="(max-width: 735px)" srcset="../assets/story2_5_v.jpg">
+                <img src="../assets/story2_5_h.jpg" alt="carousel" class="carousel">
+              </picture>
+              <picture>
+                <source media="(max-width: 735px)" srcset="../assets/story2_6_v.jpg">
+                <img src="../assets/story2_6_h.jpg" alt="carousel" class="carousel">
+              </picture>
+              <picture>
+                <source media="(max-width: 735px)" srcset="../assets/story2_7_v.jpg">
+                <img src="../assets/story2_7_h.jpg" alt="carousel" class="carousel">
+              </picture>
+              <picture>
+                <source media="(max-width: 735px)" srcset="../assets/story2_8_v.jpg">
+                <img src="../assets/story2_8_h.jpg" alt="carousel" class="carousel">
+              </picture>
+              <picture>
+                <source media="(max-width: 735px)" srcset="../assets/story2_9_v.jpg">
+                <img src="../assets/story2_9_h.jpg" alt="carousel" class="carousel">
+              </picture>
+              <picture>
+                <source media="(max-width: 735px)" srcset="../assets/story2_10_v.jpg">
+                <img src="../assets/story2_10_h.jpg" alt="carousel" class="carousel">
+              </picture>
+              <picture>
+                <source media="(max-width: 735px)" srcset="../assets/story2_11_v.jpg">
+                <img src="../assets/story2_11_h.jpg" alt="carousel" class="carousel">
+              </picture>
+            </div>
+            <div class="carousel-img" v-if="isActive_3">
+              <picture>
+                <source media="(max-width: 735px)" srcset="../assets/story3_1_v.jpg">
+                <img src="../assets/story3_1_h.jpg" alt="carousel" class="carousel">
+              </picture>
+              <picture>
+                <source media="(max-width: 735px)" srcset="../assets/story3_2_v.jpg">
+                <img src="../assets/story3_2_h.jpg" alt="carousel" class="carousel">
+              </picture>
+              <picture>
+                <source media="(max-width: 735px)" srcset="../assets/story3_3_v.jpg">
+                <img src="../assets/story3_3_h.jpg" alt="carousel" class="carousel">
+              </picture>
+              <picture>
+                <source media="(max-width: 735px)" srcset="../assets/story3_4_v.jpg">
+                <img src="../assets/story3_4_h.jpg" alt="carousel" class="carousel">
+              </picture>
+              <picture>
+                <source media="(max-width: 735px)" srcset="../assets/story3_5_v.jpg">
+                <img src="../assets/story3_5_h.jpg" alt="carousel" class="carousel">
+              </picture>
+              <picture>
+                <source media="(max-width: 735px)" srcset="../assets/story3_6_v.jpg">
+                <img src="../assets/story3_6_h.jpg" alt="carousel" class="carousel">
+              </picture>
+              <picture>
+                <source media="(max-width: 735px)" srcset="../assets/story3_7_v.jpg">
+                <img src="../assets/story3_7_h.jpg" alt="carousel" class="carousel">
+              </picture>
+              <picture>
+                <source media="(max-width: 735px)" srcset="../assets/story3_8_v.jpg">
+                <img src="../assets/story3_8_h.jpg" alt="carousel" class="carousel">
+              </picture>
+              <picture>
+                <source media="(max-width: 735px)" srcset="../assets/story3_9_v.jpg">
+                <img src="../assets/story3_9_h.jpg" alt="carousel" class="carousel">
+              </picture>
+              <picture>
+                <source media="(max-width: 735px)" srcset="../assets/story3_10_v.jpg">
+                <img src="../assets/story3_10_h.jpg" alt="carousel" class="carousel">
+              </picture>
+              <picture>
+                <source media="(max-width: 735px)" srcset="../assets/story3_11_v.jpg">
+                <img src="../assets/story3_11_h.jpg" alt="carousel" class="carousel">
+              </picture>
+              <picture>
+                <source media="(max-width: 735px)" srcset="../assets/story3_12_v.jpg">
+                <img src="../assets/story3_12_h.jpg" alt="carousel" class="carousel">
+              </picture>
+              <picture>
+                <source media="(max-width: 735px)" srcset="../assets/story3_13_v.jpg">
+                <img src="../assets/story3_13_h.jpg" alt="carousel" class="carousel">
+              </picture>
+            </div>
           </div>
-          <div class="carousel-img" v-if="isActive_3">
-            <picture>
-              <source media="(max-width: 735px)" srcset="../assets/story3_1_v.jpg">
-              <img src="../assets/story3_1_h.jpg" alt="carousel" class="carousel">
-            </picture>
-            <picture>
-              <source media="(max-width: 735px)" srcset="../assets/story3_2_v.jpg">
-              <img src="../assets/story3_2_h.jpg" alt="carousel" class="carousel">
-            </picture>
-            <picture>
-              <source media="(max-width: 735px)" srcset="../assets/story3_3_v.jpg">
-              <img src="../assets/story3_3_h.jpg" alt="carousel" class="carousel">
-            </picture>
-            <picture>
-              <source media="(max-width: 735px)" srcset="../assets/story3_4_v.jpg">
-              <img src="../assets/story3_4_h.jpg" alt="carousel" class="carousel">
-            </picture>
-            <picture>
-              <source media="(max-width: 735px)" srcset="../assets/story3_5_v.jpg">
-              <img src="../assets/story3_5_h.jpg" alt="carousel" class="carousel">
-            </picture>
-            <picture>
-              <source media="(max-width: 735px)" srcset="../assets/story3_6_v.jpg">
-              <img src="../assets/story3_6_h.jpg" alt="carousel" class="carousel">
-            </picture>
-            <picture>
-              <source media="(max-width: 735px)" srcset="../assets/story3_7_v.jpg">
-              <img src="../assets/story3_7_h.jpg" alt="carousel" class="carousel">
-            </picture>
-            <picture>
-              <source media="(max-width: 735px)" srcset="../assets/story3_8_v.jpg">
-              <img src="../assets/story3_8_h.jpg" alt="carousel" class="carousel">
-            </picture>
-            <picture>
-              <source media="(max-width: 735px)" srcset="../assets/story3_9_v.jpg">
-              <img src="../assets/story3_9_h.jpg" alt="carousel" class="carousel">
-            </picture>
-            <picture>
-              <source media="(max-width: 735px)" srcset="../assets/story3_10_v.jpg">
-              <img src="../assets/story3_10_h.jpg" alt="carousel" class="carousel">
-            </picture>
-            <picture>
-              <source media="(max-width: 735px)" srcset="../assets/story3_11_v.jpg">
-              <img src="../assets/story3_11_h.jpg" alt="carousel" class="carousel">
-            </picture>
-            <picture>
-              <source media="(max-width: 735px)" srcset="../assets/story3_12_v.jpg">
-              <img src="../assets/story3_12_h.jpg" alt="carousel" class="carousel">
-            </picture>
-            <picture>
-              <source media="(max-width: 735px)" srcset="../assets/story3_13_v.jpg">
-              <img src="../assets/story3_13_h.jpg" alt="carousel" class="carousel">
-            </picture>
+          <div class="arrow" @click="next">
+            <i class="fas fa-chevron-right fa-2x" style="color: #ffffff"></i>
           </div>
-        </div>
-        <div class="arrow" @click="next">
-          <i class="fas fa-chevron-right fa-2x" style="color: #ffffff"></i>
-        </div>
       </div>
+      </v-touch>
     </div>
   </div>
 </template>
@@ -302,6 +304,12 @@
         }
         this.width = document.getElementsByClassName('story_content')[0].offsetWidth;
         this.length = document.getElementsByClassName('carousel').length;
+      },
+      onSwipeLeft: function (){
+        this.next()
+      },
+      onSwipeRight: function (){
+        this.previous()
       }
     },
     watch: {
