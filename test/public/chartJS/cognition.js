@@ -52,7 +52,7 @@ var chart = new G2.Chart({
   container: 'cognition',
   forceFit: true,
   height: 600,
-  padding: [20, 20, 50, 140]
+  padding: [20, 20, 50, 100]
 });
 chart.source(data, {
   value: {

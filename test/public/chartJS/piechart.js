@@ -62,7 +62,7 @@ var chart = new G2.Chart({
   container: 'pieChart',
   forceFit: true,
   height: 500,
-  padding: [20, 30, 30, 20]
+  padding: [50, 30, 50, 20]
 });
 
 var COLORS = ['#7f8da9', '#db4c3c'];

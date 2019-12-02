@@ -444,7 +444,8 @@
       loadScript: function loadScript(src, callback) {
         let script = document.createElement('script');
         script.src = src;
-        script.onload = () => callback(script);
+        let a = function (){return script};
+        script.onload = () => callback(a);
         document.head.append(script);
       },
       bystander: function () {
@@ -607,6 +608,11 @@
   #cognition_2 {
     padding-bottom: 30px;
   }
+
+  #lineChart > div{
+    display: flex;
+    flex-direction: column;
+  }
   
   #lineChart .g2-legend {
     width: 250px;
@@ -717,6 +723,11 @@
     #statesvg{
       height:400px;;
     }
+    #lineChart .g2-legend{
+      position: relative !important;
+      left: 0px  !important;
+      top: 15px  !important;
+    }
   }
 
   @media only screen and (min-width: 320px) and (max-width: 735px) {
@@ -734,6 +745,11 @@
       height: 100%;
       width: 100%;
       background-color: transparent;
+    }
+    #lineChart .g2-legend{
+      position: relative !important;
+      left: 0px  !important;
+      top: 15px  !important;
     }
   }
   

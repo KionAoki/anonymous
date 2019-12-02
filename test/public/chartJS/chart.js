@@ -14,56 +14,42 @@ var data = [{
 var chart = new G2.Chart({
   container: 'mountNode',
   forceFit: true,
-  height: 500,
-  animate: false,
-  theme: 'dark',
-  background: {
-    fill: '#3A4151', // 图表背景色
-    fillOpacity: 0 // 图表背景透明度
-  },
-  plotBackground: {
-    fill: '#3A4151', // 图表背景色
-    fillOpacity: 0 // 图表背景透明度
-  }
+  height: 500
 });
 chart.source(data, {
   percent: {
-    formatter: function formatter(val) {
-      val = val * 100 + '%';
+    formatter: val => {
+      val = (val * 100) + '%';
       return val;
     }
   }
 });
-chart.coord('theta', {
-  radius: 0.75,
-  innerRadius: 0.6
-});
+chart.coord('theta');
 chart.tooltip({
-  showTitle: false,
-  itemTpl: '<li><span style="background-color:{color};" class="g2-tooltip-marker"></span>{name}: {value}</li>'
+  showTitle: false
 });
-// 辅助文本
-chart.guide().html({
-  position: ['50%', '50%'],
-  html: '<div style="color:#8c8c8c;font-size: 14px;text-align: center;width: 10em;">台灣網路霸凌情形</div>',
-  alignX: 'middle',
-  alignY: 'middle'
-});
-var interval = chart.intervalStack().position('percent').color('item', ['#7f8da9', '#db4c3c', '#fec514','#daf0fd', '#9BD782']).label('percent', {
-  formatter: function formatter(val, item) {
-    if(736 < document.documentElement.clientWidth){
-    return item.point.item + ': ' + val;
+chart.intervalStack()
+  .position('percent')
+  .color('item',['#7f8da9', '#db4c3c', '#fec514'])
+  .label('percent', {
+    offset: -40,
+    // autoRotate: false,
+    textStyle: {
+      textAlign: 'center',
+      shadowBlur: 2,
+      shadowColor: 'rgba(0, 0, 0, .45)',
+      fill: '#fff'
     }
-  }
-}).tooltip('item*percent', function(item, percent) {
+  })
+  .tooltip('item*percent', (item, percent) => {
     percent = percent * 100 + '%';
     return {
       name: item,
       value: percent
     };
-}).style({
-  lineWidth: 1,
-  stroke: '#fff'
-});
+  })
+  .style({
+    lineWidth: 1,
+    stroke: '#fff'
+  });
 chart.render();
-interval.setSelected(data[0]);

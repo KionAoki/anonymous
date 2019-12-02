@@ -263,6 +263,10 @@
     margin: 10px;
   }
 
+  .iconImg{
+    margin:0px 50px 50px 50px;
+  }
+
   @media only screen and (min-width: 736px) and (max-width: 1024px) {
     [alt="bully procedure"] {
       height: 200px;

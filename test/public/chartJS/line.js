@@ -64,7 +64,7 @@ var chart = new G2.Chart({
   container: 'lineChart',
   forceFit: true,
   height: 400,
-  padding: [20, 210, 30, 50]
+  padding: 'auto'
 });
 chart.source(data, {
   year: {

@@ -15,7 +15,7 @@ var chart = new G2.Chart({
   container: 'radialBar',
   forceFit: true,
   height: 500,
-  padding: [20, 80],
+  padding: [0, 0],
   theme: 'dark',
   background: {
     fill: '#3A4151', // 图表背景色
