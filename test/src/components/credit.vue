@@ -46,7 +46,7 @@
         team: [
           {key: 'cc', work: '數據、文字整理', name: 'Seo Joo Kim'},
           {key: 'cd', work: '設計', name: 'Chew Hui Jing'},
-          {key: 'ce', work: '工程', name: 'Kion'},
+          {key: 'ce', work: '工程', name: 'Angela'},
           {ikeyd: 'cf', work: '遊戲設計', name: 'Sora ☆'}
         ]
       }

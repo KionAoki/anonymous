@@ -10,9 +10,6 @@
       <div class="planet3">
         <div class="center shallow">
           <div class="inner">
-            <div class="sheet_content">
-              <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScJG-SFDMHUznt_y-_nk616bdv9_JvdXZMqfAFW2y9cXsF-TA/viewform?embedded=true" class="sheet" frameborder="0" marginheight="0" marginwidth="0">載入中…</iframe>
-            </div>
             <div>
               <Paragraph v-for="text in posts" :key="text.key" :title="text.title" :content="text.content"
                          :img="text.img" :comment="text.comment" :chart="text.chart"></Paragraph>
@@ -52,6 +49,47 @@
   import Paragraph from './Paragraph'
 
   var cyberbully_posts = [
+    {
+      key: '00',
+      title: '為什麼要了解網絡霸凌',
+      content: '你有仔細觀察過自己的生活嗎，或者說是審視過自己的生活嗎？<br/>' +
+        '那麼也許你就會發現，有多少不合理行為被堂而皇之冠上了「日常」的標籤。' +
+        '<br/>' +
+        '「不要太在意啦，這樣的事情每個人多少都發生過。」' +
+        '<br/>' +
+        '「我知道這樣不好，但每個人都在做我總是要合群嘛。」',
+      img: '',
+      comment: '',
+      chart: ''
+    },
+    {
+      key: '01',
+      title: '',
+      content: '網路霸凌就是其中的一種不合理，只是很多時候大家罵得開心造謠得可以飛起，就漸漸忽略，去視而不見這個不合理。<br/>' +
+        '如同家庭暴力，大多數網絡霸凌受害者選擇了默默無言含淚隱忍，讓多數人只看到了討伐狂歡的表象而不止底下的心酸苦澀。但與家庭暴力不同的是，網絡霸凌並沒有一個明確定義，有些人認為的網絡霸凌行為可能在其他人眼中就是小題大作。',
+      img: '',
+      comment: '',
+      chart: ''
+    },
+    {
+      key: '02',
+      title: '',
+      content: 'Hello<br/>' +
+        '相信網路霸凌這個議題您已經聽到耳朵長繭了吧<br/>' +
+        '但您其實真的有了解網路霸凌的含義嗎？<br/>' +
+        '還是或許和許多人一樣，身陷泥沼而不知。<br/>' +
+        '<br/>' +
+        '這是一份網路霸凌認知調查的小調查，<br/>' +
+        '測試題都是日常生活中常見的網路霸凌行為。<br/>' +
+        '<br/>' +
+        '來看看您對於網路霸凌行為的熟悉程度，<br/>' +
+        '也為了明白您與網路霸凌之間的距離究竟有多遠。',
+      img: '',
+      comment: '',
+      chart: '<div class="sheet_content">' +
+        '<iframe src="https://docs.google.com/forms/d/e/1FAIpQLScJG-SFDMHUznt_y-_nk616bdv9_JvdXZMqfAFW2y9cXsF-TA/viewform?embedded=true" class="sheet" frameborder="0" marginheight="0" marginwidth="0">載入中…</iframe>' +
+        '</div>'
+    },
     {
       key: '1',
       title: '網路霸凌的定義及概念',
@@ -179,7 +217,7 @@
       }
     },
     mounted() {
-      window.addEventListener('scroll',() => {
+      window.addEventListener('scroll', () => {
         var current = document.documentElement.scrollTop;
         var scroll1 = document.getElementById('scroll_1').offsetTop;
         var scroll2 = document.getElementById('scroll_2').offsetTop;
@@ -238,12 +276,12 @@
   
   /* sheet */
   
-  .sheet_content{
+  .sheet_content {
     display: flex;
     justify-content: center;
   }
   
-  .sheet{
+  .sheet {
     width: 100%;
     min-height: 100vh;
   }
@@ -253,54 +291,54 @@
   [alt="bully procedure"] {
     height: 300px;
   }
-
-  [alt="chartIcon"]{
+  
+  [alt="chartIcon"] {
     width: 80px;
   }
   
-  [alt="bullychat"]{
+  [alt="bullychat"] {
     width: 50%;
     margin: 10px;
   }
-
-  .iconImg{
-    margin:0px 50px 50px 50px;
+  
+  .iconImg {
+    margin: 0px 50px 50px 50px;
   }
-
+  
   @media only screen and (min-width: 736px) and (max-width: 1024px) {
     [alt="bully procedure"] {
       height: 200px;
     }
   }
-
+  
   @media only screen and (min-width: 320px) and (max-width: 735px) {
-    .page-title{
+    .page-title {
       width: 50%;
     }
     
-    [alt="chartIcon"]{
+    [alt="chartIcon"] {
       width: 60px;
       margin: 0px;
     }
-  
+    
     [alt="bully procedure"] {
       height: 700px;
     }
-  
-    [alt="bullychat"]{
+    
+    [alt="bullychat"] {
       width: 100%;
       margin: 10px;
     }
     
-    .iconImg{
+    .iconImg {
       margin: 0px 40px 40px 40px;
     }
   }
-
+  
   @media only screen and (min-width: 320px) and (max-width: 400px) {
-    .iconImg{
+    .iconImg {
       margin: 0px 20px 20px 40px;
     }
   }
-  
+
 </style>
