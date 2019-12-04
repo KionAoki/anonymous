@@ -13,12 +13,12 @@
           <button @click="changec"><img src="../assets/people-story3-01.png" alt="respondent_3"></button>
         </div>
       </div>
-      <v-touch v-on:swipeleft="onSwipeLeft" v-on:swiperight="onSwipeRight">
       <div id="carousel">
-          <div class="arrow" @click="previous">
-            <i class="fas fa-chevron-left fa-2x" style="color: #ffffff"></i>
-          </div>
-          <div class="story_content">
+        <div class="arrow" @click="previous">
+          <i class="fas fa-chevron-left fa-2x" style="color: #ffffff"></i>
+        </div>
+        <div class="story_content">
+          <v-touch v-on:swipeleft="onSwipeLeft" v-on:swiperight="onSwipeRight">
             <div class="carousel-img" v-if="isActive_1">
               <picture>
                 <source media="(max-width: 735px)" srcset="../assets/story1_1_v.jpg">
@@ -173,12 +173,12 @@
                 <img src="../assets/story3_13_h.jpg" alt="carousel" class="carousel">
               </picture>
             </div>
-          </div>
-          <div class="arrow" @click="next">
-            <i class="fas fa-chevron-right fa-2x" style="color: #ffffff"></i>
-          </div>
+          </v-touch>
+        </div>
+        <div class="arrow" @click="next">
+          <i class="fas fa-chevron-right fa-2x" style="color: #ffffff"></i>
+        </div>
       </div>
-      </v-touch>
     </div>
   </div>
 </template>
@@ -236,7 +236,7 @@
         this.isActive_2 = false;
         this.isActive_3 = false;
         this.$nextTick(function () {
-         this.fit();
+          this.fit();
           this.left = 0;
           document.getElementsByClassName('carousel-img')[0].style.left = 0;
         })
@@ -289,10 +289,10 @@
         this.window_width = document.body.clientWidth;
         var width = 1000;
         var height = 0;
-        if(this.window_width > 735){
+        if (this.window_width > 735) {
           width = document.getElementsByClassName('story_content')[0].offsetWidth;
           height = width / 1876 * 980;
-        }else {
+        } else {
           width = document.getElementsByClassName('story_content')[0].offsetWidth;
           height = width / 400 * 600;
         }
@@ -305,10 +305,10 @@
         this.width = document.getElementsByClassName('story_content')[0].offsetWidth;
         this.length = document.getElementsByClassName('carousel').length;
       },
-      onSwipeLeft: function (){
+      onSwipeLeft: function () {
         this.next()
       },
-      onSwipeRight: function (){
+      onSwipeRight: function () {
         this.previous()
       }
     },
