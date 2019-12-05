@@ -1,5 +1,11 @@
 <template>
   <div id="app">
+    <!-- loading -->
+    <div id="loading" :class="{'loading': loading, 'loadend': loadend}">
+      <div id="img_preload">
+        <div class="loder"></div>
+      </div>
+    </div>
     <div class="menu-toggle" id="hamburger" v-on:click="pop">
       <a class="hamburgerBar" style="color: white;">
         <i :class="{'fas fa-bars': bar, 'fas fa-times': cross,'fa-sm': size}"></i>
@@ -64,9 +70,18 @@ export default {
       ],
       sidebar_open: false,
       sidebar_close: true,
-      //open: hb.open,
+      loading: true,
+      loadend: false
     }
   },
+  mounted: function () {
+      window.addEventListener('load', () => {
+        setTimeout(() => {
+          this.loadend = true;
+          this.loading = false;
+        }, 3000);
+      })
+    },
   methods: {
     pop: function () {
       if (this.close) {
@@ -112,6 +127,40 @@ export default {
 </script>
 
 <style>
+  /* loading */
+
+  #loading{
+    background: #333;
+  }
+
+  #img_preload{
+    height: 100vh;
+  }
+  .loder{
+    position: absolute;
+    left: 45%;
+    top: 45%;
+    background: #333;
+    border: 3px solid white;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    animation: loding 1s linear infinite;
+    -webkit-animation: loding 1.0s linear infinite;
+    transform-origin: 50% 50%;
+  }
+  @keyframes loding{
+    0%{
+      transform: scale(0);
+    
+    }
+    100%{
+      transform: scale(1);
+      opacity: 0
+    
+    }
+  }
+  
   /* background */
   
   .star {
@@ -195,7 +244,7 @@ export default {
 
   .sidebar-nav > .sidebar-brand {
     font-size: 1.1rem;
-    height: 90px;
+    height: 70px;
     line-height: 60px;
     padding: 10.5px 0px 1px 20px;
     margin-top: 65px;
@@ -209,6 +258,26 @@ export default {
   .sidebar-nav > .sidebar-brand a:hover {
     color: #666666;
     background: 0 0
+  }
+
+  .sidebar-nav-item{
+    height: 40px;
+  }
+
+  @media only screen and (min-width: 736px) and (max-width: 1024px) {
+    .sidebar-nav > .sidebar-brand {
+      height: 50px;
+    }
+    .sidebar-nav-item{
+      height: 30px;
+    }
+  }
+
+  @media only screen and (min-width: 320px) and (max-width: 735px) {
+    .loder {
+      left: 40%;
+      top: 40%;
+    }
   }
   
 </style>

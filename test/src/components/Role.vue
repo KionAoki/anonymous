@@ -70,13 +70,18 @@
         </div>
       </div>
     </div>
-    <img src="../assets/bg-08.jpg" alt="scroll_4">
+    <picture>
+      <source media="(max-width: 1024px)" srcset="../assets/bgp-08.jpg">
+      <img src="../assets/bg-08.jpg" alt="scroll_4">
+    </picture>
     <div class="empty" id="scroll_4"></div>
   </div>
 </template>
 <script>
+  
   import PageTitle from './PageTitle'
   import Paragraph from './Paragraph'
+  
 
   var role_post = [
     {
@@ -95,7 +100,7 @@
       key: 'b',
       title: '',
       content: '',
-      img: '<img src="./bully2-01.svg" alt="cyberbully">',
+      img: '<img src="./contentImg/bully2-01.svg" alt="cyberbully">',
       comment: '',
       chart: ''
     },
@@ -142,7 +147,28 @@
         '其中本篇文章就使用了<a href="https://cyberbullying.org/bullying-laws"> Cyberbullying Research Center </a>關於美國各州霸凌法包含網路霸凌之內容統計數據：\n',
       img: '',
       comment: '',
-      chart: '<div id="usa"></div>'
+      chart: '<div id="usa"><div class="touch"></div>' +
+        '<div id="tooltip"></div>' +
+        '<svg id="statesvg" width="960" height="600"\n' +
+        '     viewBox="0 0 960 600"  preserveAspectRatio="xMidYMid"></svg>' +
+        '</div>' +
+        '<div><p style="text-align: center;">立法完整度高（深）——> 低（淺）</p></div>'
+    },
+    {
+      key: 'g1',
+      title: '',
+      content: '<ul><li>刑事制裁（Criminal Sanction）<br/>' +
+        '根據事件行為，所有州都擁有適合用於霸凌的刑法。其中刑法中定義關於騷擾的形式，大部分都包含了電子化的騷擾行為</li>' +
+        '<li>學校制裁（School Sanction）<br/>' +
+        '在某些州，霸凌法允許學校制定紀律及規定去防止霸凌的發生。</li>' +
+        '<li>學校政策（School Policy）<br/>' +
+        '除蒙大拿州外，每個州都採用霸凌法，要求學校制定正式政策以及霸凌事件應對SOP。' +
+        '有些法律要求將特定要素包括在策略中（例如對霸凌行為的定義），而另一些法律沒有要求說明。</li>' +
+        '<li>校外規定（Off-campus）<br/>' +
+        '學校對於學生在校外的不當行為也會進行處分。</li></ul>',
+      img: '',
+      comment: '',
+      chart: ''
     },
     {
       key: 'h',
@@ -153,7 +179,7 @@
         '該組織可以 <b>為父母或孩子提供心理諮商上的免費幫助</b>，並且也會定期舉辦相關教育課程講座或出版期刊。\n<br/>' +
         '<a href="http://ditchthelabel.org">Ditch the Label </a> 作為一家數位慈善機構，' +
         '<b>通過網頁及社群不斷幫助12-25歲孩童或年輕人克服霸凌遭遇</b> ，其發布的網路霸凌年度報告更是詳細統計了英國網路霸凌現況及趨勢。\n',
-      img: '<img src="./ditchthelabel.jpg" alt="Ditch the Label">',
+      img: '<img src="./contentImg/ditchthelabel.jpg" alt="Ditch the Label">',
       comment: 'Ditch the Label官網截圖 來源 https://www.ditchthelabel.org/',
       chart: ''
     },
@@ -162,7 +188,10 @@
       title: '',
       content: '<b>反霸凌法(Anti-Bullying Law)是阻止霸凌行為的重要武器之一</b> ，但可惜的是 <b>並不是每個國家都有制定相關法律</b> ，' +
         '像 <b>台灣目前並沒有針對網路霸凌的專法</b>，如果當事人想要走法律途徑，只能以公然侮辱罪、誹謗罪這樣的擦邊球名義加以控告。\n',
-      img: '<img src="./chat2-01.svg" alt="law">',
+      img: '<picture>' +
+        '<source srcset="./contentImg/chat2.svg" media="(max-width: 735px)">' +
+        '<img src="./contentImg/chat2-01.svg" alt="law">' +
+        '</picture>',
       comment: '資料來源：自行整理',
       chart: ''
     },
@@ -191,7 +220,7 @@
       key: 'l',
       title: '',
       content: '',
-      img: '<img src="./bully3-01.svg" alt="cyberbully">',
+      img: '<img src="./contentImg/bully3-01.svg" alt="cyberbully">',
       comment: '',
       chart: ''
     },
@@ -298,7 +327,7 @@
       key: 'u',
       title: '',
       content: '',
-      img: '<img src="./bully1-01.svg" alt="cyberbully">',
+      img: '<img src="./contentImg/bully1-01.svg" alt="cyberbully">',
       comment: '',
       chart: ''
     },
@@ -431,7 +460,8 @@
       loadScript: function loadScript(src, callback) {
         let script = document.createElement('script');
         script.src = src;
-        script.onload = () => callback(script);
+        let a = function (){return script};
+        script.onload = () => callback(a);
         document.head.append(script);
       },
       bystander: function () {
@@ -459,7 +489,7 @@
         this.tab_6 = true;
         var times = document.getElementById("radialBar").getElementsByTagName("div").length;
         if (times === 0) {
-          this.loadScript('./radiobar.js');
+          this.loadScript('./chartJS/radiobar.js');
         }
       }
     }
@@ -558,12 +588,8 @@
   }
   
   /* paragraph image */
-  
-  [alt="law"] {
-    height: 400px;
-  }
-  
-  [alt="cyberbully"] {
+
+  [alt="cyberbully"], [alt="law"] {
     height: 400px;
   }
   
@@ -597,6 +623,11 @@
   
   #cognition_2 {
     padding-bottom: 30px;
+  }
+
+  #lineChart > div{
+    display: flex;
+    flex-direction: column;
   }
   
   #lineChart .g2-legend {
@@ -638,5 +669,104 @@
     vertical-align: middle;
     content: '';
   }
+  
+  /* USA */
+  #usa{
+    display: flex;
+    max-width: 100vw;
+    position: relative;
+  }
+  
+  #statesvg{
+    display: flex;
+    height: 600px;
+    width: 960px;
+    cursor: pointer;
+  }
 
+  .state{
+    fill: none;
+    stroke: #a9a9a9;
+    stroke-width: 1;
+  }
+  .state:hover{
+    fill-opacity:0.5;
+  }
+  #tooltip {
+    position: absolute;
+    text-align: center;
+    padding: 20px;
+    margin: 10px;
+    font: 12px sans-serif;
+    background: lightsteelblue;
+    border: 1px;
+    border-radius: 2px;
+    pointer-events: none;
+  }
+  #tooltip h4{
+    margin:0;
+    font-size:14px;
+  }
+  #tooltip{
+    background:rgba(256,256,256,0.9);
+    border:1px solid lightsteelblue;
+    border-radius:5px;
+    font-size:12px;
+    width:auto;
+    padding:4px;
+    color: #000000;
+    opacity:0;
+  }
+  #tooltip table{
+    table-layout:fixed;
+  }
+  #tooltip tr td{
+    padding:0;
+    margin:0;
+  }
+  #tooltip tr td:nth-child(1){
+    width:150px;
+    height: 50px;
+  }
+  #tooltip tr td:nth-child(2){
+    text-align:center;
+  }
+  
+  @media only screen and (min-width: 736px) and (max-width: 1024px) {
+    [alt="cyberbully"], [alt="law"] {
+      height: 300px;
+    }
+    #statesvg{
+      height:400px;;
+    }
+    #lineChart .g2-legend{
+      position: relative !important;
+      left: 0px  !important;
+      top: 15px  !important;
+    }
+  }
+
+  @media only screen and (min-width: 320px) and (max-width: 735px) {
+    #statesvg{
+      height:200px;;
+    }
+    [alt="cyberbully"]{
+      height: 150px;
+    }
+    [alt="law"] {
+      height: 300px;
+    }
+    .touch{
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      background-color: transparent;
+    }
+    #lineChart .g2-legend{
+      position: relative !important;
+      left: 0px  !important;
+      top: 15px  !important;
+    }
+  }
+  
 </style>

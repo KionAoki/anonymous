@@ -33,20 +33,20 @@
           {
             key: 'ca',
             link: 'https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwhoisback.github.io%2Fanonymous%2F&amp;src=sdkpreparse',
-            image: './share_nav_fb.svg',
+            image: './contentImg/share_nav_fb.svg',
             alt: 'fb_share'
           },
           {
             key: 'cb',
             link: 'https://social-plugins.line.me/lineit/share?url=https%3A%2F%2Fwhoisback.github.io%2Fanonymous%2F',
-            image: './share_nav_line.svg',
+            image: './contentImg/share_nav_line.svg',
             alt: 'line_share'
           }
         ],
         team: [
           {key: 'cc', work: '數據、文字整理', name: 'Seo Joo Kim'},
           {key: 'cd', work: '設計', name: 'Chew Hui Jing'},
-          {key: 'ce', work: '工程', name: 'Kion'},
+          {key: 'ce', work: '工程', name: 'Angela'},
           {ikeyd: 'cf', work: '遊戲設計', name: 'Sora ☆'}
         ]
       }
@@ -99,5 +99,20 @@
 
   #share a:last-child {
     padding-left: 30px;
+  }
+  @media only screen and (min-width: 736px) and (max-width: 1024px) {
+    #share{
+      margin-right: 100px;
+    }
+  }
+
+  @media only screen and (min-width: 320px) and (max-width: 735px) {
+    .footer{
+      flex-direction: column;
+      justify-items: center;
+    }
+    #share{
+      margin: 20px 0px 20px 0px;
+    }
   }
 </style>
