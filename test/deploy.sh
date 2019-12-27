@@ -9,6 +9,6 @@ git init
 git add -A
 git commit -m 'deploy'
 # 部署到 https://bitbucket.org/KionAoki/kionaoki.bitbucket.io/ 分支為 gh-pages
-git push -f git@bitbucket.org:KionAoki/kionaoki.bitbucket.io.git master:gh-pages
+git push -f git@bitbucket.org:KionAoki/kionaoki.bitbucket.io.git master:web-pages
 
 cd -
