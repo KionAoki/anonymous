@@ -8,7 +8,7 @@ cd dist
 git init
 git add -A
 git commit -m 'deploy'
-# 部署到 https://github.com/whoisback/anonymous.git 分支為 gh-pages
-git push -f git@github.com:whoisback/anonymous.git master:gh-pages
+# 部署到 https://bitbucket.org/KionAoki/kionaoki.bitbucket.io/ 分支為 gh-pages
+git push -f git@bitbucket.org:KionAoki/kionaoki.bitbucket.io.git master:gh-pages
 
 cd -
