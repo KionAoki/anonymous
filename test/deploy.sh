@@ -1,14 +1,28 @@
 #!/usr/bin/env sh
-# 當發生錯誤時終止腳本運行
-set -e
 # 打包
+current_commit=$(git rev-parse HEAD | cut -c1-7)
+commit_message="Deploy website version based on ${current_commit}"
 npm run build
-# 移動至到打包後的dist目錄
-cd dist
-git init
-git add -A
-git commit -m 'deploy'
-# 部署到 https://bitbucket.org/KionAoki/kionaoki.bitbucket.io/ 分支為 gh-pages
-git push -f git@bitbucket.org:KionAoki/kionaoki.bitbucket.io.git master:web-pages
-
+git clone git@bitbucket.org:KionAoki/kionaoki.bitbucket.io.git deploy-temp
+cd deploy-temp
+git checkout origin/bb-pages
+if [ $? -ne 0 ]; then
+    git checkout --orphan bb-pages
+    if [ $? -ne 0 ]; then
+        echo "Error: Git checkout failed"
+        exit 1
+    fi
+else
+    git checkout -b bb-pages
+    git branch --set-upstream-to=origin/bb-pages
+fi
+​
+git rm -rf .
+cd ../
+cp -R dist/* deploy-temp
+cd deploy-temp
+git add --all
+git commit -m "${commit_message}"
+git push -f git@bitbucket.org:KionAoki/kionaoki.bitbucket.io.git bb-pages
 cd -
+rm -rf deploy-temp
