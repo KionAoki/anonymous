@@ -1,8 +1,9 @@
 module.exports = {
   publicPath: process.env.NODE_ENV === 'production'
-    ? '/'
-    : '/',
+    ? './'
+    : './',
   outputDir: "dist",
+  assetsDir:"./",
   lintOnSave: true,
   runtimeCompiler: false,
   productionSourceMap: false,
