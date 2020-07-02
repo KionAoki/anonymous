@@ -1,6 +1,7 @@
 # Anonymous
 
 Shih Hsin University Department of Information and Communication graduation project.
+![](https://i.imgur.com/OYrz6b7.jpg)
 
 ## Getting Started
 
@@ -49,6 +50,7 @@ We've released Anonymous project because we hope that contributions can make thi
 
 ## Versioning
 
+- Vue: `v2.x`
 - Vue CLI: `v4.0.5`
 - Node: `v11.11.0`
 - NPM: `v6.7.0`
